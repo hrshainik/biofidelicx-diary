@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { PostCard, PostWidget, Categories } from '../components'
 import { getPosts } from '../services'
+import { FeaturedPosts } from '../sections'
 
 const Home = ({ posts }) => {
   return (
@@ -11,6 +12,7 @@ const Home = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <FeaturedPosts />
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((post, i) => (
