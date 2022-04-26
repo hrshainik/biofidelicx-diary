@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import Image from 'next/image'
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -78,7 +79,7 @@ const PostDetail = ({ post }) => {
         )
       case 'image':
         return (
-          <img
+          <Image
             key={index}
             alt={obj.title}
             height={obj.height}
@@ -93,32 +94,36 @@ const PostDetail = ({ post }) => {
   }
 
   return (
-    <div className="mb-8 rounded-lg bg-white pb-12 shadow-lg lg:p-8">
-      <div className="relative mb-6 overflow-hidden shadow-md">
-        <img
-          src={post.featuredImage.url}
-          alt={post.title}
-          className="h-full w-full rounded-t-lg object-top"
-        />
-      </div>
+    <div className="mb-8 pb-12">
       <div className="px-4 lg:px-0">
+        {post.content.raw.children.map((typeObj, i) => {
+          const children = typeObj.children.map((item, itemI) =>
+            getContentFragment(itemI, item.text, item)
+          )
+
+          return getContentFragment(i, children, typeObj, typeObj.type)
+        })}
         <div className="mb-8 flex w-full items-center">
           <div className="mb-4 mr-8 flex w-full items-center lg:mb-0 lg:w-auto">
-            <img
-              src={post.author.photo.url}
-              alt={post.author.name}
-              width="30px"
-              height="30px"
-              className="rounded-full align-middle"
-            />
-            <p className="ml-2 inline align-middle text-lg text-gray-700">
+            {post.author.photo ? (
+              <Image
+                src={post.author.photo.url}
+                alt={post.author.name}
+                width="30"
+                height="30"
+                className="rounded-full object-cover align-middle"
+              />
+            ) : (
+              <p>No Photo</p>
+            )}
+            <p className="text-gray-700 ml-2 inline align-middle text-lg">
               {post.author.name}
             </p>
           </div>
-          <div className="font-medium text-gray-700">
+          <div className="text-gray-700 font-medium">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-2 inline h-6 w-6 text-pink-500"
+              className="text-pink-500 mr-2 inline h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -133,14 +138,6 @@ const PostDetail = ({ post }) => {
             <span>{moment(post.createdAt).format('MMM DD, YYYY')}</span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-        {post.content.raw.children.map((typeObj, i) => {
-          const children = typeObj.children.map((item, itemI) =>
-            getContentFragment(itemI, item.text, item)
-          )
-
-          return getContentFragment(i, children, typeObj, typeObj.type)
-        })}
       </div>
     </div>
   )

@@ -1,25 +1,40 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { getCategories } from '../services'
+import Image from 'next/image'
 
-const Header = () => {
+const Header = ({ title, imageUrl, category, slug }) => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
     getCategories().then((data) => setCategories(data))
   }, [])
 
+  const bgImage = {
+    background: `linear-gradient(
+      rgba(0, 0, 0, .75), 
+      rgba(0, 0, 0, .5)
+    ),
+    url('${imageUrl}')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+  }
+
   return (
-    <div className="container mx-auto mb-8 px-10">
-      <div className="inline-block w-full border-b border-blue-400 py-8">
-        <div className="block md:float-left">
-          <Link href="/">
-            <span className="cursor-pointer text-4xl font-bold">
-              biofidelicX diary
-            </span>
-          </Link>
-        </div>
-        <div className="hidden md:float-left md:contents">
+    <>
+      <main className="hero" style={bgImage}>
+        <div className="mx-auto mb-8">
+          <div className="flex h-32 items-center justify-center py-3">
+            <Link href="/">
+              <Image
+                src="/logo.svg"
+                alt="logo"
+                width="250"
+                height="75"
+                className="cursor-pointer"
+              />
+            </Link>
+            {/* <div className="">
           {categories.map((category) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <span className="font-semibol mt-2 ml-4 cursor-pointer align-middle md:float-right">
@@ -27,9 +42,24 @@ const Header = () => {
               </span>
             </Link>
           ))}
+        </div> */}
+          </div>
         </div>
-      </div>
-    </div>
+        <div
+          style={{ height: '60vh' }}
+          className="flex flex-col items-center justify-center"
+        >
+          <h1 className="w-11/12 py-8 text-center text-7xl">{title}</h1>
+          {category && (
+            <Link href={`/category/${slug}`}>
+              <span className="cursor-pointer bg-aquamarine-500 px-3 py-2 text-midnight-500">
+                {category}
+              </span>
+            </Link>
+          )}
+        </div>
+      </main>
+    </>
   )
 }
 

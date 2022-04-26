@@ -1,12 +1,14 @@
 import React from 'react'
 import { Header } from './'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Header />
+    <>
+      {/* <Header /> */}
       {children}
-    </div>
+      <Footer />
+    </>
   )
 }
 
