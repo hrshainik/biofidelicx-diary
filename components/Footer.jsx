@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="w-full">
       <div className="container mx-auto">
-        <ul className="mb-12 flex items-end justify-center gap-12 uppercase">
+        <ul className="mb-12 flex flex-wrap items-end justify-center gap-12 uppercase">
           <li className="pb-3">
             <a href="#">About Us</a>
           </li>
@@ -28,7 +28,7 @@ const Footer = () => {
             <a href="#">Team</a>
           </li>
         </ul>
-        <ul className="mb-8 flex items-center justify-center gap-16 uppercase">
+        <ul className="mb-8 flex flex-wrap items-center justify-center gap-16 uppercase">
           <li>
             <a
               href="https://www.facebook.com/biofidelicx"
