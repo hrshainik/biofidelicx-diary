@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import { getCategories, getCategoryPost } from '../../services'
-import { PostCard, Categories, Loader, Header } from '../../components'
+import { Categories, Loader, Header, RegularPostCard } from '../../components'
 import Head from 'next/head'
 
 const CategoryPost = ({ posts }) => {
@@ -33,7 +33,7 @@ const CategoryPost = ({ posts }) => {
         <div className="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="col-span-1 lg:col-span-8">
             {posts.map((post, index) => (
-              <PostCard key={index} post={post.node} />
+              <RegularPostCard key={index} post={post.node} />
             ))}
           </div>
           <div className="col-span-1 lg:col-span-4">

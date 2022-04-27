@@ -1,9 +1,9 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import moment from 'moment'
-import Link from 'next/link'
-import Image from 'next/image'
 
-const PostCard = ({ post }) => {
+const RegularPostCard = ({ post }) => {
   return (
     <Link href={`/post/${post.slug}`}>
       <div className="mb-8 cursor-pointer">
@@ -70,4 +70,4 @@ const PostCard = ({ post }) => {
   )
 }
 
-export default PostCard
+export default RegularPostCard

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import React, { useEffect, useState } from 'react'
+import { Pagination } from 'swiper'
 import 'swiper/css'
+import 'swiper/css/pagination'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { FeaturedPostCard } from '../components'
 import { getFeaturedPosts } from '../services'
 
@@ -20,8 +22,12 @@ const FeaturedPosts = () => {
       <div className="container mx-auto mb-8" style={{ marginTop: '-3rem' }}>
         <Swiper
           spaceBetween={30}
+          pagination={{
+            dynamicBullets: true,
+          }}
+          modules={[Pagination]}
           slidesPerView={1.5}
-          initialSlide={1}
+          initialSlide={2}
           centeredSlides={true}
           loop
           breakpoints={{

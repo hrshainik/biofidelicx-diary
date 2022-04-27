@@ -88,4 +88,14 @@ a {
   .ts {
     @apply font-normal font-t;
   }
+  .folded-corner {
+    @apply absolute right-0 bottom-0 w-0 h-0 bg-white-500;
+    border: 1.6rem solid transparent;
+    border-color: #e6fffb transparent transparent #e6fffb;
+  }
 }
+
+.swiper-pagination-bullet {
+  background-color: #05ffdb !important;
+}
+
