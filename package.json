@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^6.3.2",
     "graphql": "^16.3.0",
     "graphql-request": "^4.2.0",
     "html-react-parser": "^1.4.10",

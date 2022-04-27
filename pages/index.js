@@ -33,7 +33,7 @@ const Home = ({ posts }) => {
           ))}
         </div>
         <div className="col-span-1 lg:col-span-4">
-          <div className="relative top-8 lg:sticky">
+          <div className="relative lg:sticky lg:top-8">
             <PostWidget />
             {/* <Categories /> */}
           </div>

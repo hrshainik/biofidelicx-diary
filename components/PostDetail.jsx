@@ -23,7 +23,7 @@ const PostDetail = ({ post }) => {
     switch (type) {
       case 'heading-one':
         return (
-          <h1 key={index} className="mb-4 text-xl font-semibold">
+          <h1 key={index} className="h1">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -31,7 +31,7 @@ const PostDetail = ({ post }) => {
         )
       case 'heading-two':
         return (
-          <h2 key={index} className="mb-4 text-xl font-semibold">
+          <h2 key={index} className="h2">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -39,7 +39,7 @@ const PostDetail = ({ post }) => {
         )
       case 'heading-three':
         return (
-          <h3 key={index} className="mb-4 text-xl font-semibold">
+          <h3 key={index} className="h3">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -47,7 +47,7 @@ const PostDetail = ({ post }) => {
         )
       case 'heading-four':
         return (
-          <h4 key={index} className="mb-4 text-xl font-semibold">
+          <h4 key={index} className="h4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -55,7 +55,7 @@ const PostDetail = ({ post }) => {
         )
       case 'heading-five':
         return (
-          <h5 key={index} className="mb-4 text-xl font-semibold">
+          <h5 key={index} className="h5">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -63,7 +63,7 @@ const PostDetail = ({ post }) => {
         )
       case 'heading-six':
         return (
-          <h6 key={index} className="mb-4 text-xl font-semibold">
+          <h6 key={index} className="h6">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -71,7 +71,7 @@ const PostDetail = ({ post }) => {
         )
       case 'paragraph':
         return (
-          <p key={index} className="mb-8">
+          <p key={index} className="tm">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -92,6 +92,8 @@ const PostDetail = ({ post }) => {
         return modifiedText
     }
   }
+
+  console.log(post.content.raw.children)
 
   return (
     <div className="mb-8 pb-12">

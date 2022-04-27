@@ -49,7 +49,9 @@ const Header = ({ title, imageUrl, category, slug }) => {
           style={{ height: '60vh' }}
           className="flex flex-col items-center justify-center"
         >
-          <h1 className="w-11/12 py-8 text-center text-7xl">{title}</h1>
+          <h1 className="h1 w-11/12 py-8 text-center text-white-500">
+            {title}
+          </h1>
           {category && (
             <Link href={`/category/${slug}`}>
               <span className="cursor-pointer bg-aquamarine-500 px-3 py-2 text-midnight-500">

@@ -44,7 +44,7 @@ const FeaturedPostCard = ({ post }) => (
         className="h-full w-full object-cover object-top"
       />
     </div>
-    <div className="relative z-20 mx-auto flex flex-col items-center p-6 pt-0 text-midnight-500">
+    <div className="relative z-20 mx-auto flex flex-col items-center px-2 pt-0 text-midnight-500 lg:px-4">
       <div className="py-2 px-3 text-midnight-500">
         {/* <span className="uppercase">{post.categories[0].name}</span> */}
         <span>Categories</span>

@@ -57,6 +57,10 @@ module.exports = {
         900: '#7d7d7d',
       },
     },
+    fontFamily: {
+      h: ['Playfair Display', 'sans-serif'],
+      t: ['Source Sans Pro', 'sans-serif'],
+    },
   },
   plugins: [],
 }
