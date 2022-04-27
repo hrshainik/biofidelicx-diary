@@ -10,7 +10,7 @@ const Custom500 = () => {
         <title>Server Problem - biofidelicX academy</title>
       </Head>
       <div className="flex h-screen w-full flex-col items-center justify-center">
-        <Image src={notFoundImg} />
+        <Image src={errorImg} />
         <Link href="/">
           <span className="cursor-pointer bg-aquamarine-500 px-4 py-3 font-bold uppercase text-midnight-500">
             Go Back

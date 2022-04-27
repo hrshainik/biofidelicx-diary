@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import notFoundImg from '../public/500.svg'
+import notFoundImg from '../public/404.svg'
 
 const Custom404 = () => {
   return (
