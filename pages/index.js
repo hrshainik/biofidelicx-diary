@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import {
-  PostWidget,
-  Categories,
+  FeaturedPosts,
   Header,
+  PostWidget,
   RegularPostCard,
   SpecialPostCard,
 } from '../components'
 import { getPosts } from '../services'
-import { FeaturedPosts } from '../sections'
 
 const Home = ({ posts }) => {
   return (

@@ -1,6 +1,6 @@
-import React from 'react'
 import moment from 'moment'
 import Image from 'next/image'
+import React from 'react'
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -92,8 +92,6 @@ const PostDetail = ({ post }) => {
         return modifiedText
     }
   }
-
-  console.log(post.content.raw.children)
 
   return (
     <div className="mb-8 pb-12">
