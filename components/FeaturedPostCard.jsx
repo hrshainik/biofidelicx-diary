@@ -1,7 +1,6 @@
-import React from 'react'
-import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 const FeaturedPostCard = ({ post }) => (
   // <div className="relative h-72">
@@ -63,7 +62,7 @@ const FeaturedPostCard = ({ post }) => (
               className="mr-2 rounded-full object-cover align-middle"
             />
           ) : (
-            <p>No Photo</p>
+            <Image src="/user.svg" alt="user" width="30" height="30" />
           )}
           <p className="inline align-middle text-lg">{post.author.name}</p>
         </div>

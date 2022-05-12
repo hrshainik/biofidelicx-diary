@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import React from 'react'
 
 const Author = ({ author }) => {
   return (
@@ -15,7 +15,7 @@ const Author = ({ author }) => {
             loading="lazy"
           />
         ) : (
-          <p>No Photo</p>
+          <Image src="/user.svg" alt="user" width="30" height="30" />
         )}
       </div>
       <h3 className="text-white my-4 text-xl font-bold">{author.name}</h3>

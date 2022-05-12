@@ -1,7 +1,7 @@
+import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import moment from 'moment'
 
 const RegularPostCard = ({ post }) => {
   return (
@@ -37,7 +37,7 @@ const RegularPostCard = ({ post }) => {
                   className="rounded-full object-cover align-middle"
                 />
               ) : (
-                <p>No Photo</p>
+                <Image src="/user.svg" alt="user" width="30" height="30" />
               )}
               <p className="text-gray-700 ml-2 inline align-middle text-lg">
                 {post.author.name}

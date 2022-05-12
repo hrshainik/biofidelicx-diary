@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import moment from 'moment'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 
 const SpecialPostCard = ({ post }) => {
   return (
@@ -34,7 +34,7 @@ const SpecialPostCard = ({ post }) => {
                     className="rounded-full object-cover align-middle"
                   />
                 ) : (
-                  <p>No Photo</p>
+                  <Image src="/user.svg" alt="user" width="30" height="30" />
                 )}
                 <p className="text-gray-700 ml-2 align-middle text-lg">
                   {post.author.name}
