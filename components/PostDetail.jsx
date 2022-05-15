@@ -95,7 +95,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <div className="mb-8 pb-12">
-      <div className="px-4 lg:px-0">
+      <div>
         {post.content.raw.children.map((typeObj, i) => {
           const children = typeObj.children.map((item, itemI) =>
             getContentFragment(itemI, item.text, item)

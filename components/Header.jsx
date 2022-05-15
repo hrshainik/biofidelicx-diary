@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Link from 'next/link'
-import { getCategories } from '../services'
 import Image from 'next/image'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import { getCategories } from '../services'
 
 const Header = ({ title, imageUrl, category, slug }) => {
   const [categories, setCategories] = useState([])
@@ -31,18 +31,9 @@ const Header = ({ title, imageUrl, category, slug }) => {
                 alt="logo"
                 width="250"
                 height="75"
-                className="cursor-pointer"
+                className="logo cursor-pointer"
               />
             </Link>
-            {/* <div className="">
-          {categories.map((category) => (
-            <Link key={category.slug} href={`/category/${category.slug}`}>
-              <span className="font-semibol mt-2 ml-4 cursor-pointer align-middle md:float-right">
-                {category.name}
-              </span>
-            </Link>
-          ))}
-        </div> */}
           </div>
         </div>
         <div

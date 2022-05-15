@@ -35,12 +35,12 @@ const FeaturedPostCard = ({ post }) => (
   //   </Link>
   // </div>
   <div className="mb-8">
-    <div className="relative z-10 h-56">
+    <div className="relative z-10 h-40">
       <Image
         src={post.featuredImage.url}
         alt={post.title}
         layout="fill"
-        className="h-full w-full object-cover object-top"
+        className="w-full object-cover object-top"
       />
     </div>
     <div className="relative z-20 mx-auto flex flex-col items-center px-2 pt-0 text-midnight-500 lg:px-4">

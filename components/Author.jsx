@@ -15,7 +15,7 @@ const Author = ({ author }) => {
             loading="lazy"
           />
         ) : (
-          <Image src="/user.svg" alt="user" width="30" height="30" />
+          <Image src="/user.svg" alt="user" width="90" height="90" />
         )}
       </div>
       <h3 className="text-white my-4 text-xl font-bold">{author.name}</h3>

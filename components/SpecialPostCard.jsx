@@ -6,16 +6,16 @@ import React from 'react'
 const SpecialPostCard = ({ post }) => {
   return (
     <Link href={`/post/${post.slug}`}>
-      <div className="order-first col-span-1 mb-8 cursor-pointer md:col-span-2">
+      <div className="sp-card order-first col-span-1 mb-8 cursor-pointer md:col-span-2">
         <div className="relative h-56 md:h-96">
           <Image
             src={post.featuredImage.url}
             alt={post.title}
             layout="fill"
-            className="h-full w-full object-cover object-top"
+            className="f-img h-full w-full object-cover object-top"
             loading="lazy"
           />
-          <div className="absolute inset-3 flex flex-col items-center justify-center border-4 border-white-500 p-4 text-white-500 md:inset-5 lg:inset-7">
+          <div className="sp-card-title absolute inset-3 flex flex-col items-center justify-center border-4 border-white-500 p-4 text-white-500 md:inset-5 lg:inset-7">
             <span className="uppercase">{post.categories[0].name}</span>
             <h1 className="h1 text-center">{post.title}</h1>
           </div>

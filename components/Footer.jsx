@@ -120,9 +120,11 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <div className="flex items-center justify-between gap-4 py-4">
-          <p>@Copyright 2022. All right reserved by biofidelicX.</p>
-          <p>Credits - Sites by Habibur Rahman</p>
+        <div className="flex flex-col items-center justify-between gap-4 py-4 sm:flex-row">
+          <p className="text-xs">
+            @Copyright 2022. All right reserved by biofidelicX.
+          </p>
+          <p className="text-xs">Credits - Sites by Habibur Rahman</p>
         </div>
       </div>
     </footer>

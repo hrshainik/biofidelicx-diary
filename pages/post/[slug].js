@@ -1,17 +1,16 @@
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import React from 'react'
-import { getPosts, getPostDetails } from '../../services'
 import {
-  PostDetail,
-  Categories,
-  PostWidget,
   Author,
   Comments,
   CommentsForm,
-  Loader,
   Header,
+  Loader,
+  PostDetail,
+  PostWidget,
 } from '../../components'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
+import { getPostDetails, getPosts } from '../../services'
 
 const PostDetails = ({ post }) => {
   const router = useRouter()
@@ -42,8 +41,8 @@ const PostDetails = ({ post }) => {
         category={post.categories[0].name}
         slug={post.categories[0].slug}
       />
-      <div className="mx-auto mb-8">
-        <div className="container mx-auto -mt-16 grid grid-cols-1 gap-12 bg-midnight-500 p-8 lg:grid-cols-12">
+      <div className="mx-auto mb-8 px-2">
+        <div className="container mx-auto -mt-16 grid grid-cols-1 gap-12 bg-white-500 p-8 lg:grid-cols-12">
           <div className="col-span-1 lg:col-span-8">
             <PostDetail post={post} />
             <Author author={post.author} />
