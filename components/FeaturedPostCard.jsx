@@ -44,27 +44,31 @@ const FeaturedPostCard = ({ post }) => (
       />
     </div>
     <div className="relative z-20 mx-auto flex flex-col items-center px-2 pt-0 text-midnight-500 lg:px-4">
-      <div className="py-2 px-3 text-midnight-500">
+      <div className="py-1 text-midnight-500">
         {/* <span className="uppercase">{post.categories[0].name}</span> */}
-        <span>Categories</span>
+        <span className="font-ct text-xs font-semibold uppercase tracking-sm">
+          Categories
+        </span>
       </div>
-      <h1 className="cursor-pointer text-center text-2xl font-semibold text-midnight-500 transition duration-100">
+      <h1 className="mb-2 cursor-pointer text-center text-xl font-semibold leading-6 text-midnight-500 transition duration-100">
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="items-center justify-center text-center lg:flex">
-        <div className="mb-4 flex w-full items-center justify-center lg:mb-0 lg:w-auto">
+        <div className="mb-4 flex w-full items-center justify-center gap-2 lg:mb-0 lg:w-auto">
           {post.author.photo ? (
             <Image
               src={post.author.photo.url}
               alt={post.author.name}
-              width="30"
-              height="30"
+              width="24"
+              height="24"
               className="mr-2 rounded-full object-cover align-middle"
             />
           ) : (
-            <Image src="/user.svg" alt="user" width="30" height="30" />
+            <Image src="/user.svg" alt="user" width="24" height="24" />
           )}
-          <p className="inline align-middle text-lg">{post.author.name}</p>
+          <p className="inline align-middle text-sm text-white-900">
+            {post.author.name}
+          </p>
         </div>
         {/* <div className="font-medium">
           <svg

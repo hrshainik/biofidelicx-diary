@@ -58,8 +58,14 @@ module.exports = {
       },
     },
     fontFamily: {
-      h: ['Playfair Display', 'sans-serif'],
+      h: ['Merriweather', 'sans-serif'],
       t: ['Source Sans Pro', 'sans-serif'],
+      ct: ['Montserrat', 'sans-serif'],
+    },
+    letterSpacing: {
+      sm: '1px',
+      md: '2px',
+      lg: '3px',
     },
   },
   plugins: [],

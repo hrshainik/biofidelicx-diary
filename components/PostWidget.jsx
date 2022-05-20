@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import Link from 'next/link'
-import { getRecentPosts, getRelatedPosts } from '../services'
 import Image from 'next/image'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import { getRecentPosts, getRelatedPosts } from '../services'
 
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([])
@@ -17,8 +17,8 @@ const PostWidget = ({ categories, slug }) => {
 
   return (
     <>
-      <fieldset className="border border-aquamarine-500">
-        <legend className="mx-auto px-3 text-2xl">
+      <fieldset className="border border-midnight-100">
+        <legend className="mx-auto px-3 font-h text-3xl font-bold">
           {slug ? 'Related Posts' : 'Recent Posts'}
         </legend>
         <div className="p-8 pt-4">
@@ -37,12 +37,12 @@ const PostWidget = ({ categories, slug }) => {
                 />
               </div>
               <div className="ml-4 flex-grow">
-                <p className="font-xs text-gray-500">
+                <p className="text-sm text-white-900">
                   {moment(post.createdAt).format('MMM DD, YYYY')}
                 </p>
                 <Link
                   href={`/post/${post.slug}`}
-                  className="text-md"
+                  className="text-base"
                   key={post.title}
                 >
                   {post.title}

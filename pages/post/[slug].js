@@ -42,20 +42,23 @@ const PostDetails = ({ post }) => {
         slug={post.categories[0].slug}
       />
       <div className="mx-auto mb-8 px-2">
-        <div className="container mx-auto -mt-16 grid grid-cols-1 gap-12 bg-white-500 p-8 lg:grid-cols-12">
-          <div className="col-span-1 lg:col-span-8">
-            <PostDetail post={post} />
-            <Author author={post.author} />
-            <CommentsForm slug={post.slug} />
-            <Comments slug={post.slug} />
-          </div>
-          <div className="col-span-1 lg:col-span-4">
-            <div className="relative lg:sticky lg:top-8">
-              <PostWidget
-                slug={post.slug}
-                categories={post.categories.map((category) => category.slug)}
-              />
-              {/* <Categories /> */}
+        <div className="post-details">
+          <div className="post-shadow"></div>
+          <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
+            <div className="col-span-1 lg:col-span-8">
+              <PostDetail post={post} />
+              <Author author={post.author} />
+              <CommentsForm slug={post.slug} />
+              <Comments slug={post.slug} />
+            </div>
+            <div className="col-span-1 lg:col-span-4">
+              <div className="relative lg:sticky lg:top-8">
+                <PostWidget
+                  slug={post.slug}
+                  categories={post.categories.map((category) => category.slug)}
+                />
+                {/* <Categories /> */}
+              </div>
             </div>
           </div>
         </div>

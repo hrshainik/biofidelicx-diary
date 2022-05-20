@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 
 const Footer = () => {
@@ -13,12 +12,10 @@ const Footer = () => {
             <a href="#">Quizzes</a>
           </li>
           <li>
-            <Image
+            <img
               src="/logo.svg"
               alt="logo"
-              height="75"
-              width="250"
-              className="cursor-pointer"
+              className="w-36 cursor-pointer sm:w-40 md:w-52 lg:w-60"
             />
           </li>
           <li className="pb-3">
@@ -124,7 +121,12 @@ const Footer = () => {
           <p className="text-xs">
             @Copyright 2022. All right reserved by biofidelicX.
           </p>
-          <p className="text-xs">Credits - Sites by Habibur Rahman</p>
+          <p className="text-xs">
+            Developed by{' '}
+            <a href="https://hrshainik.me" target="_blank">
+              Habibur Rahman
+            </a>
+          </p>
         </div>
       </div>
     </footer>
