@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -20,7 +21,7 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <>
+    <motion.div>
       <Head>
         <title>{post.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -63,7 +64,7 @@ const PostDetails = ({ post }) => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 

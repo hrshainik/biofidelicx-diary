@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import React from 'react'
 import { Layout } from '../components'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AnimatePresence exitBeforeEnter>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AnimatePresence>
   )
 }
 

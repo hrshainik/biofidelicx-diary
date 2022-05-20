@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Head from 'next/head'
 import {
   FeaturedPosts,
@@ -10,7 +11,7 @@ import { getPosts } from '../services'
 
 const Home = ({ posts }) => {
   return (
-    <>
+    <motion.div exit={{ opacity: 0 }}>
       <Head>
         <title>biofidelicX diary</title>
         <link rel="icon" href="/favicon.ico" />
@@ -28,6 +29,7 @@ const Home = ({ posts }) => {
         />
         <meta name="author" content="Habibur Rahman" />
       </Head>
+
       <Header title="Main Header" imageUrl={'/hero-img.jpg'} />
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 sm:p-0 lg:grid-cols-12">
@@ -47,7 +49,7 @@ const Home = ({ posts }) => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 

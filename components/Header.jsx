@@ -23,7 +23,7 @@ const Header = ({ title, imageUrl, category, slug }) => {
     <>
       <main className="hero" style={bgImage}>
         <div className="mx-auto mb-8">
-          <div className="flex h-32 items-center justify-center py-3">
+          <div className="flex items-center justify-center py-3">
             <Link href="/">
               <img src="/logo.svg" alt="logo" className="logo" />
             </Link>
