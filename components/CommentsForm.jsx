@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { submitComment } from '../services'
 
 const CommentsForm = ({ slug }) => {
@@ -74,14 +74,14 @@ const CommentsForm = ({ slug }) => {
   }
 
   return (
-    <div className="mb-8 rounded-lg bg-white p-8 pb-12 shadow-lg">
-      <h3 className="mb-8 border-b pb-4 text-xl font-semibold">
+    <div className="my-8">
+      <h3 className="mb-6 border-b border-midnight-200 pb-2 text-xl font-semibold">
         Leave a Reply
       </h3>
       <div className="mb-4 grid grid-cols-1 gap-4">
         <textarea
           name="comment"
-          className="w-full rounded-lg bg-gray-100 p-4 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+          className="w-full rounded-none border border-midnight-100 p-4 outline-none"
           placeholder="Comment"
           value={formData.comment}
           onChange={onInputChange}
@@ -93,7 +93,7 @@ const CommentsForm = ({ slug }) => {
           // ref={nameEl}
           value={formData.name}
           onChange={onInputChange}
-          className="w-full rounded-lg bg-gray-100 py-2 px-4 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+          className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
           placeholder="Name"
           name="name"
         />
@@ -102,12 +102,12 @@ const CommentsForm = ({ slug }) => {
           // ref={emailEl}
           value={formData.email}
           onChange={onInputChange}
-          className="w-full rounded-lg bg-gray-100 py-2 px-4 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+          className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
           placeholder="Email"
           name="email"
         />
       </div>
-      <div className="mb-4 grid grid-cols-1 gap-4">
+      <div className="mb-2 grid grid-cols-1 gap-4">
         <div>
           <input
             type="checkbox"
@@ -127,18 +127,18 @@ const CommentsForm = ({ slug }) => {
         </div>
       </div>
       {error && (
-        <p className="text-xs text-red-500">All fields are required.</p>
+        <p className="text-sm text-rose-600">All fields are required.</p>
       )}
-      <div className="mt-8">
+      <div className="btn-noti">
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="ease inline-block cursor-pointer rounded-full bg-pink-600 px-8 py-3 text-lg text-white transition duration-500 hover:bg-indigo-900"
+          className="bg-midnight-500 px-3.5 py-2 font-ct text-xs font-bold uppercase tracking-sm text-white-500"
         >
           Post Comment
         </button>
         {showSuccessMsg && (
-          <span className="float-right mt-3 text-xl font-semibold text-green-500">
+          <span className="bg-aquamarine-500 px-3.5 py-2 font-ct text-sm font-normal opacity-0 transition-opacity duration-300 ease-in-out">
             Comment submitted for review
           </span>
         )}

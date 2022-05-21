@@ -258,6 +258,14 @@ a {
   }
 }
 
+.btn-noti {
+  @apply mt-4 flex items-center justify-between;
+
+  & > span {
+    @apply opacity-100;
+  }
+}
+
 // Swiper Library
 .swiper-pagination-bullet {
   background-color: #05ffdb !important;

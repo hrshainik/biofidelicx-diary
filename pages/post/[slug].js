@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -21,7 +20,14 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <motion.div>
+    <>
+      <script
+        async
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+        nonce="bcVR7zAR"
+      ></script>
       <Head>
         <title>{post.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -29,12 +35,21 @@ const PostDetails = ({ post }) => {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={`${post.excerpt}`} />
+        <meta name="description" content={post.excerpt} />
         <meta
           name="keywords"
           content="biofidelicX diary, biofidelicX academy"
         />
-        <meta name="author" content={`${post.author.name}`} />
+        <meta name="author" content={post.author.name} />
+        // For facebook
+        <meta
+          property="og:url"
+          content={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.featuredImage.url} />
       </Head>
       <Header
         title={post.title}
@@ -48,7 +63,7 @@ const PostDetails = ({ post }) => {
           <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
             <div className="col-span-1 lg:col-span-8">
               <PostDetail post={post} />
-              <Author author={post.author} />
+              <Author author={post.author} date={post.createdAt} />
               <CommentsForm slug={post.slug} />
               <Comments slug={post.slug} />
             </div>
@@ -64,7 +79,7 @@ const PostDetails = ({ post }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </>
   )
 }
 

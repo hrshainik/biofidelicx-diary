@@ -1,4 +1,3 @@
-import moment from 'moment'
 import Image from 'next/image'
 import React from 'react'
 
@@ -109,22 +108,51 @@ const PostDetail = ({ post }) => {
         <div className="social-wrapper flex justify-center md:float-left md:flex-none">
           <div className="social mb-4 flex md:mr-6 md:flex-col">
             <div className="fb block cursor-pointer border border-r-0 border-midnight-200 p-4 md:border-b-0 md:border-r">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="h-6 w-6 fill-midnight-300 md:h-10 md:w-10"
+              <div
+                class="fb-share-button"
+                data-href={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
+                data-layout="button"
+                data-size="large"
               >
-                <path d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z" />
-              </svg>
+                <a
+                  target="_blank"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbiofidelicx-diary.vercel.app%2Fpost%2F${post.slug}&amp;src=sdkpreparse`}
+                  class="fb-xfbml-parse-ignore"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6 fill-midnight-300 md:h-10 md:w-10"
+                  >
+                    <path d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z" />
+                  </svg>
+                </a>
+              </div>
             </div>
             <div className="tw block cursor-pointer border border-r-0 border-midnight-200 p-4 md:border-b-0 md:border-r">
-              <svg
-                className="h-6 w-6 fill-midnight-300 md:h-10 md:w-10"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 30 30"
+              <a
+                class="twitter-share-button"
+                href={`https://twitter.com/intent/tweet?text=${encodeURI(
+                  post.title
+                )}&url=${encodeURI(
+                  `https://biofidelicx-diary.vercel.app/post/${post.slug}`
+                )}&hashtags=biofidelicx,biofidelicxdiary&via=biofidelicx`}
+                data-text={post.title}
+                data-url={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
+                data-hashtags="biofidelicx,biofidelicxdiary"
+                data-via="biofidelicx"
+                data-related="twitterapi,twitter"
+                data-lang="en"
+                target="_blank"
               >
-                <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z" />
-              </svg>
+                <svg
+                  className="h-6 w-6 fill-midnight-300 md:h-10 md:w-10"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 30"
+                >
+                  <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z" />
+                </svg>
+              </a>
             </div>
             <div className="ln cursor-pointer border border-midnight-200 p-4">
               <svg
@@ -144,41 +172,6 @@ const PostDetail = ({ post }) => {
 
           return getContentFragment(i, children, typeObj, typeObj.type)
         })}
-        <div className="mb-8 flex w-full items-center">
-          <div className="mb-4 mr-8 flex w-full items-center lg:mb-0 lg:w-auto">
-            {post.author.photo ? (
-              <Image
-                src={post.author.photo.url}
-                alt={post.author.name}
-                width="30"
-                height="30"
-                className="rounded-full object-cover align-middle"
-              />
-            ) : (
-              <Image src="/user.svg" alt="user" width="30" height="30" />
-            )}
-            <p className="text-gray-700 ml-2 inline align-middle text-lg">
-              {post.author.name}
-            </p>
-          </div>
-          <div className="text-gray-700 font-medium">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-pink-500 mr-2 inline h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            <span>{moment(post.createdAt).format('MMM DD, YYYY')}</span>
-          </div>
-        </div>
       </div>
     </div>
   )
