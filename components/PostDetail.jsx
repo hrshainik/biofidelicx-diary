@@ -109,7 +109,6 @@ const PostDetail = ({ post }) => {
           <div className="social mb-4 flex md:mr-6 md:flex-col">
             <div className="fb block cursor-pointer border border-r-0 border-midnight-200 p-4 md:border-b-0 md:border-r">
               <div
-                class="fb-share-button"
                 data-href={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
                 data-layout="button"
                 data-size="large"
@@ -117,7 +116,6 @@ const PostDetail = ({ post }) => {
                 <a
                   target="_blank"
                   href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbiofidelicx-diary.vercel.app%2Fpost%2F${post.slug}&amp;src=sdkpreparse`}
-                  class="fb-xfbml-parse-ignore"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +129,6 @@ const PostDetail = ({ post }) => {
             </div>
             <div className="tw block cursor-pointer border border-r-0 border-midnight-200 p-4 md:border-b-0 md:border-r">
               <a
-                class="twitter-share-button"
                 href={`https://twitter.com/intent/tweet?text=${encodeURI(
                   post.title
                 )}&url=${encodeURI(
