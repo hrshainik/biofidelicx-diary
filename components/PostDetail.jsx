@@ -103,7 +103,7 @@ const PostDetail = ({ post }) => {
   }
 
   return (
-    <div className="mb-8 pb-12">
+    <div className="mb-12">
       <div className="relative">
         <div className="social-wrapper flex justify-center md:float-left md:flex-none">
           <div className="social mb-4 flex md:mr-6 md:flex-col">

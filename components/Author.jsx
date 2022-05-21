@@ -4,7 +4,7 @@ import React from 'react'
 
 const Author = ({ author, date }) => {
   return (
-    <div className="flex items-end justify-between">
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-0">
       <div className="flex items-center gap-3">
         <div className="">
           {author.photo ? (

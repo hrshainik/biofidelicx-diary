@@ -259,7 +259,7 @@ a {
 }
 
 .btn-noti {
-  @apply mt-4 flex items-center justify-between;
+  @apply mt-4 flex sm:items-center sm:justify-between flex-col sm:flex-row gap-3 sm:gap-0;
 
   & > span {
     @apply opacity-100;
