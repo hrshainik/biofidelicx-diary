@@ -82,8 +82,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      h: ['Merriweather', 'sans-serif'],
-      t: ['Source Sans Pro', 'sans-serif'],
+      h: ['Cardo', 'sans-serif'],
+      t: ['Josefin Sans', 'sans-serif'],
       ct: ['Montserrat', 'sans-serif'],
     },
     letterSpacing: {

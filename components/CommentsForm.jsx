@@ -137,11 +137,11 @@ const CommentsForm = ({ slug }) => {
         >
           Post Comment
         </button>
-        {/* {showSuccessMsg && ( */}
-        <span className="bg-aquamarine-500 px-3.5 py-2 text-center font-ct text-sm font-normal opacity-0 transition-opacity duration-300 ease-in-out">
-          Comment submitted for review
-        </span>
-        {/* )} */}
+        {showSuccessMsg && (
+          <span className="bg-aquamarine-500 px-3.5 py-2 text-center font-ct text-sm font-normal opacity-0 transition-opacity duration-300 ease-in-out">
+            Comment submitted for review
+          </span>
+        )}
       </div>
     </div>
   )
