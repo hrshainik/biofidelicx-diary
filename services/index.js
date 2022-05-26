@@ -243,7 +243,6 @@ export const getAuthors = async () => {
               url
             }
             slug
-            socialLink
           }
         }
       }
