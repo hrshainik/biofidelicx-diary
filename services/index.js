@@ -47,6 +47,7 @@ export const getPostDetails = async (slug) => {
           bio
           name
           id
+          slug
           photo {
             url
           }
@@ -228,4 +229,54 @@ export const getFeaturedPosts = async () => {
   const result = await request(graphqlAPI, query)
 
   return result.posts
+}
+
+export const getAuthors = async () => {
+  const query = gql`
+    query MyQuery {
+      authorsConnection {
+        edges {
+          node {
+            bio
+            name
+            photo {
+              url
+            }
+            slug
+            socialLink
+          }
+        }
+      }
+    }
+  `
+
+  const result = await request(graphqlAPI, query)
+  return result.authorsConnection.edges
+}
+
+export const getAuthorDetails = async (slug) => {
+  const query = gql`
+    query GetAuthorDetails($slug: String!) {
+      author(where: { slug: $slug }) {
+        post {
+          excerpt
+          title
+          slug
+          categories {
+            name
+          }
+          featuredImage {
+            url
+          }
+        }
+        slug
+        socialLink
+        name
+        bio
+      }
+    }
+  `
+
+  const result = await request(graphqlAPI, query, { slug })
+  return result.author
 }

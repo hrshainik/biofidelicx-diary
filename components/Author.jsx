@@ -1,5 +1,6 @@
 import moment from 'moment'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Author = ({ author, date }) => {
@@ -34,7 +35,11 @@ const Author = ({ author, date }) => {
           <span className="font-h text-sm font-light italic text-midnight-300">
             Written By
           </span>
-          <h3 className="text-2xl font-semibold">{author.name}</h3>
+          <Link href={`/author/${author.slug}`}>
+            <h3 className="cursor-pointer text-2xl font-semibold">
+              {author.name}
+            </h3>
+          </Link>
           <p className="font-ct text-base">{author.bio}</p>
         </div>
       </div>
