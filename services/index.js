@@ -262,6 +262,14 @@ export const getAuthorDetails = async (slug) => {
           excerpt
           title
           slug
+          author {
+            bio
+            name
+            id
+            photo {
+              url
+            }
+          }
           categories {
             name
           }
@@ -270,9 +278,14 @@ export const getAuthorDetails = async (slug) => {
           }
         }
         slug
-        socialLink
+        facebook
+        twitter
+        website
+        linkedin
+        email
         name
         bio
+        createdAt
       }
     }
   `
