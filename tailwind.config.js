@@ -82,9 +82,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      h: ['Cardo', 'sans-serif'],
-      t: ['Josefin Sans', 'sans-serif'],
-      ct: ['Montserrat', 'sans-serif'],
+      h: ['Cardo'],
+      t: ['Josefin Sans'],
+      ct: ['Montserrat'],
     },
     letterSpacing: {
       sm: '1px',
