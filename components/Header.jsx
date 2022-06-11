@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getCategories } from '../services'
 
 const Header = ({ title, imageUrl, category, slug }) => {
@@ -17,6 +17,7 @@ const Header = ({ title, imageUrl, category, slug }) => {
     url('${imageUrl}')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundPostion: 'center',
   }
 
   return (

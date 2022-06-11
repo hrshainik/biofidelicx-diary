@@ -277,6 +277,9 @@ export const getAuthorDetails = async (slug) => {
           }
         }
         slug
+        cover {
+          url
+        }
         facebook
         twitter
         website

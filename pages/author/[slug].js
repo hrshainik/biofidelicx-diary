@@ -1,8 +1,7 @@
 import moment from 'moment'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import React from 'react'
-import { Loader, RegularPostCard } from '../../components'
+import { Header, Loader, RegularPostCard } from '../../components'
 import { getAuthorDetails, getAuthors } from '../../services'
 
 const AuthorDetails = ({ author }) => {
@@ -11,6 +10,7 @@ const AuthorDetails = ({ author }) => {
   if (router.isFallback) {
     return <Loader />
   }
+
   return (
     <>
       <Head>
@@ -27,6 +27,7 @@ const AuthorDetails = ({ author }) => {
         />
         <meta name="author" content="Habibur Rahman" />
       </Head>
+      <Header title={author.name} imageUrl={author?.cover?.url} />
       <div className="mx-auto mb-8 px-10">
         <div className="container mx-auto mt-12">
           <h1>{author.name}</h1>
