@@ -1,4 +1,5 @@
 export { default as Author } from './Author'
+export { default as AuthorAbout } from './AuthorAbout'
 export { default as Categories } from './Categories'
 export { default as Comments } from './Comments'
 export { default as CommentsForm } from './CommentsForm'

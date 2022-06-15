@@ -39,9 +39,7 @@ const Header = ({ title, imageUrl, category, slug }) => {
           </h1>
           {category && (
             <Link href={`/category/${slug}`}>
-              <span className="cursor-pointer bg-aquamarine-500 px-3 py-2.5 font-ct text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500">
-                {category}
-              </span>
+              <span className="post-tag">{category}</span>
             </Link>
           )}
         </div>

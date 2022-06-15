@@ -36,9 +36,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 // Default Tag
+// Recheck default tags design
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold font-h;
+}
+
+code , pre {
+  @apply py-4 inline-block;
+}
+
+blockquote {
+  @apply pl-3 border-aquamarine-500 border-l-4;
 }
 
 // Tailwind Components
@@ -92,6 +105,29 @@ a {
 
   @media only screen and (max-width: 768px) {
     min-height: 70vh;
+  }
+}
+
+.post-tag {
+  @apply relative cursor-pointer bg-aquamarine-500 px-3 py-2.5 font-ct text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
+
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(5, 255, 219);
+    opacity: 0.45;
+    width: 70px;
+    height: 2px;
+  }
+
+  &::before {
+    right: 105%;
+  }
+
+  &::after {
+    left: 105%;
   }
 }
 

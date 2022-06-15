@@ -1,7 +1,6 @@
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const Author = ({ author, date }) => {
   return (
@@ -22,8 +21,8 @@ const Author = ({ author, date }) => {
               viewBox="64 64 896 896"
               focusable="false"
               data-icon="user"
-              width="1em"
-              height="1em"
+              width="90"
+              height="90"
               fill="currentColor"
               aria-hidden="true"
             >
@@ -43,7 +42,8 @@ const Author = ({ author, date }) => {
           <p className="font-ct text-base">{author.bio}</p>
         </div>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
+        {/* Recheck (pen svg) */}
         <svg
           viewBox="64 64 896 896"
           focusable="false"
