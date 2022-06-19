@@ -27,16 +27,19 @@ const AuthorDetails = ({ author }) => {
         <meta name="author" content="Habibur Rahman" />
       </Head>
       <Header title={author.name} imageUrl={author?.cover?.url} />
-      <div className="mx-auto mb-8 px-10">
-        <div className="container mx-auto mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
-            {author.post.map((post, i) => (
-              <RegularPostCard key={i} post={post} />
-            ))}
-          </div>
-          <div className="col-span-1 lg:col-span-4">
-            <div className="relative lg:sticky lg:top-8">
-              <AuthorAbout author={author} />
+      <div className="mx-auto mb-8 px-2">
+        <div className="post-details">
+          <div className="post-shadow"></div>
+          <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
+            <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
+              {author.post.map((post, i) => (
+                <RegularPostCard key={i} post={post} />
+              ))}
+            </div>
+            <div className="col-span-1 lg:col-span-4">
+              <div className="relative lg:sticky lg:top-8">
+                <AuthorAbout author={author} />
+              </div>
             </div>
           </div>
         </div>

@@ -121,7 +121,11 @@ const Footer = () => {
           </p>
           <p className="text-xs">
             Developed by{' '}
-            <a href="https://hrshainik.me" target="_blank">
+            <a
+              href="https://hrshainik.me"
+              target="_blank"
+              className="text-aquamarine-500"
+            >
               Habibur Rahman
             </a>
           </p>

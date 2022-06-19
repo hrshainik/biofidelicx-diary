@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import Head from 'next/head'
 import {
   FeaturedPosts,
@@ -11,7 +10,7 @@ import { getPosts } from '../services'
 
 const Home = ({ posts }) => {
   return (
-    <motion.div exit={{ opacity: 0 }}>
+    <>
       <Head>
         <title>biofidelicX diary</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,11 +33,11 @@ const Home = ({ posts }) => {
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 sm:p-0 lg:grid-cols-12">
         <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
-          {posts.map((post, i) =>
-            post.node.specialPost ? (
-              <SpecialPostCard key={i} post={post.node} />
+          {posts.map(({ node: post }, i) =>
+            post.specialPost ? (
+              <SpecialPostCard key={i} post={post} />
             ) : (
-              <RegularPostCard key={i} post={post.node} />
+              <RegularPostCard key={i} post={post} />
             )
           )}
         </div>
@@ -49,7 +48,7 @@ const Home = ({ posts }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </>
   )
 }
 

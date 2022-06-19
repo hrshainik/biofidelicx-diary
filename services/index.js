@@ -30,6 +30,9 @@ export const getPosts = async () => {
             specialPost
           }
         }
+        pageInfo {
+          hasNextPage
+        }
       }
     }
   `

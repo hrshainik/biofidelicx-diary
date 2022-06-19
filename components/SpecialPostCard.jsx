@@ -1,7 +1,6 @@
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const SpecialPostCard = ({ post }) => {
   return (
@@ -24,18 +23,15 @@ const SpecialPostCard = ({ post }) => {
         </div>
         <div className="relative bg-aquamarine-400 p-4 pb-8">
           <div className="folded-corner"></div>
-          <div className="flex flex-col items-start gap-2  md:flex-row md:gap-8">
-            <div className="order-last block flex-col items-center justify-center text-center md:order-first md:basis-56">
-              <div
-                className="flex items-center lg:mb-2 lg:w-auto"
-                style={{ color: 'rgb(170, 170, 177)' }}
-              >
+          <div className="flex flex-col items-start gap-6  md:flex-row md:gap-8">
+            <div className="order-last block flex-col items-center justify-center text-center text-gray-600 md:order-first md:basis-56">
+              <div className="mb-2 flex items-center lg:w-auto">
                 {post.author.photo ? (
                   <Image
                     src={post.author.photo.url}
                     alt={post.author.name}
-                    width="30"
-                    height="30"
+                    width="24"
+                    height="24"
                     className="rounded-full object-cover align-middle"
                   />
                 ) : (
@@ -43,8 +39,8 @@ const SpecialPostCard = ({ post }) => {
                     viewBox="64 64 896 896"
                     focusable="false"
                     data-icon="user"
-                    width="1em"
-                    height="1em"
+                    width="20"
+                    height="20"
                     fill="currentColor"
                     aria-hidden="true"
                   >
@@ -53,16 +49,13 @@ const SpecialPostCard = ({ post }) => {
                 )}
                 <p className="ml-2 align-middle text-sm">{post.author.name}</p>
               </div>
-              <div
-                className="flex items-center text-sm"
-                style={{ color: 'rgba(170, 170, 177)' }}
-              >
+              <div className="flex items-center text-sm">
                 <svg
                   viewBox="64 64 896 896"
                   focusable="false"
                   data-icon="calendar"
-                  width="1em"
-                  height="1em"
+                  width="20"
+                  height="20"
                   fill="currentColor"
                   aria-hidden="true"
                 >
