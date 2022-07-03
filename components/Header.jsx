@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { getCategories } from '../services'
 
-const Header = ({ title, imageUrl, category, slug }) => {
+const Header = ({ title, imageUrl, category, slug, totalItems }) => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
@@ -34,13 +34,14 @@ const Header = ({ title, imageUrl, category, slug }) => {
           style={{ height: '40vh' }}
           className="flex flex-col items-center justify-center"
         >
-          <h1 className="w-11/12 py-8 text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl">
-            {title}
-          </h1>
+          <h1 className="main-title">{title}</h1>
           {category && (
             <Link href={`/category/${slug}`}>
-              <span className="post-tag">{category}</span>
+              <span className="post-tag cursor-pointer">{category}</span>
             </Link>
+          )}
+          {totalItems && (
+            <span className="post-tag">{totalItems} articles</span>
           )}
         </div>
       </main>

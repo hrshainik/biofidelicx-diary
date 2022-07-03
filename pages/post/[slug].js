@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import React from 'react'
 import {
   Author,
   Comments,
@@ -68,7 +67,7 @@ const PostDetails = ({ post }) => {
               <Comments slug={post.slug} />
             </div>
             <div className="col-span-1 lg:col-span-4">
-              <div className="relative lg:sticky lg:top-8">
+              <div className="relative lg:sticky lg:top-20">
                 <PostWidget
                   slug={post.slug}
                   categories={post.categories.map((category) => category.slug)}

@@ -4,6 +4,7 @@ import { AuthorAbout, Header, Loader, RegularPostCard } from '../../components'
 import { getAuthorDetails, getAuthors } from '../../services'
 
 const AuthorDetails = ({ author }) => {
+  console.log(author)
   const router = useRouter()
 
   if (router.isFallback) {
@@ -26,7 +27,11 @@ const AuthorDetails = ({ author }) => {
         />
         <meta name="author" content="Habibur Rahman" />
       </Head>
-      <Header title={author.name} imageUrl={author?.cover?.url} />
+      <Header
+        title={author.name}
+        imageUrl={author?.cover?.url}
+        totalItems={author.post.length}
+      />
       <div className="mx-auto mb-8 px-2">
         <div className="post-details">
           <div className="post-shadow"></div>
@@ -37,7 +42,7 @@ const AuthorDetails = ({ author }) => {
               ))}
             </div>
             <div className="col-span-1 lg:col-span-4">
-              <div className="relative lg:sticky lg:top-8">
+              <div className="relative lg:sticky lg:top-20">
                 <AuthorAbout author={author} />
               </div>
             </div>

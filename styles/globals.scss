@@ -37,20 +37,31 @@ body::-webkit-scrollbar-thumb {
 
 // Default Tag
 // Recheck default tags design
-a {
-  color: inherit;
-  text-decoration: none;
-  box-shadow: inset 0 -6px 0 0 #9bfff1;
-  transition: all 300ms ease;
-  display: inline-block;
-  line-height: 100%;
+.post-content {
+  & a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: inset 0 -6px 0 0 #9bfff1;
+    transition: all 300ms ease;
+    display: inline-block;
+    line-height: 100%;
+    margin-right: 12px;
 
-  &:hover {
-    box-shadow: inset 0 -24px 0 0 #9bfff1;
+    &:hover {
+      box-shadow: inset 0 -24px 0 0 #9bfff1;
+    }
+  }
+
+  & > * {
+    margin: 0.5em 0;
+  }
+
+  & > h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0em;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+.post-content h1, h2, h3, h4, h5, h6 {
   @apply font-bold font-h;
 }
 
@@ -80,10 +91,9 @@ h6 {
 
 code , pre {
   @apply p-4 inline-block;
-  background-color: #283142;
-  color: #eceff1;
+  background-color: #eeeef0;
   display: block;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 blockquote {
@@ -137,16 +147,29 @@ blockquote {
 }
 
 // Custom Classes
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: #374151;
+  border-radius: 100vh;
+}
+
 .hero {
   min-height: 80vh;
+  margin-top: 52px;
 
   @media only screen and (max-width: 768px) {
     min-height: 70vh;
   }
 }
 
+.main-title {
+  @apply w-11/12 py-8 text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl;
+  max-width: 100rem;
+}
+
 .post-tag {
-  @apply relative cursor-pointer bg-aquamarine-500 px-3 py-2.5 font-ct text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
+  @apply relative bg-aquamarine-500 px-3 py-2.5 font-ct text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
 
   &::before, &::after {
     position: absolute;
@@ -341,25 +364,32 @@ blockquote {
 
 // Swiper Library
 .swiper-pagination-bullet {
-  background-color: #05ffdb !important;
+  background-color: #031231 !important;
 }
 
 // Navbar
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-  height: 80px;
+  background: #080810;
+  height: 52px;
+  border-bottom: 1px solid #212128;
+  border-top: 1px solid #212128;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
   color: white;
   z-index: 99999;
-  @apply relative;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  right: 0;
+  @apply text-xs font-bold fixed;
 }
 
 .navbar-logo {
   justify-self: start;
-  margin-left: 20px;
+  padding: 0 1.4rem;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -371,15 +401,17 @@ blockquote {
   grid-gap: 25px;
   list-style: none;
   text-align: center;
-  width: 70vw;
-  justify-content: end;
-  margin-right: 2rem;
+  flex: 1;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  height: 80px;
+  justify-content: center;
+  border-left: 1px solid #212128;
+  height: 52px;
+  color: rgba($color: #fff, $alpha: .5);
+  @apply tracking-md cursor-pointer;
 }
 
 .nav-links {
@@ -401,9 +433,19 @@ blockquote {
   display: none;
 }
 
+.share-link {
+  border-left: 1px solid #212128;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 1.4rem;
+}
+
 @media screen and (max-width: 960px) {
-  .NavbarItems {
-    position: relative;
+  .navbar {
+    justify-content: space-between;
   }
 
   .nav-menu {
@@ -412,17 +454,17 @@ blockquote {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100vh - 80px);
-    height: calc(calc(var(--vh, 1vh) * 100) - 80px);
+    height: calc(100vh - 52px);
+    height: calc(calc(var(--vh, 1vh) * 100) - 52px);
     position: absolute;
-    top: 80px;
+    top: 52px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease-in;
   }
 
   .nav-menu.active {
-    background: #242222;
+    background: #080810;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease-in;
@@ -441,21 +483,11 @@ blockquote {
     border-radius: 0;
   }
 
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
-  }
-
   .menu-icon {
     display: block;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(-100%, -50%);
     font-size: 1.8rem;
     cursor: pointer;
+    margin: 0 1.4rem;
   }
 
   .fa-times {
@@ -482,7 +514,11 @@ blockquote {
     transition: 250ms;
   }
 
-  button {
+  .nav-item {
+    border: none;
+  }
+
+  .share-link {
     display: none;
   }
 }

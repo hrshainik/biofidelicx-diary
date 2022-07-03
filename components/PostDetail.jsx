@@ -66,7 +66,9 @@ const PostDetail = ({ post }) => {
             </div>
           </div>
         </div>
-        <RichText content={post.content.raw.children} />
+        <div className="post-content">
+          <RichText content={post.content.raw.children} />
+        </div>
       </div>
     </div>
   )
