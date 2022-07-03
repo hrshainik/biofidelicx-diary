@@ -40,18 +40,55 @@ body::-webkit-scrollbar-thumb {
 a {
   color: inherit;
   text-decoration: none;
+  box-shadow: inset 0 -6px 0 0 #9bfff1;
+  transition: all 300ms ease;
+  display: inline-block;
+  line-height: 100%;
+
+  &:hover {
+    box-shadow: inset 0 -24px 0 0 #9bfff1;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-bold font-h;
 }
 
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
 code , pre {
-  @apply py-4 inline-block;
+  @apply p-4 inline-block;
+  background-color: #283142;
+  color: #eceff1;
+  display: block;
+  border-radius: 4px;
 }
 
 blockquote {
-  @apply pl-3 border-aquamarine-500 border-l-4;
+  @apply pl-3 border-aquamarine-700 border-l-4 text-aquamarine-800;
+  line-height: 26px;
 }
 
 // Tailwind Components
@@ -142,11 +179,11 @@ blockquote {
         opacity: 1;
       }
 
-      &-text {
-        & h1 {
-          // color: #05ffdb;
-        }
-      }
+      // &-text {
+      //   & h1 {
+      //     color: #05ffdb;
+      //   }
+      // }
     }
 
     & .card-img {
@@ -218,7 +255,7 @@ blockquote {
   }
 
   & .f-img {
-    @apply transition-all delay-300 ease-in-out;
+    @apply transition-all delay-300 ease-in;
     transform: scale(1.075);
   }
 
@@ -240,7 +277,7 @@ blockquote {
   }
 
   &-title {
-    @apply transition-all delay-300 ease-in-out absolute inset-3 flex flex-col items-center justify-center border-2 md:border-4 border-white-500 p-4 text-white-500 md:inset-5 lg:inset-12;
+    @apply transition-all delay-300 ease-in absolute inset-3 flex flex-col items-center justify-center border-2 md:border-4 border-white-500 p-4 text-white-500 md:inset-5 lg:inset-12;
 
     & > span {
       @apply relative text-sm font-bold font-ct pb-2 uppercase tracking-sm;
@@ -381,14 +418,14 @@ blockquote {
     top: 80px;
     left: -100%;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease-in;
   }
 
   .nav-menu.active {
     background: #242222;
     left: 0;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease-in;
     z-index: 1;
   }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -25,12 +25,15 @@ const FeaturedPosts = () => {
         </p>
         <Swiper
           spaceBetween={30}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           pagination={{
             dynamicBullets: true,
           }}
           modules={[Pagination]}
           slidesPerView={1.5}
-          initialSlide={2}
           centeredSlides={true}
           loop
           breakpoints={{

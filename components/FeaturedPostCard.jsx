@@ -20,7 +20,7 @@ const FeaturedPostCard = ({ post }) => {
             {category}
           </span>
         </div>
-        <h1 className="mb-2 cursor-pointer text-center text-xl font-semibold leading-6 text-midnight-500 transition duration-100">
+        <h1 className="mb-2 cursor-pointer text-center text-xl font-semibold leading-6 text-midnight-500">
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
         <div className="items-center justify-center text-center lg:flex">
