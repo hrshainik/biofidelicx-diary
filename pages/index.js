@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import {
   FeaturedPosts,
   Header,
@@ -9,6 +10,11 @@ import {
 import { getPosts } from '../services'
 
 const Home = ({ posts }) => {
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }, [])
+
   return (
     <>
       <Head>
