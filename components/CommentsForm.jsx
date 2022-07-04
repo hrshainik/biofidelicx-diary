@@ -106,7 +106,7 @@ const CommentsForm = ({ slug }) => {
         />
       </div>
       <div className="mb-2 grid grid-cols-1 gap-4">
-        <div>
+        <div className="flex items-center">
           <input
             type="checkbox"
             checked={formData.storeData}
