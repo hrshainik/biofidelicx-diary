@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Author = ({ author, date }) => {
   return (
-    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-0">
+    <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-0">
       <div className="flex items-center gap-3">
         <div className="">
           {author.photo ? (
@@ -39,11 +39,10 @@ const Author = ({ author, date }) => {
               {author.name}
             </h3>
           </Link>
-          <p className="font-ct text-base">{author.bio}</p>
+          <p className="font-ct text-sm">{author.bio.slice(0, 45)}...</p>
         </div>
       </div>
-      <div className="flex items-center gap-2 text-gray-400">
-        {/* Recheck (pen svg) */}
+      <div className="flex basis-0 items-center gap-2 text-gray-400 md:basis-56 md:justify-end">
         <svg
           viewBox="64 64 896 896"
           focusable="false"

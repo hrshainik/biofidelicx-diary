@@ -1,7 +1,7 @@
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getRecentPosts, getRelatedPosts } from '../services'
 
 const PostWidget = ({ categories, slug }) => {
@@ -21,7 +21,7 @@ const PostWidget = ({ categories, slug }) => {
         <legend className="mx-auto px-3 font-h text-3xl font-bold">
           {slug ? 'Related Posts' : 'Recent Posts'}
         </legend>
-        <div className="p-8 pt-4">
+        <div className="p-5 pt-4 lg:p-8">
           {relatedPosts.map((post) => (
             <div
               className="mb-4 flex w-full items-start last:mb-0"
@@ -36,7 +36,7 @@ const PostWidget = ({ categories, slug }) => {
                   alt={post.title}
                 />
               </div>
-              <div className="ml-4 flex-grow">
+              <div className="ml-2 flex-grow sm:ml-4">
                 <p className="text-sm text-white-900">
                   {moment(post.createdAt).format('MMM DD, YYYY')}
                 </p>

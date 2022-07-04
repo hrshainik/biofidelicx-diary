@@ -34,7 +34,7 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="w-6"
           >
-            <g clip-path="url(#clip0_106_2)">
+            <g clipPath="url(#clip0_106_2)">
               <path
                 d="M18.1128 34.9543H14.0183V37.6795H18.1128V34.9543Z"
                 fill="#05FFDB"
@@ -104,7 +104,7 @@ const Navbar = () => {
           </svg>
         </a>
         <div className="menu-icon" onClick={handleClick}>
-          {click ? (
+          {/* {click ? (
             <svg
               viewBox="64 64 896 896"
               focusable="false"
@@ -128,7 +128,22 @@ const Navbar = () => {
             >
               <path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path>
             </svg>
-          )}
+          )} */}
+          <svg
+            className={`ham hamRotate ham4 ${click ? 'menuActive' : ''}`}
+            viewBox="0 0 100 100"
+            width="45"
+          >
+            <path
+              class="line top"
+              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+            />
+            <path class="line middle" d="m 70,50 h -40" />
+            <path
+              class="line bottom"
+              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+            />
+          </svg>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">

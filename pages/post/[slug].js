@@ -23,7 +23,7 @@ const PostDetails = ({ post }) => {
       <script
         async
         defer
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
         nonce="bcVR7zAR"
       ></script>

@@ -7,7 +7,7 @@ const AuthorAbout = ({ author }) => {
         <legend className="mx-auto px-3 font-h text-3xl font-bold">
           About
         </legend>
-        <div className="p-8 pt-4">
+        <div className="p-5 pt-4 lg:p-8">
           <div className="">
             <p className="mb-2">{author.bio}</p>
             <p className="mb-2">

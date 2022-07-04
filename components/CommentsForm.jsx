@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { submitComment } from '../services'
 
 const CommentsForm = ({ slug }) => {
@@ -90,7 +90,6 @@ const CommentsForm = ({ slug }) => {
       <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <input
           type="text"
-          // ref={nameEl}
           value={formData.name}
           onChange={onInputChange}
           className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
@@ -99,7 +98,6 @@ const CommentsForm = ({ slug }) => {
         />
         <input
           type="text"
-          // ref={emailEl}
           value={formData.email}
           onChange={onInputChange}
           className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
@@ -111,7 +109,6 @@ const CommentsForm = ({ slug }) => {
         <div>
           <input
             type="checkbox"
-            // ref={storeDataEl}
             checked={formData.storeData}
             onChange={onInputChange}
             id="storeData"
