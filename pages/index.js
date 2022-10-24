@@ -9,11 +9,29 @@ import {
 } from '../components'
 import { getPosts } from '../services'
 
-const Home = ({ posts }) => {
+const Home = ({ postsInfo }) => {
   useEffect(() => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   }, [])
+
+  const { edges: posts, pageInfo, aggregate } = postsInfo
+  const { count: totalItems } = aggregate
+  console.log(totalItems)
+  console.log(posts)
+  console.log(pageInfo)
+  const { pageSize } = pageInfo
+  let pages = totalItems / pageSize
+  if (Number.isInteger(pages)) {
+    pages
+  } else {
+    pages = Math.floor(pages + 1)
+  }
+
+  console.log(pages)
+
+  const arr = [...Array(pages).keys()]
+  console.log(arr)
 
   return (
     <>
@@ -53,6 +71,11 @@ const Home = ({ posts }) => {
             {/* <Categories /> */}
           </div>
         </div>
+        <ul>
+          {arr.map((i) => (
+            <li key={i}>{i}</li>
+          ))}
+        </ul>
       </div>
     </>
   )
@@ -60,10 +83,10 @@ const Home = ({ posts }) => {
 
 export default Home
 
-export async function getStaticProps() {
-  const posts = (await getPosts()) || []
+export async function getStaticProps({ params }) {
+  const postsInfo = (await getPosts(1)) || []
 
   return {
-    props: { posts },
+    props: { postsInfo },
   }
 }
