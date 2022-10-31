@@ -93,7 +93,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const { edges: posts } = await getPosts()
+  const limit = 3
+  const offset = 0
+  const { edges: posts } = await getPosts(limit, offset)
 
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
