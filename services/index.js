@@ -2,10 +2,10 @@ import { gql, request } from 'graphql-request'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
-export const getPosts = async (first) => {
+export const getPosts = async (limit, offset) => {
   const query = gql`
-    query MyQuery($first: Int!) {
-      postsConnection(first: $first) {
+    query MyQuery($limit: Int!, $offset: Int!) {
+      postsConnection(first: $limit, skip: $offset) {
         edges {
           node {
             author {
@@ -33,8 +33,20 @@ export const getPosts = async (first) => {
         pageInfo {
           hasNextPage
           hasPreviousPage
-          pageSize
         }
+      }
+    }
+  `
+
+  const result = await request(graphqlAPI, query, { limit, offset })
+
+  return result.postsConnection
+}
+
+export const getTotalPostNumber = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection {
         aggregate {
           count
         }
@@ -42,7 +54,7 @@ export const getPosts = async (first) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { first })
+  const result = await request(graphqlAPI, query)
 
   return result.postsConnection
 }

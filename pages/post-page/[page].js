@@ -7,13 +7,12 @@ import {
   PostWidget,
   RegularPostCard,
   SpecialPostCard,
-} from '../components'
-import { getPosts } from '../services'
+} from '../../components'
+import { getPosts, getTotalPostNumber } from '../../services'
 
-let limit = 3
+const limit = 3
 
-const Home = ({ posts, pageInfo, currentPageNumber }) => {
-  console.log(pageInfo)
+const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
   useEffect(() => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -68,41 +67,46 @@ const Home = ({ posts, pageInfo, currentPageNumber }) => {
 
 export default Home
 
-export async function getStaticProps() {
-  // async function* fetchData() {
-  //   let offset = 0
-  //   let hasNextPage = true
+export async function getStaticPaths() {
+  const { aggregate } = await getTotalPostNumber()
 
-  // while (hasNextPage) {
-  //   const { edges: posts, pageInfo } = await getPosts(limit, offset)
+  function* numberOfPages({ total, limit }) {
+    let page = 1
+    let offset = 0
 
-  //   hasNextPage = pageInfo.hasNextPage
-  //   offset += limit
+    while (offset < total) {
+      yield page
 
-  //   yield posts
-  // }
-  const offset = 0
+      page++
+      offset += limit
+    }
+  }
 
-  const { edges: posts, pageInfo } = await getPosts(limit, 0)
-  // }
+  const paths = [
+    ...numberOfPages({
+      total: aggregate.count,
+      limit,
+    }),
+  ].map((page) => ({
+    params: { page: String(page) },
+  }))
 
-  // async function paginatedQuery() {
-  //   const iterator = fetchData()
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
-  //   let data = []
+export async function getStaticProps({ params }) {
+  const offset = Number((params.page - 1) * limit)
 
-  //   for await (const posts of iterator) data = [...data, ...posts]
-
-  //   return data
-  // }
-
-  // const posts = await paginatedQuery()
+  const { edges: posts, pageInfo } = await getPosts(limit, offset)
 
   return {
     props: {
+      currentPageNumber: Number(params.page),
       posts,
-      pageInfo,
-      currentPageNumber: 1,
+      ...pageInfo,
     },
   }
 }
