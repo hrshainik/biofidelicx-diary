@@ -26,11 +26,11 @@ body {
 body::-webkit-scrollbar {
   width: 8px;
 }
- 
+
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: #031231;
 }
@@ -56,13 +56,23 @@ body::-webkit-scrollbar-thumb {
     margin: 0.5em 0;
   }
 
-  & > h1, h2, h3, h4, h5, h6 {
+  & > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 0em;
   }
 }
 
-.post-content h1, h2, h3, h4, h5, h6 {
-  @apply font-bold font-h;
+.post-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-h font-bold;
 }
 
 h1 {
@@ -98,14 +108,14 @@ code {
 }
 
 pre {
-  @apply p-2 block;
+  @apply block p-2;
   background-color: rgb(248, 249, 251);
   border-radius: 4px;
   border: 1px solid rgb(218, 222, 237);
 }
 
 blockquote {
-  @apply border-aquamarine-500 border-l-2;
+  @apply border-l-2 border-aquamarine-500;
   margin: 1rem 0 !important;
   line-height: 26px;
   padding-left: 10px;
@@ -115,43 +125,43 @@ blockquote {
 // Tailwind Components
 @layer components {
   .h1 {
-    @apply font-bold font-h text-5xl;
+    @apply font-h text-5xl font-bold;
   }
   .h2 {
-    @apply font-bold font-h;
+    @apply font-h font-bold;
   }
   .h3 {
-    @apply font-bold font-h;
+    @apply font-h font-bold;
   }
   .h4 {
-    @apply font-bold font-h;
+    @apply font-h font-bold;
   }
   .h5 {
-    @apply font-bold font-h;
+    @apply font-h font-bold;
   }
   .h6 {
-    @apply font-bold font-h;
+    @apply font-h font-bold;
   }
   .tlgb {
-    @apply font-semibold font-t;
+    @apply font-t font-semibold;
   }
   .tlg {
-    @apply font-normal font-t;
+    @apply font-t font-normal;
   }
   .tmb {
-    @apply font-semibold font-t;
+    @apply font-t font-semibold;
   }
   .tm {
-    @apply font-normal font-t;
+    @apply font-t font-normal;
   }
   .tsb {
-    @apply font-semibold font-t;
+    @apply font-t font-semibold;
   }
   .ts {
-    @apply font-normal font-t;
+    @apply font-t font-normal;
   }
   .folded-corner {
-    @apply absolute right-0 bottom-0 w-0 h-0 bg-white-500;
+    @apply absolute right-0 bottom-0 h-0 w-0 bg-white-500;
     border: 1.6rem solid transparent;
     border-color: #c1fff6 transparent transparent #c1fff6;
   }
@@ -182,9 +192,10 @@ blockquote {
 .post-tag {
   @apply relative bg-aquamarine-500 px-3 py-2.5 font-ct text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     position: absolute;
-    content: "";
+    content: '';
     top: 50%;
     transform: translateY(-50%);
     background-color: rgb(5, 255, 219);
@@ -233,7 +244,7 @@ blockquote {
     position: relative;
     background-color: #fff;
     z-index: 20;
-  
+
     &::before {
       position: absolute;
       z-index: 1;
@@ -246,7 +257,7 @@ blockquote {
       opacity: 0;
       transition: opacity 0.6s ease-in-out;
     }
-  
+
     & .shadow-box {
       position: absolute;
       top: 0;
@@ -311,14 +322,14 @@ blockquote {
   }
 
   &-title {
-    @apply transition-all delay-300 ease-in absolute inset-3 flex flex-col items-center justify-center border-2 md:border-4 border-white-500 p-4 text-white-500 md:inset-5 lg:inset-12;
+    @apply absolute inset-3 flex flex-col items-center justify-center border-2 border-white-500 p-4 text-white-500 transition-all delay-300 ease-in md:inset-5 md:border-4 lg:inset-12;
 
     & > span {
-      @apply relative text-sm font-bold font-ct pb-2 uppercase tracking-sm;
+      @apply relative pb-2 font-ct text-sm font-bold uppercase tracking-sm;
       color: rgba(255, 255, 255, 0.6);
-      
+
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         height: 2px;
         width: 50px;
@@ -341,7 +352,7 @@ blockquote {
 }
 
 .post-details {
-  @apply relative container mx-auto -mt-16 bg-white-500 p-4 sm:p-8 z-20;
+  @apply container relative z-20 mx-auto -mt-16 bg-white-500 p-4 sm:p-8;
 
   & .post-shadow {
     position: absolute;
@@ -352,13 +363,13 @@ blockquote {
     right: 0;
 
     &::before {
-      content: url("../public/shadow.png");
+      content: url('../public/shadow.png');
       left: -8px;
       position: absolute;
     }
 
     &::after {
-      content: url("../public/shadow-inverse.png");
+      content: url('../public/shadow-inverse.png');
       right: -8px;
       position: absolute;
     }
@@ -366,7 +377,7 @@ blockquote {
 }
 
 .btn-noti {
-  @apply mt-4 flex sm:items-center sm:justify-between flex-col sm:flex-row gap-3 sm:gap-0;
+  @apply mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-0;
 
   & > span {
     @apply opacity-100;
@@ -390,12 +401,12 @@ blockquote {
   font-size: 1.2rem;
   color: white;
   z-index: 99999;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   text-transform: uppercase;
   top: 0;
   left: 0;
   right: 0;
-  @apply text-xs font-bold fixed;
+  @apply fixed text-xs font-bold;
 }
 
 .navbar-logo {
@@ -421,8 +432,8 @@ blockquote {
   justify-content: center;
   border-left: 1px solid #212128;
   height: 52px;
-  color: rgba($color: #fff, $alpha: .5);
-  @apply tracking-md cursor-pointer;
+  color: rgba($color: #fff, $alpha: 0.5);
+  @apply cursor-pointer tracking-md;
 }
 
 .nav-links {
@@ -550,11 +561,11 @@ blockquote {
 }
 
 .line {
-  fill:none;
+  fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke:#fff;
-  stroke-width:5.5;
-  stroke-linecap:round;
+  stroke: #fff;
+  stroke-width: 5.5;
+  stroke-linecap: round;
 }
 
 .ham4 .top {
@@ -569,7 +580,6 @@ blockquote {
 .ham4.menuActive .bottom {
   stroke-dashoffset: -68px;
 }
-
 
 // Dropdown
 .dropdown-menu {
@@ -609,4 +619,10 @@ blockquote {
   }
 }
 
+.pagination {
+  @apply col-span-1 flex justify-between;
 
+  @media only screen and (min-width: 1024px) {
+    grid-column: 1 / span 2;
+  }
+}

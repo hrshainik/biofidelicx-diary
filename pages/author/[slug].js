@@ -4,7 +4,6 @@ import { AuthorAbout, Header, Loader, RegularPostCard } from '../../components'
 import { getAuthorDetails, getAuthors } from '../../services'
 
 const AuthorDetails = ({ author }) => {
-  console.log(author)
   const router = useRouter()
 
   if (router.isFallback) {

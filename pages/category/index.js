@@ -4,7 +4,6 @@ import { Header, PostWidget } from '../../components'
 import { getCategories } from '../../services'
 
 const CategoryPost = ({ categories }) => {
-  console.log(categories)
   return (
     <>
       <Head>
@@ -46,7 +45,6 @@ const CategoryPost = ({ categories }) => {
 }
 export default CategoryPost
 
-// Fetch data at build time
 export async function getStaticProps() {
   const categories = await getCategories()
 

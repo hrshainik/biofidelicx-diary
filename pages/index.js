@@ -13,7 +13,6 @@ import { getPosts } from '../services'
 let limit = 3
 
 const Home = ({ posts, pageInfo, currentPageNumber }) => {
-  console.log(pageInfo)
   useEffect(() => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -50,17 +49,24 @@ const Home = ({ posts, pageInfo, currentPageNumber }) => {
               <RegularPostCard key={i} post={post} />
             )
           )}
+          <div className="pagination">
+            <Link href={`/post-page/${currentPageNumber - 1}`}>
+              <a className="bg-midnight-500 px-3.5 py-2 font-ct text-xs font-bold tracking-sm text-white-500">
+                &larr; Prev
+              </a>
+            </Link>
+            <Link href={`/post-page/${currentPageNumber + 1}`}>
+              <a className="bg-midnight-500 px-3.5 py-2 font-ct text-xs font-bold tracking-sm text-white-500">
+                Next &rarr;
+              </a>
+            </Link>
+          </div>
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky lg:top-20">
             <PostWidget />
-            {/* <Categories /> */}
           </div>
         </div>
-        <Link href={`/post-page/${currentPageNumber - 1}`}>Prev</Link>
-        <Link href={`/post-page/${currentPageNumber + 1}`}>
-          <a>Next</a>
-        </Link>
       </div>
     </>
   )
@@ -69,34 +75,9 @@ const Home = ({ posts, pageInfo, currentPageNumber }) => {
 export default Home
 
 export async function getStaticProps() {
-  // async function* fetchData() {
-  //   let offset = 0
-  //   let hasNextPage = true
-
-  // while (hasNextPage) {
-  //   const { edges: posts, pageInfo } = await getPosts(limit, offset)
-
-  //   hasNextPage = pageInfo.hasNextPage
-  //   offset += limit
-
-  //   yield posts
-  // }
   const offset = 0
 
   const { edges: posts, pageInfo } = await getPosts(limit, 0)
-  // }
-
-  // async function paginatedQuery() {
-  //   const iterator = fetchData()
-
-  //   let data = []
-
-  //   for await (const posts of iterator) data = [...data, ...posts]
-
-  //   return data
-  // }
-
-  // const posts = await paginatedQuery()
 
   return {
     props: {
