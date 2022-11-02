@@ -626,3 +626,34 @@ blockquote {
     grid-column: 1 / span 2;
   }
 }
+
+.checkbox {
+  @apply flex items-center;
+}
+
+.checkbox svg {
+  stroke: #031231;
+}
+
+.box {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.3s linear;
+  fill: none;
+}
+
+.check {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+.reverse {
+  .box {
+    stroke-dashoffset: 320;
+  }
+  .check {
+    stroke-dashoffset: 0;
+  }
+}

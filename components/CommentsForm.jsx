@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { submitComment } from '../services'
+import Checkbox from './Checkbox'
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false)
@@ -107,20 +108,27 @@ const CommentsForm = ({ slug }) => {
       </div>
       <div className="mb-2 grid grid-cols-1 gap-4">
         <div className="flex items-center">
-          <input
+          {/* <input
             type="checkbox"
             checked={formData.storeData}
             onChange={onInputChange}
             id="storeData"
             name="storeData"
             value="true"
-          />
+            />
           <label
             className="ml-2 cursor-pointer text-gray-500"
             htmlFor="storeData"
-          >
-            Save my email for the next time I comment
-          </label>
+            >
+            
+          </label> */}
+          <Checkbox
+            value="true"
+            isCheckboxSelected={formData.storeData}
+            handleCheckbox={onInputChange}
+            text="Save my email for the next time I comment"
+            name="storeData"
+          />
         </div>
       </div>
       {error && (
