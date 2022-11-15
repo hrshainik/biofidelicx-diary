@@ -393,8 +393,8 @@ blockquote {
 .navbar {
   background-color: #031231;
   height: 52px;
-  border-bottom: 1px solid #212128;
-  border-top: 1px solid #212128;
+  border-bottom: 1px solid #535353;
+  border-top: 1px solid #535353;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -430,7 +430,7 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid #212128;
+  border-left: 1px solid #535353;
   height: 52px;
   color: rgba($color: #fff, $alpha: 0.5);
   @apply cursor-pointer tracking-md;
@@ -441,11 +441,11 @@ blockquote {
   padding: 0.5rem 1rem;
 }
 
-.nav-links:hover {
-  background-color: #1888ff;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
-}
+// .nav-links:hover {
+//   background-color: #1888ff;
+//   border-radius: 4px;
+//   transition: all 0.2s ease-out;
+// }
 
 .nav-links-mobile {
   display: none;
@@ -456,7 +456,7 @@ blockquote {
 }
 
 .share-link {
-  border-left: 1px solid #212128;
+  border-left: 1px solid #535353;
   height: 100%;
   display: flex;
   align-items: center;

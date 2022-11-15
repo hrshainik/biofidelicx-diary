@@ -5,12 +5,10 @@ import { Header, PostWidget } from '../../components'
 import { getAuthors } from '../../services'
 
 const Author = ({ authors }) => {
-  console.log(authors)
-
   return (
     <>
       <Head>
-        <title>Category</title>
+        <title>Authors</title>
         <link rel="icon" href="/favicon.ico" />
         <meta httpEquiv="X-UA-Compatible" content="IE=7" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
