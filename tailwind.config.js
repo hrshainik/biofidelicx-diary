@@ -83,7 +83,7 @@ module.exports = {
     },
     fontFamily: {
       h: ['Cardo', 'serif'],
-      t: ['Montserrat', 'sans-serif'],
+      t: ['Source Sans Pro', 'sans-serif'],
     },
     letterSpacing: {
       sm: '1px',
