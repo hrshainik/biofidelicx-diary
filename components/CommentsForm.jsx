@@ -108,20 +108,6 @@ const CommentsForm = ({ slug }) => {
       </div>
       <div className="mb-2 grid grid-cols-1 gap-4">
         <div className="flex items-center">
-          {/* <input
-            type="checkbox"
-            checked={formData.storeData}
-            onChange={onInputChange}
-            id="storeData"
-            name="storeData"
-            value="true"
-            />
-          <label
-            className="ml-2 cursor-pointer text-gray-500"
-            htmlFor="storeData"
-            >
-            
-          </label> */}
           <Checkbox
             value="true"
             isCheckboxSelected={formData.storeData}

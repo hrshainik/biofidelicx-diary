@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import { Header } from '../components'
 
 const Contact = () => {
   return (
@@ -7,7 +8,12 @@ const Contact = () => {
       <Head>
         <title>Contact - biofidelicX</title>
       </Head>
-      <h1>Contact</h1>
+      <Header title="We'd love to hear from you" />
+      <div className="mx-auto mb-8 px-2 md:px-5">
+        <div className="post-details">
+          <div className="post-shadow"></div>
+        </div>
+      </div>
     </>
   )
 }
