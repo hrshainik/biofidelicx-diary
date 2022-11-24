@@ -54,12 +54,12 @@ const Home = ({ posts, pageInfo, currentPageNumber }) => {
           )}
           <div className="pagination">
             <Link href={`/post-page/${currentPageNumber - 1}`}>
-              <a className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold tracking-sm text-white-500">
+              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
                 &larr; Prev
               </a>
             </Link>
             <Link href={`/post-page/${currentPageNumber + 1}`}>
-              <a className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold tracking-sm text-white-500">
+              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
                 Next &rarr;
               </a>
             </Link>

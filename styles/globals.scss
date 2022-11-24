@@ -162,6 +162,80 @@ blockquote {
   }
 }
 
+.btn {
+  @apply relative flex cursor-pointer items-center justify-center py-2 px-4 text-midnight-500;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-outline {
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+
+  span {
+    z-index: 20;
+  }
+
+  &:after {
+    background: #05ffdb;
+    content: '';
+    height: 155px;
+    left: -75px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+  }
+}
+
+.btn-outline:hover {
+  &:after {
+    left: 120%;
+    transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+.btn-fill {
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+  background-color: #031231;
+  color: #fff;
+
+  span {
+    z-index: 20;
+  }
+
+  &:after {
+    background: #05ffdb;
+    content: '';
+    height: 155px;
+    left: -75px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+  }
+}
+
+.btn-fill:hover {
+  &:after {
+    left: 120%;
+    transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
 .hero-l {
   @apply absolute top-1/2 left-1/2 flex -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center;
   max-width: 100rem;
