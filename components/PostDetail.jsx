@@ -5,7 +5,7 @@ const PostDetail = ({ post }) => {
     <div className="mb-12">
       <div className="relative">
         <div className="social-wrapper flex justify-center md:float-left md:flex-none">
-          <div className="social mb-4 flex md:mr-6 md:flex-col">
+          <div className="social mb-0 flex md:mb-4 md:mr-6 md:flex-col">
             <div className="fb block cursor-pointer border border-r-0 border-midnight-200 p-4 md:border-b-0 md:border-r">
               <div
                 data-href={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}

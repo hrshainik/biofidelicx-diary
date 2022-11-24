@@ -153,6 +153,7 @@ blockquote {
 }
 
 .hero {
+  @apply relative;
   min-height: 65vh;
   margin-top: 52px;
 
@@ -162,13 +163,13 @@ blockquote {
 }
 
 .hero-l {
-  @apply flex flex-col items-center justify-center;
+  @apply absolute top-1/2 left-1/2 flex -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center;
+  max-width: 100rem;
+  width: 90%;
 }
 
 .main-title {
-  @apply w-11/12 py-8 text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl;
-  max-width: 100rem;
-  width: 90%;
+  @apply text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl;
 
   @media only screen and (max-width: 768px) {
     @apply py-2;
