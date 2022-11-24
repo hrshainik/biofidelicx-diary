@@ -1,15 +1,8 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { AuthorAbout, Header, Loader, RegularPostCard } from '../../components'
+import { AuthorAbout, Header, RegularPostCard } from '../../components'
 import { getAuthorDetails, getAuthors } from '../../services'
 
 const AuthorDetails = ({ author }) => {
-  const router = useRouter()
-
-  if (router.isFallback) {
-    return <Loader />
-  }
-
   return (
     <>
       <Head>

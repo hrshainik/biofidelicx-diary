@@ -1,15 +1,8 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { Categories, Header, Loader, RegularPostCard } from '../../components'
+import { Categories, Header, RegularPostCard } from '../../components'
 import { getCategories, getCategoryPost } from '../../services'
 
 const CategoryPost = ({ posts }) => {
-  const router = useRouter()
-
-  if (router.isFallback) {
-    return <Loader />
-  }
-
   const category = posts[0].node.categories[0].name
 
   return (

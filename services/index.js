@@ -2,10 +2,54 @@ import { gql, request } from 'graphql-request'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
+export const getSpecialPost = async () => {
+  const query = gql`
+    query MyQuery() {
+      postsConnection(where: { specialPost: true }) {
+        edges {
+          node {
+            author {
+              bio
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            slug
+            title
+            excerpt
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+              categoryColor {
+                hex
+              }
+            }
+            specialPost
+          }
+        }
+      }
+    }
+  `
+
+  const result = await request(graphqlAPI, query)
+
+  return result.postsConnection
+}
+
 export const getPosts = async (limit, offset) => {
   const query = gql`
     query MyQuery($limit: Int!, $offset: Int!) {
-      postsConnection(first: $limit, skip: $offset) {
+      postsConnection(
+        first: $limit
+        skip: $offset
+        where: { specialPost: false }
+      ) {
         edges {
           node {
             author {

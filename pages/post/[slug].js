@@ -1,23 +1,15 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import {
   Author,
   Comments,
   CommentsForm,
   Header,
-  Loader,
   PostDetail,
   PostWidget,
 } from '../../components'
 import { getPostDetails, getPosts } from '../../services'
 
 const PostDetails = ({ post }) => {
-  const router = useRouter()
-
-  if (router.isFallback) {
-    return <Loader />
-  }
-
   return (
     <>
       <script
@@ -73,7 +65,6 @@ const PostDetails = ({ post }) => {
                   slug={post.slug}
                   categories={post.categories.map((category) => category.slug)}
                 />
-                {/* <Categories /> */}
               </div>
             </div>
           </div>

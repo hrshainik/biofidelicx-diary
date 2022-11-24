@@ -8,11 +8,11 @@ import {
   RegularPostCard,
   SpecialPostCard,
 } from '../components'
-import { getPosts } from '../services'
+import { getPosts, getSpecialPost } from '../services'
 
 let limit = 3
 
-const Home = ({ posts, pageInfo, currentPageNumber }) => {
+const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
   useEffect(() => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -45,13 +45,12 @@ const Home = ({ posts, pageInfo, currentPageNumber }) => {
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
         <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
-          {posts.map(({ node: post }, i) =>
-            post.specialPost ? (
-              <SpecialPostCard key={i} post={post} />
-            ) : (
-              <RegularPostCard key={i} post={post} />
-            )
-          )}
+          {specialPost.map(({ node: post }, i) => (
+            <SpecialPostCard post={post} key={i} />
+          ))}
+          {posts.map(({ node: post }, i) => (
+            <RegularPostCard key={i} post={post} />
+          ))}
           <div className="pagination">
             <Link href={`/post-page/${currentPageNumber - 1}`}>
               <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
@@ -81,12 +80,14 @@ export async function getStaticProps() {
   const offset = 0
 
   const { edges: posts, pageInfo } = await getPosts(limit, 0)
+  const { edges: specialPost } = await getSpecialPost()
 
   return {
     props: {
       posts,
       pageInfo,
       currentPageNumber: 1,
+      specialPost,
     },
   }
 }

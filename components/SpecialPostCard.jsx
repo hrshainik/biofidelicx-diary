@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const SpecialPostCard = ({ post }) => {
+  console.log(post)
   return (
     <Link href={`/post/${post.slug}`}>
       <div className="sp-card order-first col-span-1 mb-8 cursor-pointer md:col-span-2">
