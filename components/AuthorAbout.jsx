@@ -9,8 +9,8 @@ const AuthorAbout = ({ author }) => {
         </legend>
         <div className="p-5 pt-4 lg:p-8">
           <div className="">
-            <p className="mb-2">{author.bio}</p>
-            <p className="mb-2">
+            <p className="mb-4">{author.bio}</p>
+            <p className="mb-4">
               Joined on {moment(author.createdAt).format('MMM DD, YYYY')}
             </p>
             <div className="author-social-links flex items-center gap-2">

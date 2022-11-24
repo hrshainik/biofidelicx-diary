@@ -2,7 +2,14 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { getCategories } from '../services'
 
-const Header = ({ title, imageUrl, category, slug, totalItems }) => {
+const Header = ({
+  title,
+  imageUrl,
+  category,
+  slug,
+  totalItems,
+  categoryColor,
+}) => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
@@ -30,18 +37,36 @@ const Header = ({ title, imageUrl, category, slug, totalItems }) => {
             </Link>
           </div>
         </div>
-        <div
-          style={{ height: '40vh' }}
-          className="flex flex-col items-center justify-center"
-        >
+        <div className="hero-l">
           <h1 className="main-title">{title}</h1>
           {category && (
             <Link href={`/category/${slug}`}>
-              <span className="post-tag cursor-pointer">{category}</span>
+              <div className="flex items-center gap-1">
+                <div
+                  className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-52 xl:w-64 2xl:w-96"
+                  style={{ backgroundColor: `${categoryColor}` }}
+                ></div>
+                <span
+                  className="post-tag cursor-pointer"
+                  style={{
+                    backgroundColor: `${categoryColor}`,
+                  }}
+                >
+                  {category}
+                </span>
+                <div
+                  className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-52 xl:w-64 2xl:w-96"
+                  style={{ backgroundColor: `${categoryColor}` }}
+                ></div>
+              </div>
             </Link>
           )}
           {totalItems && (
-            <span className="post-tag">{totalItems} articles</span>
+            <div className="flex items-center gap-1">
+              <div className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-36"></div>
+              <span className="post-tag">{totalItems} articles</span>
+              <div className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-36"></div>
+            </div>
           )}
         </div>
       </main>

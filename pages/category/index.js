@@ -20,8 +20,8 @@ const CategoryPost = ({ categories }) => {
         />
         <meta name="author" content="Habibur Rahman" />
       </Head>
-      <Header />
-      <div className="mx-auto mb-8 px-2">
+      <Header title="Categories" />
+      <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
           <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 ::selection {
   color: #031231;
   background-color: #05ffdb;
@@ -17,7 +15,7 @@
 
 html,
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #fff;
   color: #031231;
 }
@@ -32,6 +30,21 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
+  background-color: #031231;
+}
+
+pre::-webkit-scrollbar,
+code::-webkit-scrollbar {
+  height: 6px;
+}
+
+pre::-webkit-scrollbar-track,
+code::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+pre::-webkit-scrollbar-thumb,
+code::-webkit-scrollbar-thumb {
   background-color: #031231;
 }
 
@@ -124,42 +137,6 @@ blockquote {
 
 // Tailwind Components
 @layer components {
-  .h1 {
-    @apply font-h text-5xl font-bold;
-  }
-  .h2 {
-    @apply font-h font-bold;
-  }
-  .h3 {
-    @apply font-h font-bold;
-  }
-  .h4 {
-    @apply font-h font-bold;
-  }
-  .h5 {
-    @apply font-h font-bold;
-  }
-  .h6 {
-    @apply font-h font-bold;
-  }
-  .tlgb {
-    @apply font-t font-semibold;
-  }
-  .tlg {
-    @apply font-t font-normal;
-  }
-  .tmb {
-    @apply font-t font-semibold;
-  }
-  .tm {
-    @apply font-t font-normal;
-  }
-  .tsb {
-    @apply font-t font-semibold;
-  }
-  .ts {
-    @apply font-t font-normal;
-  }
   .folded-corner {
     @apply absolute right-0 bottom-0 h-0 w-0 bg-white-500;
     border: 1.6rem solid transparent;
@@ -176,21 +153,30 @@ blockquote {
 }
 
 .hero {
-  min-height: 80vh;
+  min-height: 65vh;
   margin-top: 52px;
 
   @media only screen and (max-width: 768px) {
-    min-height: 70vh;
+    min-height: 55vh;
   }
+}
+
+.hero-l {
+  @apply flex flex-col items-center justify-center;
 }
 
 .main-title {
   @apply w-11/12 py-8 text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl;
   max-width: 100rem;
+  width: 90%;
+
+  @media only screen and (max-width: 768px) {
+    @apply py-2;
+  }
 }
 
 .post-tag {
-  @apply relative bg-aquamarine-500 px-3 py-2.5 font-ct text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
+  @apply relative bg-aquamarine-500 px-3 py-2.5 font-t text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
 
   &::before,
   &::after {
@@ -198,7 +184,7 @@ blockquote {
     content: '';
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgb(5, 255, 219);
+    // background-color: rgb(5, 255, 219);
     opacity: 0.45;
     width: 70px;
     height: 2px;
@@ -325,7 +311,7 @@ blockquote {
     @apply absolute inset-3 flex flex-col items-center justify-center border-2 border-white-500 p-4 text-white-500 transition-all delay-300 ease-in md:inset-5 md:border-4 lg:inset-12;
 
     & > span {
-      @apply relative pb-2 font-ct text-sm font-bold uppercase tracking-sm;
+      @apply relative pb-2 font-t text-sm font-bold uppercase tracking-sm;
       color: rgba(255, 255, 255, 0.6);
 
       &::after {
@@ -477,7 +463,6 @@ blockquote {
     justify-content: center;
     width: 100%;
     height: calc(100vh - 51px);
-    // height: calc(calc(var(--vh, 1vh) * 100) - 52px);
     position: absolute;
     top: 51px;
     left: -100%;
@@ -622,7 +607,7 @@ blockquote {
 .pagination {
   @apply col-span-1 flex justify-between;
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 768px) {
     grid-column: 1 / span 2;
   }
 }

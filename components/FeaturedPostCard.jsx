@@ -16,7 +16,7 @@ const FeaturedPostCard = ({ post }) => {
       </div>
       <div className="relative z-20 mx-auto flex flex-col items-center px-2 pt-0 text-midnight-500 lg:px-4">
         <div className="py-1 text-midnight-500">
-          <span className="font-ct text-xs font-semibold uppercase tracking-sm">
+          <span className="font-t text-xs font-semibold uppercase tracking-sm">
             {category}
           </span>
         </div>

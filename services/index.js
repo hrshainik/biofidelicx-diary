@@ -26,6 +26,9 @@ export const getPosts = async (limit, offset) => {
             categories {
               name
               slug
+              categoryColor {
+                hex
+              }
             }
             specialPost
           }
@@ -82,6 +85,9 @@ export const getPostDetails = async (slug) => {
         categories {
           name
           slug
+          categoryColor {
+            hex
+          }
         }
         content {
           raw
@@ -182,6 +188,9 @@ export const getCategoryPost = async (slug) => {
             categories {
               name
               slug
+              categoryColor {
+                hex
+              }
             }
           }
         }
@@ -291,6 +300,9 @@ export const getAuthorDetails = async (slug) => {
           }
           categories {
             name
+            categoryColor {
+              hex
+            }
           }
           featuredImage {
             url

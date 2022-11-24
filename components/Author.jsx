@@ -39,7 +39,7 @@ const Author = ({ author, date }) => {
               {author.name}
             </h3>
           </Link>
-          <p className="font-ct text-sm">{author.bio.slice(0, 45)}...</p>
+          <p className="font-t text-sm">{author.bio.slice(0, 45)}...</p>
         </div>
       </div>
       <div className="flex basis-0 items-center gap-2 text-gray-400 md:basis-56 md:justify-end">

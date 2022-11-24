@@ -19,7 +19,10 @@ const FeaturedPosts = () => {
 
   return (
     <div className="w-full">
-      <div className="container mx-auto mb-8" style={{ marginTop: '-7rem' }}>
+      <div
+        className="container mx-auto mb-8 p-5"
+        style={{ marginTop: '-7rem' }}
+      >
         <p className="text-center font-h text-xl font-bold leading-loose text-white-500 md:text-left">
           The Highlights
         </p>

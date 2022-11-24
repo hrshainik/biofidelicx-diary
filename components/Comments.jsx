@@ -23,7 +23,7 @@ const Comments = ({ slug }) => {
               className="mb-4 border-b border-midnight-100 pb-4 last:border-none"
             >
               <p className="mb-2 flex items-center gap-2 text-sm font-normal text-gray-400">
-                <span className="font-ct text-base font-semibold capitalize text-gray-700">
+                <span className="font-t text-base font-semibold capitalize text-gray-700">
                   {comment.name}
                 </span>
                 <span className="dot"></span>

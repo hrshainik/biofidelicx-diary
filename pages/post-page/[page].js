@@ -40,7 +40,7 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
 
       <Header title="Main Header" imageUrl={'/hero-img.jpg'} />
       <FeaturedPosts />
-      <div className="container mx-auto grid grid-cols-1 gap-12 p-5 sm:p-0 lg:grid-cols-12">
+      <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
         <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
           {posts.map(({ node: post }, i) =>
             post.specialPost ? (
@@ -51,12 +51,12 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
           )}
           <div className="pagination">
             <Link href={`/post-page/${currentPageNumber - 1}`}>
-              <a className="bg-midnight-500 px-3.5 py-2 font-ct text-xs font-bold tracking-sm text-white-500">
+              <a className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold tracking-sm text-white-500">
                 &larr; Prev
               </a>
             </Link>
             <Link href={`/post-page/${currentPageNumber + 1}`}>
-              <a className="bg-midnight-500 px-3.5 py-2 font-ct text-xs font-bold tracking-sm text-white-500">
+              <a className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold tracking-sm text-white-500">
                 Next &rarr;
               </a>
             </Link>

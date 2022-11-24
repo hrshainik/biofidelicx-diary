@@ -20,8 +20,13 @@ const RegularPostCard = ({ post }) => {
           style={{ width: '95%' }}
         >
           <div className="shadow-box"></div>
-          <div className="-mt-4 bg-aquamarine-500/80 py-2 px-3.5">
-            <span className="font-ct text-xs font-semibold uppercase leading-3 tracking-sm">
+          <div
+            className="-mt-4 py-2 px-3.5"
+            style={{
+              backgroundColor: `${post.categories[0].categoryColor?.hex}`,
+            }}
+          >
+            <span className="font-t text-xs font-semibold uppercase leading-3 tracking-sm">
               {post.categories[0].name}
             </span>
           </div>

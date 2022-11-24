@@ -138,12 +138,12 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="bg-midnight-500 px-3.5 py-2 font-ct text-xs font-bold uppercase tracking-sm text-white-500"
+          className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold uppercase tracking-sm text-white-500"
         >
           Post Comment
         </button>
         {showSuccessMsg && (
-          <span className="bg-aquamarine-500 px-3.5 py-2 text-center font-ct text-sm font-normal opacity-0 transition-opacity duration-300 ease-in-out">
+          <span className="bg-aquamarine-500 px-3.5 py-2 text-center font-t text-sm font-normal opacity-0 transition-opacity duration-300 ease-in-out">
             Comment submitted for review
           </span>
         )}

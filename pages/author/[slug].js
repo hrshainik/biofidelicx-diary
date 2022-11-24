@@ -31,7 +31,7 @@ const AuthorDetails = ({ author }) => {
         imageUrl={author?.cover?.url}
         totalItems={author.post.length}
       />
-      <div className="mx-auto mb-8 px-2">
+      <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
           <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
