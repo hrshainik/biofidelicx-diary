@@ -6,7 +6,6 @@ import {
   Header,
   PostWidget,
   RegularPostCard,
-  SpecialPostCard,
 } from '../../components'
 import { getPosts, getTotalPostNumber } from '../../services'
 
@@ -42,21 +41,17 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
         <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
-          {posts.map(({ node: post }, i) =>
-            post.specialPost ? (
-              <SpecialPostCard key={i} post={post} />
-            ) : (
-              <RegularPostCard key={i} post={post} />
-            )
-          )}
+          {posts.map(({ node: post }, i) => (
+            <RegularPostCard key={i} post={post} />
+          ))}
           <div className="pagination">
             <Link href={`/post-page/${currentPageNumber - 1}`}>
-              <a className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold tracking-sm text-white-500">
+              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
                 &larr; Prev
               </a>
             </Link>
             <Link href={`/post-page/${currentPageNumber + 1}`}>
-              <a className="bg-midnight-500 px-3.5 py-2 font-t text-xs font-bold tracking-sm text-white-500">
+              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
                 Next &rarr;
               </a>
             </Link>

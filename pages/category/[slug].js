@@ -21,7 +21,10 @@ const CategoryPost = ({ posts }) => {
         />
         <meta name="author" content="Habibur Rahman" />
       </Head>
-      <Header title={category} />
+      <Header
+        title={category}
+        imageUrl={posts[0].node.categories[0].photo.url}
+      />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>

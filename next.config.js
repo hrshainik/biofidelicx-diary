@@ -12,7 +12,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/post-page/0',
+        source: '/post-page/1',
         destination: '/',
         permanent: true,
       },

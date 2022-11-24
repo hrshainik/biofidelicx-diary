@@ -235,6 +235,9 @@ export const getCategoryPost = async (slug) => {
               categoryColor {
                 hex
               }
+              photo {
+                url
+              }
             }
           }
         }

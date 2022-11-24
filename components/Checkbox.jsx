@@ -5,7 +5,6 @@ const Checkbox = ({
   isCheckboxSelected,
   text,
 }) => {
-  console.log(isCheckboxSelected, value, text)
   return (
     <div className="checkbox">
       <input
