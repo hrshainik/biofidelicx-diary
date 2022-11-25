@@ -12,6 +12,7 @@ const Contact = () => {
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
+          <h2 className="title">Get In Touch</h2>
         </div>
       </div>
     </>

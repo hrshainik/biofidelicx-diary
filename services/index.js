@@ -198,6 +198,15 @@ export const getCategories = async () => {
       categories {
         name
         slug
+        post {
+          title
+        }
+        photo {
+          url
+        }
+        categoryColor {
+          hex
+        }
       }
     }
   `

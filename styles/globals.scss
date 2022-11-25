@@ -250,6 +250,12 @@ blockquote {
   }
 }
 
+.title {
+  @apply m-auto mb-4 text-center font-h text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl;
+  width: 90%;
+  max-width: 600px;
+}
+
 .post-tag {
   @apply relative bg-aquamarine-500 px-3 py-2.5 font-t text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
 

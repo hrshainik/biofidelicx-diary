@@ -4,6 +4,7 @@ import { Header, PostWidget } from '../../components'
 import { getCategories } from '../../services'
 
 const CategoryPost = ({ categories }) => {
+  console.log(categories)
   return (
     <>
       <Head>
