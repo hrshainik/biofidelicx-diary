@@ -1,8 +1,15 @@
 import Head from 'next/head'
-import { AuthorAbout, Header, RegularPostCard } from '../../components'
+import { useRouter } from 'next/router'
+import { AuthorAbout, Header, Loader, RegularPostCard } from '../../components'
 import { getAuthorDetails, getAuthors } from '../../services'
 
 const AuthorDetails = ({ author }) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <Loader />
+  }
+
   return (
     <>
       <Head>
@@ -48,10 +55,10 @@ const AuthorDetails = ({ author }) => {
 export default AuthorDetails
 
 export async function getStaticProps({ params }) {
-  const authorDetails = await getAuthorDetails(params.slug)
+  const author = await getAuthorDetails(params.slug)
 
   return {
-    props: { author: authorDetails },
+    props: { author: author || null },
   }
 }
 

@@ -18,6 +18,8 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   }, [])
 
+  console.log(pageInfo)
+
   return (
     <>
       <Head>
@@ -52,16 +54,39 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
             <RegularPostCard key={i} post={post} />
           ))}
           <div className="pagination">
-            <Link href={`/post-page/${currentPageNumber - 1}`}>
-              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
-                &larr; Prev
-              </a>
-            </Link>
-            <Link href={`/post-page/${currentPageNumber + 1}`}>
-              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
-                Next &rarr;
-              </a>
-            </Link>
+            {pageInfo.hasPreviousPage ? (
+              <Link href={`/post-page/${currentPageNumber - 1}`}>
+                <a className="btn btn-outline cursor-pointer font-t text-xs font-bold tracking-sm">
+                  &larr; Prev
+                </a>
+              </Link>
+            ) : (
+              <Link href={`/post-page/${currentPageNumber - 1}`}>
+                <a
+                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  &larr; Prev
+                </a>
+              </Link>
+            )}
+
+            {pageInfo.hasNextPage ? (
+              <Link href={`/post-page/${currentPageNumber + 1}`}>
+                <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
+                  Next &rarr;
+                </a>
+              </Link>
+            ) : (
+              <Link href={`/post-page/${currentPageNumber + 1}`}>
+                <a
+                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Next &rarr;
+                </a>
+              </Link>
+            )}
           </div>
         </div>
         <div className="col-span-1 lg:col-span-4">

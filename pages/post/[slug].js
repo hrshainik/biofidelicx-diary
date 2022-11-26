@@ -1,15 +1,22 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import {
   Author,
   Comments,
   CommentsForm,
   Header,
+  Loader,
   PostDetail,
   PostWidget,
 } from '../../components'
 import { getPostDetails, getPosts } from '../../services'
 
 const PostDetails = ({ post }) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <Loader />
+  }
   return (
     <>
       <script
@@ -85,7 +92,7 @@ export async function getStaticProps({ params }) {
   const postDetails = await getPostDetails(params.slug)
 
   return {
-    props: { post: postDetails },
+    props: { post: postDetails || null },
   }
 }
 

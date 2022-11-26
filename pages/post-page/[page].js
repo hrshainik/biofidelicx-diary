@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import {
   FeaturedPosts,
   Header,
+  Loader,
   PostWidget,
   RegularPostCard,
 } from '../../components'
@@ -12,6 +14,12 @@ import { getPosts, getTotalPostNumber } from '../../services'
 const limit = 3
 
 const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <Loader />
+  }
+
   useEffect(() => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -45,16 +53,39 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
             <RegularPostCard key={i} post={post} />
           ))}
           <div className="pagination">
-            <Link href={`/post-page/${currentPageNumber - 1}`}>
-              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
-                &larr; Prev
-              </a>
-            </Link>
-            <Link href={`/post-page/${currentPageNumber + 1}`}>
-              <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
-                Next &rarr;
-              </a>
-            </Link>
+            {hasPreviousPage ? (
+              <Link href={`/post-page/${currentPageNumber - 1}`}>
+                <a className="btn btn-outline cursor-pointer font-t text-xs font-bold tracking-sm">
+                  &larr; Prev
+                </a>
+              </Link>
+            ) : (
+              <Link href={`/post-page/${currentPageNumber - 1}`}>
+                <a
+                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  &larr; Prev
+                </a>
+              </Link>
+            )}
+
+            {hasNextPage ? (
+              <Link href={`/post-page/${currentPageNumber + 1}`}>
+                <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
+                  Next &rarr;
+                </a>
+              </Link>
+            ) : (
+              <Link href={`/post-page/${currentPageNumber + 1}`}>
+                <a
+                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Next &rarr;
+                </a>
+              </Link>
+            )}
           </div>
         </div>
         <div className="col-span-1 lg:col-span-4">
@@ -106,7 +137,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      currentPageNumber: Number(params.page),
+      currentPageNumber: Number(params.page) || null,
       posts,
       ...pageInfo,
     },
