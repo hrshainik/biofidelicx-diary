@@ -45,7 +45,10 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
         <meta name="author" content="Habibur Rahman" />
       </Head>
 
-      <Header title="Main Header" imageUrl={'/hero-img.jpg'} />
+      <Header
+        title="Come here to fall in love with bio-science."
+        imageUrl={'/hero-img.jpg'}
+      />
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
         <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
@@ -54,7 +57,13 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
           ))}
           <div className="pagination">
             {hasPreviousPage ? (
-              <Link href={`/post-page/${currentPageNumber - 1}`}>
+              <Link
+                href={`${
+                  currentPageNumber === 2
+                    ? '/'
+                    : `/post-page/${currentPageNumber - 1}`
+                }`}
+              >
                 <a className="btn btn-outline cursor-pointer font-t text-xs font-bold tracking-sm">
                   &larr; Prev
                 </a>

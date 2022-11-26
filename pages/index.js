@@ -18,8 +18,6 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   }, [])
 
-  console.log(pageInfo)
-
   return (
     <>
       <Head>
