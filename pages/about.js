@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import { Header } from '../components'
-import AuthorCard from '../components/AuthorCard'
+import TeamMemberCard from '../components/TeamMemberCard'
 
 const About = () => {
   return (
@@ -23,11 +23,11 @@ const About = () => {
             </p>
           </div>
           <h2 className="title">Our Leading, Strong and Creative Team</h2>
-          <div className="author-cards">
-            <AuthorCard />
-            <AuthorCard />
-            <AuthorCard />
-            <AuthorCard />
+          <div className="team-cards">
+            <TeamMemberCard />
+            <TeamMemberCard />
+            <TeamMemberCard />
+            <TeamMemberCard />
           </div>
         </div>
       </div>

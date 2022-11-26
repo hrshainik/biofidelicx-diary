@@ -487,7 +487,6 @@ blockquote {
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 25px;
   list-style: none;
   text-align: center;
   flex: 1;
@@ -507,12 +506,6 @@ blockquote {
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
-
-// .nav-links:hover {
-//   background-color: #1888ff;
-//   border-radius: 4px;
-//   transition: all 0.2s ease-out;
-// }
 
 .nav-links-mobile {
   display: none;
@@ -542,6 +535,7 @@ blockquote {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    grid-gap: 25px;
     width: 100%;
     height: calc(100vh - 51px);
     position: absolute;
@@ -721,5 +715,69 @@ blockquote {
   }
   .check {
     stroke-dashoffset: 0;
+  }
+}
+
+.team-cards {
+  @apply flex flex-col gap-14;
+
+  .team-card {
+    @apply relative;
+
+    &-img {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      width: 70%;
+      height: 580px;
+    }
+
+    &-info {
+      @apply absolute bg-white-500;
+      top: 50px;
+      width: 90%;
+      max-width: 440px;
+      border: 5px solid black;
+      padding: 22px 36px;
+
+      & > h2 {
+        font-size: 42px;
+        line-height: 90%;
+      }
+
+      & > span {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      & > p {
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .team-card:nth-child(even) {
+    & > .team-card-img {
+      right: 0;
+      margin-left: auto;
+    }
+
+    & > .team-card-info {
+      left: 0;
+    }
+  }
+
+  .team-card:nth-child(odd) {
+    & > .team-card-img {
+      left: 0;
+      margin-right: auto;
+    }
+
+    & > .team-card-info {
+      right: 0;
+    }
   }
 }

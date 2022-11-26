@@ -121,47 +121,31 @@ const Navbar = () => {
           </svg>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className="nav-item">
-            <Link href="/" className="nav-links" onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+          <Link href="/" className="nav-links" onClick={closeMobileMenu}>
+            <li className="nav-item">Home</li>
+          </Link>
+          <Link
+            href="https://biofidelicx-quiz.vercel.app"
+            className="nav-links"
+            onClick={closeMobileMenu}
           >
-            <Link
-              href="https://biofidelicx-quiz.vercel.app"
-              className="nav-links"
-              onClick={closeMobileMenu}
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
             >
               Quiz
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/about" className="nav-links" onClick={closeMobileMenu}>
-              About
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              href="/contact"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Contact
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              href="/sign-up"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Sign Up
-            </Link>
-          </li>
+            </li>
+          </Link>
+          <Link href="/about" className="nav-links" onClick={closeMobileMenu}>
+            <li className="nav-item">About</li>
+          </Link>
+          <Link href="/contact" className="nav-links" onClick={closeMobileMenu}>
+            <li className="nav-item">Contact</li>
+          </Link>
+          <Link href="/sign-up" className="nav-links" onClick={closeMobileMenu}>
+            <li className="nav-item">Sign Up</li>
+          </Link>
         </ul>
         <div className="share-link">
           <a
