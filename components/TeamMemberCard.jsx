@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 
-const TeamMemberCard = () => {
+const TeamMemberCard = ({ name, designation, bio, img }) => {
   return (
     <div className="team-card">
       <div className="team-card-img relative">
         <Image
-          src={'/dummymember.jpg'}
+          src={`/${img}`}
           layout="fill"
           className="h-full w-full object-cover"
           loading="lazy"
@@ -14,13 +14,9 @@ const TeamMemberCard = () => {
         />
       </div>
       <div className="team-card-info">
-        <h2>Name</h2>
-        <span>Designation</span>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita
-          tempore, recusandae voluptatibus minima dolorum harum eos dolor nisi.
-          Accusamus, quidem.
-        </p>
+        <h2>{name}</h2>
+        <span>{designation}</span>
+        <p>{bio}</p>
         <div className="socials"></div>
       </div>
     </div>

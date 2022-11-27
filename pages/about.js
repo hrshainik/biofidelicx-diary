@@ -13,9 +13,9 @@ const About = () => {
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
-          <div className="mission mb-12">
+          <div className="mb-10">
             <h2 className="title">Our Mission</h2>
-            <p className="text-center">
+            <p className="para">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
               enim iusto aspernatur ut? Explicabo culpa veritatis mollitia
               sapiente. Accusamus odit ab repellat laudantium labore id, commodi
@@ -24,10 +24,24 @@ const About = () => {
           </div>
           <h2 className="title">Our Leading, Strong and Creative Team</h2>
           <div className="team-cards">
-            <TeamMemberCard />
-            <TeamMemberCard />
-            <TeamMemberCard />
-            <TeamMemberCard />
+            <TeamMemberCard
+              name="Habibur Rahman"
+              designation="CEO"
+              bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+              enim iusto aspernatur ut? Explicabo culpa veritatis mollitia
+              sapiente. Accusamus odit ab repellat laudantium labore id, commodi
+              enim placeat fugiat tempore!"
+              img="dummymember.jpg"
+            />
+            <TeamMemberCard
+              name="Mehedi Hasan"
+              designation="Font-End Developer"
+              bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+              enim iusto aspernatur ut? Explicabo culpa veritatis mollitia
+              sapiente. Accusamus odit ab repellat laudantium labore id, commodi
+              enim placeat fugiat tempore!"
+              img="hero-img.jpg"
+            />
           </div>
         </div>
       </div>

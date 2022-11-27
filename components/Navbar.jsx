@@ -121,30 +121,39 @@ const Navbar = () => {
           </svg>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <Link href="/" className="nav-links" onClick={closeMobileMenu}>
-            <li className="nav-item">Home</li>
+          <Link href="/" className="nav-links">
+            <a onClick={closeMobileMenu}>
+              <li className="nav-item">Home</li>
+            </a>
           </Link>
           <Link
             href="https://biofidelicx-quiz.vercel.app"
             className="nav-links"
-            onClick={closeMobileMenu}
           >
-            <li
-              className="nav-item"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            >
-              Quiz
-            </li>
+            <a onClick={closeMobileMenu}>
+              <li
+                className="nav-item"
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+              >
+                Quiz
+              </li>
+            </a>
           </Link>
           <Link href="/about" className="nav-links" onClick={closeMobileMenu}>
-            <li className="nav-item">About</li>
+            <a onClick={closeMobileMenu}>
+              <li className="nav-item">About</li>
+            </a>
           </Link>
           <Link href="/contact" className="nav-links" onClick={closeMobileMenu}>
-            <li className="nav-item">Contact</li>
+            <a onClick={closeMobileMenu}>
+              <li className="nav-item">Contact</li>
+            </a>
           </Link>
           <Link href="/sign-up" className="nav-links" onClick={closeMobileMenu}>
-            <li className="nav-item">Sign Up</li>
+            <a onClick={closeMobileMenu}>
+              <li className="nav-item">Sign Up</li>
+            </a>
           </Link>
         </ul>
         <div className="share-link">
