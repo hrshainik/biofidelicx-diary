@@ -324,115 +324,51 @@ blockquote {
 }
 
 .share-link {
-  border-left: 1px solid #535353;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0 1.4rem;
+  @apply flex h-full cursor-pointer items-center justify-center border-l border-solid border-l-[#535353] px-[1.4rem];
 }
 
 @media screen and (max-width: 960px) {
   .navbar {
-    justify-content: space-between;
+    @apply justify-between;
   }
 
   .nav-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 25px;
-    width: 100%;
-    height: calc(100vh - 51px);
-    position: absolute;
-    top: 51px;
-    left: -100%;
-    opacity: 1;
+    @apply absolute top-[51px] -left-full flex h-[calc(100vh_-_51px)] w-full flex-col items-center justify-center gap-6 opacity-100;
     transition: all 0.5s ease-in;
   }
 
   .nav-menu.active {
-    background: #031231;
-    left: 0;
-    opacity: 1;
+    @apply left-0 z-[1] bg-midnight-500 opacity-100;
     transition: all 0.5s ease-in;
-    z-index: 1;
-  }
-
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
-
-  .nav-links:hover {
-    background-color: #1888ff;
-    border-radius: 0;
   }
 
   .menu-icon {
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
-    margin: 0 12px;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
-  }
-
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 80%;
-    background: #1888ff;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-
-  .nav-links-mobile:hover {
-    background: #fff;
-    color: #1888ff;
-    transition: 250ms;
+    @apply mx-3 block cursor-pointer;
   }
 
   .nav-item {
-    border: none;
+    @apply border-none;
   }
 
   .share-link {
-    display: none;
+    @apply hidden;
   }
 }
 
 // Menu Icon
 .ham {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  @apply cursor-pointer select-none;
   transition: transform 400ms;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .hamRotate.menuActive {
-  transform: rotate(45deg);
+  @apply rotate-45;
 }
 
 .line {
-  fill: none;
+  @apply fill-transparent stroke-white-500 stroke-[5.5];
+  // fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #fff;
-  stroke-width: 5.5;
   stroke-linecap: square;
 }
 
@@ -451,48 +387,26 @@ blockquote {
 
 // Dropdown
 .dropdown-menu {
-  background: red;
-  width: 200px;
-  position: absolute;
-  top: 80px;
-  list-style: none;
-  text-align: start;
-}
-
-.dropdown-menu li {
-  background: #1888ff;
-  cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-  background: #5cabff;
+  @apply absolute top-20 w-52 list-none bg-rose-500 text-left;
 }
 
 .dropdown-menu.clicked {
-  display: none;
+  @apply hidden;
 }
 
 .dropdown-link {
-  display: block;
-  height: 100%;
-  width: 100%;
+  @apply block h-full w-full p-4 text-white-500;
   text-decoration: none;
-  color: #fff;
-  padding: 16px;
 }
 
-@media screen and (max-width: 960px) {
-  .fa-caret-down {
-    display: none;
-  }
-}
+// @media screen and (max-width: 960px) {
+//   .fa-caret-down {
+//     display: none;
+//   }
+// }
 
 .pagination {
-  @apply col-span-1 flex justify-between;
-
-  @media only screen and (min-width: 768px) {
-    grid-column: 1 / span 2;
-  }
+  @apply col-span-1 flex justify-between md:col-[1_/_span_2];
 }
 
 .checkbox {
@@ -500,20 +414,22 @@ blockquote {
 }
 
 .checkbox svg {
-  stroke: #031231;
+  @apply stroke-midnight-500;
 }
 
 .box {
+  @apply fill-transparent;
   stroke-dasharray: 320;
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.3s linear;
-  fill: none;
+  // fill: none;
 }
 
 .check {
+  @apply fill-transparent;
   stroke-dasharray: 70;
   stroke-dashoffset: 70;
-  fill: none;
+  // fill: none;
   transition: stroke-dashoffset 0.3s linear;
 }
 
@@ -527,80 +443,41 @@ blockquote {
 }
 
 .team-cards {
-  @apply mt-8 flex flex-col gap-32;
-  margin-bottom: 6rem;
-
-  @media only screen and (min-width: 768px) {
-    width: 90%;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    @apply gap-14;
-  }
+  @apply mt-8 mb-24 flex flex-col gap-32 md:w-[90%] lg:gap-14;
 
   .team-card {
     @apply relative;
 
     &-img {
-      position: relative;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      height: 580px;
-
-      @media only screen and (min-width: 768px) {
-        width: 90%;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        width: 78%;
-      }
+      @apply relative inset-y-0 h-[580px] w-full md:w-[90%] lg:w-[78%];
     }
 
     &-info {
-      @apply absolute bg-white-500;
-      bottom: -6rem;
-      width: 90%;
-      max-width: 440px;
-      border: 5px solid black;
-      padding: 22px 36px;
-
-      @media only screen and (min-width: 1024px) {
-        top: 50px;
-        bottom: unset;
-      }
+      @apply absolute -bottom-24 w-[90%] max-w-[440px] border-4 border-solid border-midnight-500 bg-white-500 py-6 px-9 lg:top-12 lg:bottom-[unset];
 
       & > h2 {
-        font-size: 42px;
-        line-height: 90%;
+        @apply text-[42px] leading-[90%];
       }
 
       & > span {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        display: inline-block;
+        @apply mb-3 inline-block text-sm font-bold;
       }
 
       & > p {
-        font-size: 14px;
-        font-weight: normal;
+        @apply text-sm;
       }
     }
   }
 
   .team-card:nth-child(even) {
     & > .team-card-img {
-      right: 0;
-      margin-left: auto;
+      @apply right-0 ml-auto;
     }
 
     & > .team-card-info {
-      left: 50%;
-      transform: translateX(-50%);
+      @apply left-1/2 -translate-x-1/2 md:left-0;
 
       @media only screen and (min-width: 768px) {
-        left: 0;
         transform: unset;
       }
     }
@@ -608,16 +485,13 @@ blockquote {
 
   .team-card:nth-child(odd) {
     & > .team-card-img {
-      left: 0;
-      margin-right: auto;
+      @apply left-0 mr-auto;
     }
 
     & > .team-card-info {
-      left: 50%;
-      transform: translateX(-50%);
+      @apply left-1/2 -translate-x-1/2 md:right-0;
 
       @media only screen and (min-width: 768px) {
-        right: 0;
         left: unset;
         transform: unset;
       }

@@ -121,15 +121,12 @@ const Navbar = () => {
           </svg>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <Link href="/" className="nav-links">
+          <Link href="/">
             <a onClick={closeMobileMenu}>
               <li className="nav-item">Home</li>
             </a>
           </Link>
-          <Link
-            href="https://biofidelicx-quiz.vercel.app"
-            className="nav-links"
-          >
+          <Link href="https://biofidelicx-quiz.vercel.app">
             <a onClick={closeMobileMenu}>
               <li
                 className="nav-item"
@@ -140,17 +137,17 @@ const Navbar = () => {
               </li>
             </a>
           </Link>
-          <Link href="/about" className="nav-links" onClick={closeMobileMenu}>
+          <Link href="/about" onClick={closeMobileMenu}>
             <a onClick={closeMobileMenu}>
               <li className="nav-item">About</li>
             </a>
           </Link>
-          <Link href="/contact" className="nav-links" onClick={closeMobileMenu}>
+          <Link href="/contact" onClick={closeMobileMenu}>
             <a onClick={closeMobileMenu}>
               <li className="nav-item">Contact</li>
             </a>
           </Link>
-          <Link href="/sign-up" className="nav-links" onClick={closeMobileMenu}>
+          <Link href="/sign-up" onClick={closeMobileMenu}>
             <a onClick={closeMobileMenu}>
               <li className="nav-item">Sign Up</li>
             </a>
