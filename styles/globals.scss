@@ -2,22 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-  color: #031231;
-  background-color: #05ffdb;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #fff;
-  color: #031231;
+  @apply bg-white-500 font-t text-midnight-500 selection:bg-aquamarine-500 selection:text-midnight-500;
 }
 
 // Scrollbar Design
@@ -52,13 +44,10 @@ code::-webkit-scrollbar-thumb {
 // Recheck default tags design
 .post-content {
   & a {
-    color: inherit;
+    @apply mr-3 inline-block leading-none;
     text-decoration: none;
     box-shadow: inset 0 -6px 0 0 rgba(5, 255, 219, 0.75);
     transition: all 300ms ease;
-    display: inline-block;
-    line-height: 100%;
-    margin-right: 12px;
 
     &:hover {
       box-shadow: inset 0 -24px 0 0 rgba(5, 255, 219, 0.75);
@@ -66,7 +55,7 @@ code::-webkit-scrollbar-thumb {
   }
 
   & > * {
-    margin: 0.5em 0;
+    @apply my-2;
   }
 
   & > h1,
@@ -75,7 +64,7 @@ code::-webkit-scrollbar-thumb {
   h4,
   h5,
   h6 {
-    margin-bottom: 0em;
+    @apply mb-0;
   }
 }
 
@@ -113,61 +102,42 @@ h6 {
 }
 
 code {
-  padding: 3px;
-  background-color: rgb(248, 249, 251);
-  border-radius: 4px;
-  border: 1px solid rgb(218, 222, 237);
-  font-size: 14px;
+  @apply rounded  bg-white-600 p-[3px] text-sm;
 }
 
 pre {
-  @apply block p-2;
-  background-color: rgb(248, 249, 251);
-  border-radius: 4px;
-  border: 1px solid rgb(218, 222, 237);
+  @apply block rounded border border-solid border-white-600 p-2;
 }
 
 blockquote {
-  @apply border-l-2 border-aquamarine-500;
+  @apply my-4 border-l-2 border-aquamarine-500 pl-2 leading-7;
   margin: 1rem 0 !important;
-  line-height: 26px;
-  padding-left: 10px;
-  line-height: 30px;
 }
 
 // Tailwind Components
 @layer components {
   .folded-corner {
-    @apply absolute right-0 bottom-0 h-0 w-0 bg-white-500;
-    border: 1.6rem solid transparent;
+    @apply absolute right-0 bottom-0 h-0 w-0 border-[25px] border-solid border-transparent bg-white-500;
     border-color: #c1fff6 transparent transparent #c1fff6;
   }
 }
 
 // Custom Classes
 .dot {
-  width: 4px;
-  height: 4px;
-  background-color: #374151;
-  border-radius: 100vh;
+  @apply h-1 w-1 rounded-full bg-[#374151];
 }
 
 .hero {
-  @apply relative;
-  min-height: 65vh;
-  margin-top: 52px;
+  @apply relative mt-[52px] min-h-[65vh];
 
   @media only screen and (max-width: 768px) {
-    min-height: 55vh;
+    @apply min-h-[55vh];
   }
 }
 
 .btn {
-  @apply relative flex items-center justify-center py-2 px-4 text-midnight-500;
-  font-size: 12px;
-  font-weight: 400;
+  @apply relative flex items-center justify-center py-2 px-4 text-xs font-normal uppercase text-midnight-500;
   text-decoration: none;
-  text-transform: uppercase;
 
   &:hover {
     text-decoration: none;
@@ -175,71 +145,25 @@ blockquote {
 }
 
 .btn-outline {
-  border: 1px solid;
-  overflow: hidden;
-  position: relative;
+  @apply relative overflow-hidden border border-solid border-midnight-500 after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:content-[""] hover:after:left-[120%];
 
   span {
-    z-index: 20;
+    @apply z-20;
   }
 
   &:after {
-    background: #05ffdb;
-    content: '';
-    height: 155px;
-    left: -75px;
-    opacity: 0.2;
-    position: absolute;
-    top: -50px;
-    transform: rotate(35deg);
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-    width: 50px;
   }
 }
 
 .btn-outline:hover {
   &:after {
-    left: 120%;
-    transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1);
-  }
-}
-
-.btn-fill {
-  border: 1px solid;
-  overflow: hidden;
-  position: relative;
-  background-color: #031231;
-  color: #fff;
-
-  span {
-    z-index: 20;
-  }
-
-  &:after {
-    background: #05ffdb;
-    content: '';
-    height: 155px;
-    left: -75px;
-    opacity: 0.2;
-    position: absolute;
-    top: -50px;
-    transform: rotate(35deg);
-    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-    width: 50px;
-  }
-}
-
-.btn-fill:hover {
-  &:after {
-    left: 120%;
     transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
 .hero-l {
-  @apply absolute top-1/2 left-1/2 flex -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center;
-  max-width: 100rem;
-  width: 90%;
+  @apply absolute top-1/2 left-1/2 flex w-[90%] max-w-[100rem] -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center;
 }
 
 .main-title {
@@ -251,61 +175,28 @@ blockquote {
 }
 
 .title {
-  @apply m-auto mb-4 text-center font-h text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl;
-  width: 75%;
-  max-width: 600px;
+  @apply m-auto mb-4 w-3/4 max-w-xl text-center font-h text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl;
 }
 
 .para {
-  @apply m-auto mb-4 text-center font-t;
-  width: 90%;
-  max-width: 800px;
+  @apply m-auto mb-4 w-[90%] max-w-3xl text-center font-t;
 }
 
 .post-tag {
   @apply relative bg-aquamarine-500 px-3 py-2.5 font-t text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
-
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    top: 50%;
-    transform: translateY(-50%);
-    // background-color: rgb(5, 255, 219);
-    opacity: 0.45;
-    width: 70px;
-    height: 2px;
-  }
-
-  &::before {
-    right: 105%;
-  }
-
-  &::after {
-    left: 105%;
-  }
 }
 
 .card {
   &:hover {
     & .card-con {
+      @apply before:opacity-100;
       & .shadow-box {
-        opacity: 0;
+        @apply opacity-0;
       }
-
-      &::before {
-        opacity: 1;
-      }
-
-      // &-text {
-      //   & h1 {
-      //     color: #05ffdb;
-      //   }
-      // }
     }
 
     & .card-img {
-      transform: scale(1.075);
+      @apply scale-[1.075];
     }
   }
 
@@ -314,37 +205,21 @@ blockquote {
   }
 
   & .card-con {
-    position: relative;
-    background-color: #fff;
-    z-index: 20;
+    @apply relative z-20 bg-white-500 before:absolute before:top-0 before:left-0 before:z-[1] before:h-full before:w-full before:opacity-0 before:content-[""];
 
     &::before {
-      position: absolute;
-      z-index: 1;
-      content: '';
-      top: 0;
-      left: 0;
       box-shadow: 0 0 13px 5px rgb(188 188 188 / 30%);
-      height: 100%;
-      width: 100%;
-      opacity: 0;
       transition: opacity 0.6s ease-in-out;
     }
 
     & .shadow-box {
-      position: absolute;
-      top: 0;
-      opacity: 1;
-      height: 45px;
-      width: 100%;
-      z-index: 1;
+      @apply absolute top-0 z-[1] h-11 w-full opacity-100;
       box-shadow: 0 0 13px 5px rgb(188 188 188 / 30%);
       transition: opacity 0.5s ease-in-out;
     }
 
     &-text {
-      background-color: #fff;
-      z-index: 100;
+      @apply z-[100] bg-white-500;
 
       & h1 {
         transition: color 0.3s ease-in-out;
@@ -368,56 +243,29 @@ blockquote {
     }
 
     & .f-img {
-      transform: scale(1);
+      @apply scale-100;
     }
   }
 
   & .f-img {
-    @apply transition-all delay-300 ease-in;
-    transform: scale(1.075);
+    @apply scale-[1.075] transition-all delay-300 ease-in;
   }
 
   &-up {
-    @apply relative;
-    height: 480px;
-
-    @media only screen and (max-width: 1024px) {
-      height: 400px;
-    }
-
-    @media only screen and (max-width: 768px) {
-      height: 260px;
-    }
-
-    @media only screen and (max-width: 640px) {
-      height: 200px;
-    }
+    @apply relative h-[480px] sm:h-[200px] md:h-[260px] lg:h-[400px];
   }
 
   &-title {
     @apply absolute inset-3 flex flex-col items-center justify-center border-2 border-white-500 p-4 text-white-500 transition-all delay-300 ease-in md:inset-5 md:border-4 lg:inset-12;
 
     & > span {
-      @apply relative pb-2 font-t text-sm font-bold uppercase tracking-sm;
-      color: rgba(255, 255, 255, 0.6);
-
-      &::after {
-        content: '';
-        position: absolute;
-        height: 2px;
-        width: 50px;
-        background-color: rgba(255, 255, 255, 0.4);
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-      }
+      @apply relative pb-2 font-t text-sm font-bold uppercase tracking-sm text-white-500/60 after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:w-[50px] after:-translate-x-1/2 after:bg-white-500/40 after:content-[""];
     }
   }
 }
 
 .logo {
-  @apply cursor-pointer;
-  width: 300px;
+  @apply w-[175px] cursor-pointer md:w-[300px];
 
   @media only screen and (max-width: 768px) {
     width: 175px !important;
@@ -428,24 +276,7 @@ blockquote {
   @apply container relative z-20 mx-auto -mt-16 bg-white-500 p-4 sm:p-8;
 
   & .post-shadow {
-    position: absolute;
-    top: 4rem;
-    height: 90px;
-    width: 100%;
-    left: 0;
-    right: 0;
-
-    &::before {
-      content: url('../public/shadow.png');
-      left: -8px;
-      position: absolute;
-    }
-
-    &::after {
-      content: url('../public/shadow-inverse.png');
-      right: -8px;
-      position: absolute;
-    }
+    @apply absolute top-16 left-0 right-0 h-[90px] w-full before:absolute before:-left-2 before:content-[url('../public/shadow.png')] after:absolute after:-right-2 after:content-[url(../public/shadow-inverse.png)];
   }
 }
 
@@ -464,61 +295,32 @@ blockquote {
 
 // Navbar
 .navbar {
-  background-color: #031231;
-  height: 52px;
-  border-bottom: 1px solid #535353;
-  border-top: 1px solid #535353;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  color: white;
-  z-index: 99999;
-  font-family: 'Montserrat';
-  text-transform: uppercase;
-  top: 0;
-  left: 0;
-  right: 0;
-  @apply fixed text-xs font-bold;
+  @apply fixed inset-x-0 top-0 z-[99999] flex h-[52px] items-center justify-center border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-sm font-bold uppercase text-white-500;
 }
 
 .navbar-logo {
-  justify-self: start;
-  padding: 0 1.4rem;
-  cursor: pointer;
+  @apply cursor-pointer justify-self-start px-5 text-3xl;
   text-decoration: none;
-  font-size: 2rem;
 }
 
 .nav-menu {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  list-style: none;
-  text-align: center;
-  flex: 1;
+  @apply grid flex-auto list-none grid-cols-5 text-center;
+  // grid-template-columns: repeat(5, auto);
+  // flex: 1;
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-left: 1px solid #535353;
-  height: 52px;
-  color: rgba($color: #fff, $alpha: 0.5);
-  @apply cursor-pointer tracking-md;
+  @apply flex h-[52px] cursor-pointer items-center justify-center border-l border-solid border-l-[#535353] tracking-md text-white-500/50;
 }
 
 .nav-links {
+  @apply px-4 py-2;
   text-decoration: none;
-  padding: 0.5rem 1rem;
 }
 
-.nav-links-mobile {
-  display: none;
-}
-
+.nav-links-mobile,
 .menu-icon {
-  display: none;
+  @apply hidden;
 }
 
 .share-link {
@@ -552,7 +354,7 @@ blockquote {
   }
 
   .nav-menu.active {
-    background: #080810;
+    background: #031231;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease-in;
@@ -631,7 +433,7 @@ blockquote {
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   stroke: #fff;
   stroke-width: 5.5;
-  stroke-linecap: round;
+  stroke-linecap: square;
 }
 
 .ham4 .top {

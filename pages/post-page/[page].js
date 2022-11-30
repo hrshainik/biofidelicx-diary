@@ -71,7 +71,7 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
             ) : (
               <Link href={`/post-page/${currentPageNumber - 1}`}>
                 <a
-                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm"
+                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
                   &larr; Prev
@@ -88,7 +88,7 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
             ) : (
               <Link href={`/post-page/${currentPageNumber + 1}`}>
                 <a
-                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm"
+                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
                   Next &rarr;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Pagination } from 'swiper'
+import { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -19,10 +19,7 @@ const FeaturedPosts = () => {
 
   return (
     <div className="w-full">
-      <div
-        className="container mx-auto mb-8 p-5"
-        style={{ marginTop: '-7rem' }}
-      >
+      <div className="container mx-auto mb-8" style={{ marginTop: '-7rem' }}>
         <p className="text-center font-h text-xl font-bold leading-loose text-white-500 md:text-left">
           The Highlights
         </p>
@@ -35,7 +32,7 @@ const FeaturedPosts = () => {
           pagination={{
             dynamicBullets: true,
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           slidesPerView={1.5}
           centeredSlides={true}
           loop
