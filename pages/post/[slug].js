@@ -97,7 +97,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const limit = 3
+  const limit = 10
   const offset = 0
   const { edges: posts } = await getPosts(limit, offset)
 

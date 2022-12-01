@@ -11,8 +11,6 @@ import {
 } from '../../components'
 import { getPosts, getTotalPostNumber } from '../../services'
 
-const limit = 3
-
 const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
   const router = useRouter()
 
@@ -140,6 +138,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const limit = 10
   const offset = Number((params.page - 1) * limit)
 
   const { edges: posts, pageInfo } = await getPosts(limit, offset)

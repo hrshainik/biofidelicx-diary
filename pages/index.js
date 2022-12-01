@@ -10,8 +10,6 @@ import {
 } from '../components'
 import { getPosts, getSpecialPost } from '../services'
 
-let limit = 3
-
 const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
   useEffect(() => {
     let vh = window.innerHeight * 0.01
@@ -100,9 +98,10 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
 export default Home
 
 export async function getStaticProps() {
+  const limit = 10
   const offset = 0
 
-  const { edges: posts, pageInfo } = await getPosts(limit, 0)
+  const { edges: posts, pageInfo } = await getPosts(limit, offset)
   const { edges: specialPost } = await getSpecialPost()
 
   return {

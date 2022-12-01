@@ -2,124 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 body {
   @apply bg-white-500 font-t text-midnight-500 selection:bg-aquamarine-500 selection:text-midnight-500;
 }
 
 // Scrollbar Design
 body::-webkit-scrollbar {
-  width: 8px;
+  @apply w-2;
 }
 
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  @apply shadow-[inset_0_0_6px_rgba(0,0,0,0.3)];
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #031231;
+  @apply bg-midnight-500;
 }
 
 pre::-webkit-scrollbar,
 code::-webkit-scrollbar {
-  height: 6px;
+  @apply h-[6px];
 }
 
 pre::-webkit-scrollbar-track,
 code::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  @apply shadow-[inset_0_0_6px_rgba(0,0,0,0.3)];
 }
 
 pre::-webkit-scrollbar-thumb,
 code::-webkit-scrollbar-thumb {
-  background-color: #031231;
+  @apply bg-midnight-500;
 }
 
 // Default Tag
 // Recheck default tags design
 .post-content {
   & a {
-    @apply mr-3 inline-block leading-none;
-    text-decoration: none;
-    box-shadow: inset 0 -6px 0 0 rgba(5, 255, 219, 0.75);
-    transition: all 300ms ease;
-
-    &:hover {
-      box-shadow: inset 0 -24px 0 0 rgba(5, 255, 219, 0.75);
-    }
+    @apply mr-3 inline-block leading-none no-underline shadow-[inset_0_-6px_0_0_rgba(5,255,219,0.75)] transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_-24px_0_0_rgba(5,255,219,0.75)];
   }
 
   & > * {
     @apply my-2;
   }
 
-  & > h1,
+  h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply mb-0;
+    @apply mb-0 font-h font-bold;
+  }
+
+  h1 {
+    @apply text-sm;
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  code {
+    @apply rounded  bg-white-600 p-[3px] text-sm;
+  }
+
+  pre {
+    @apply block rounded border border-solid border-white-600 p-2;
+  }
+
+  blockquote {
+    @apply my-4 border-l-2 border-aquamarine-500 pl-2 leading-7;
   }
 }
 
-.post-content h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-h font-bold;
-}
-
-h1 {
-  font-size: 30px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 16px;
-}
-
-h6 {
-  font-size: 14px;
-}
-
-code {
-  @apply rounded  bg-white-600 p-[3px] text-sm;
-}
-
-pre {
-  @apply block rounded border border-solid border-white-600 p-2;
-}
-
-blockquote {
-  @apply my-4 border-l-2 border-aquamarine-500 pl-2 leading-7;
-  margin: 1rem 0 !important;
-}
-
-// Tailwind Components
-@layer components {
-  .folded-corner {
-    @apply absolute right-0 bottom-0 h-0 w-0 border-[25px] border-solid border-transparent bg-white-500;
-    border-color: #c1fff6 transparent transparent #c1fff6;
-  }
+.folded-corner {
+  @apply absolute right-0 bottom-0 h-0 w-0 border-[25px] border-solid border-transparent border-t-aquamarine-200 border-r-transparent border-b-transparent border-l-aquamarine-200 bg-white-500;
 }
 
 // Custom Classes
@@ -128,37 +102,18 @@ blockquote {
 }
 
 .hero {
-  @apply relative mt-[52px] min-h-[65vh];
-
-  @media only screen and (max-width: 768px) {
-    @apply min-h-[55vh];
-  }
+  @apply relative mt-[52px] min-h-[65vh] md:min-h-[55vh];
 }
 
 .btn {
-  @apply relative flex items-center justify-center py-2 px-4 text-xs font-normal uppercase text-midnight-500;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-  }
+  @apply relative flex items-center justify-center py-2 px-4 text-xs font-normal uppercase text-midnight-500 no-underline;
 }
 
 .btn-outline {
-  @apply relative overflow-hidden border border-solid border-midnight-500 after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:content-[""] hover:after:left-[120%];
+  @apply relative overflow-hidden border border-solid border-midnight-500 after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
 
   span {
     @apply z-20;
-  }
-
-  &:after {
-    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-  }
-}
-
-.btn-outline:hover {
-  &:after {
-    transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
@@ -168,10 +123,6 @@ blockquote {
 
 .main-title {
   @apply text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl;
-
-  @media only screen and (max-width: 768px) {
-    @apply py-2;
-  }
 }
 
 .title {
@@ -201,28 +152,21 @@ blockquote {
   }
 
   &-img {
-    transition: transform 0.3s ease-in-out;
+    @apply transition-transform duration-300 ease-in-out;
   }
 
   & .card-con {
-    @apply relative z-20 bg-white-500 before:absolute before:top-0 before:left-0 before:z-[1] before:h-full before:w-full before:opacity-0 before:content-[""];
-
-    &::before {
-      box-shadow: 0 0 13px 5px rgb(188 188 188 / 30%);
-      transition: opacity 0.6s ease-in-out;
-    }
+    @apply relative z-20 bg-white-500 before:absolute before:top-0 before:left-0 before:z-[1] before:h-full before:w-full before:opacity-0 before:shadow-[0_0_13px_5px_rgba(188,188,188,0.3)] before:transition-opacity before:duration-700 before:content-[""];
 
     & .shadow-box {
-      @apply absolute top-0 z-[1] h-11 w-full opacity-100;
-      box-shadow: 0 0 13px 5px rgb(188 188 188 / 30%);
-      transition: opacity 0.5s ease-in-out;
+      @apply absolute top-0 z-[1] h-11 w-full opacity-100 shadow-[0_0_13px_5px_rgba(188,188,188,0.3)] transition-opacity duration-500 ease-in-out;
     }
 
     &-text {
       @apply z-[100] bg-white-500;
 
       & h1 {
-        transition: color 0.3s ease-in-out;
+        @apply transition-colors duration-300 ease-in-out;
       }
     }
   }
@@ -231,15 +175,7 @@ blockquote {
 .sp-card {
   &:hover {
     & .sp-card-title {
-      @apply inset-8;
-
-      @media only screen and (max-width: 1024px) {
-        @apply inset-6;
-      }
-
-      @media only screen and (max-width: 640px) {
-        @apply inset-4;
-      }
+      @apply inset-4 sm:inset-6 lg:inset-8;
     }
 
     & .f-img {
@@ -266,10 +202,6 @@ blockquote {
 
 .logo {
   @apply w-[175px] cursor-pointer md:w-[300px];
-
-  @media only screen and (max-width: 768px) {
-    width: 175px !important;
-  }
 }
 
 .post-details {
@@ -290,23 +222,20 @@ blockquote {
 
 // Swiper Library
 .swiper-pagination-bullet {
-  background-color: #031231 !important;
+  @apply bg-midnight-500;
 }
 
 // Navbar
 .navbar {
-  @apply fixed inset-x-0 top-0 z-[99999] flex h-[52px] items-center justify-center border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-sm font-bold uppercase text-white-500;
+  @apply fixed inset-x-0 top-0 z-[99999] flex h-[52px] items-center justify-between border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-sm font-bold uppercase text-white-500 md:justify-center;
 }
 
 .navbar-logo {
-  @apply cursor-pointer justify-self-start px-5 text-3xl;
-  text-decoration: none;
+  @apply cursor-pointer justify-self-start px-5 text-3xl no-underline;
 }
 
 .nav-menu {
   @apply grid flex-auto list-none grid-cols-5 text-center;
-  // grid-template-columns: repeat(5, auto);
-  // flex: 1;
 }
 
 .nav-item {
@@ -314,8 +243,7 @@ blockquote {
 }
 
 .nav-links {
-  @apply px-4 py-2;
-  text-decoration: none;
+  @apply px-4 py-2 no-underline;
 }
 
 .nav-links-mobile,
@@ -327,19 +255,17 @@ blockquote {
   @apply flex h-full cursor-pointer items-center justify-center border-l border-solid border-l-[#535353] px-[1.4rem];
 }
 
-@media screen and (max-width: 960px) {
-  .navbar {
-    @apply justify-between;
-  }
+@media screen and (max-width: 768px) {
+  // .navbar {
+  //   @apply ;
+  // }
 
   .nav-menu {
-    @apply absolute top-[51px] -left-full flex h-[calc(100vh_-_51px)] w-full flex-col items-center justify-center gap-6 opacity-100;
-    transition: all 0.5s ease-in;
+    @apply absolute top-[51px] -left-full flex h-[calc(100vh_-_51px)] w-full flex-col items-center justify-center gap-6 opacity-100 transition-all duration-500 ease-in-out;
   }
 
   .nav-menu.active {
-    @apply left-0 z-[1] bg-midnight-500 opacity-100;
-    transition: all 0.5s ease-in;
+    @apply left-0 z-[1] bg-midnight-500 opacity-100 transition-all duration-500 ease-in;
   }
 
   .menu-icon {
@@ -367,7 +293,6 @@ blockquote {
 
 .line {
   @apply fill-transparent stroke-white-500 stroke-[5.5];
-  // fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   stroke-linecap: square;
 }
@@ -395,15 +320,8 @@ blockquote {
 }
 
 .dropdown-link {
-  @apply block h-full w-full p-4 text-white-500;
-  text-decoration: none;
+  @apply block h-full w-full p-4 text-white-500 no-underline;
 }
-
-// @media screen and (max-width: 960px) {
-//   .fa-caret-down {
-//     display: none;
-//   }
-// }
 
 .pagination {
   @apply col-span-1 flex justify-between md:col-[1_/_span_2];
@@ -422,14 +340,12 @@ blockquote {
   stroke-dasharray: 320;
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.3s linear;
-  // fill: none;
 }
 
 .check {
   @apply fill-transparent;
   stroke-dasharray: 70;
   stroke-dashoffset: 70;
-  // fill: none;
   transition: stroke-dashoffset 0.3s linear;
 }
 
@@ -443,7 +359,7 @@ blockquote {
 }
 
 .team-cards {
-  @apply mt-8 mb-24 flex flex-col gap-32 md:w-[90%] lg:gap-14;
+  @apply mt-8 mb-24 flex flex-col gap-32 lg:gap-14;
 
   .team-card {
     @apply relative;
