@@ -1,25 +1,25 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
-import notFoundImg from '../public/404.svg'
+import { Header } from '../components'
 
-const Custom404 = () => {
+const NotFound = () => {
   return (
     <>
       <Head>
-        <title>Page Not Found - biofidelicX academy</title>
+        <title>Not Found - biofidelicX</title>
       </Head>
-      <div className="flex h-screen w-full flex-col items-center justify-center gap-6">
-        <Image src={notFoundImg} />
-        <Link href="/">
-          <span className="cursor-pointer bg-aquamarine-500 px-4 py-3 font-bold uppercase text-midnight-500">
-            Go Back
-          </span>
-        </Link>
+      <Header title="Ooops! Page Not Found." />
+      <div className="mx-auto mb-8 px-2 md:px-5">
+        <div className="post-details flex flex-col items-center">
+          <div className="post-shadow"></div>
+          <h2 className="title">Something Went Wrong!</h2>
+          <p className="para">This page doesn't exist or was removed!</p>
+          <p className="para">We suggest you back to home page.</p>
+          <button className="btn btn-outline">Back to home</button>
+        </div>
       </div>
     </>
   )
 }
 
-export default Custom404
+export default NotFound
