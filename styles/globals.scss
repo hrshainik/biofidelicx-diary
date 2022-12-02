@@ -175,7 +175,7 @@ code::-webkit-scrollbar-thumb {
 .sp-card {
   &:hover {
     & .sp-card-title {
-      @apply inset-4 sm:inset-6 lg:inset-8;
+      @apply after:-top-2 after:-left-2 after:-right-2 after:-bottom-2;
     }
 
     & .f-img {
@@ -184,15 +184,15 @@ code::-webkit-scrollbar-thumb {
   }
 
   & .f-img {
-    @apply scale-[1.075] transition-all delay-300 ease-in;
+    @apply scale-[1.075] transition-all duration-300 ease-in-out;
   }
 
   &-up {
-    @apply relative h-[480px] sm:h-[200px] md:h-[260px] lg:h-[400px];
+    @apply relative z-10 h-[480px] before:absolute before:z-10 before:h-full before:w-full before:bg-midnight-900/30 sm:h-[200px] md:h-[260px] lg:h-[400px];
   }
 
   &-title {
-    @apply absolute inset-3 flex flex-col items-center justify-center border-2 border-white-500 p-4 text-white-500 transition-all delay-300 ease-in md:inset-5 md:border-4 lg:inset-12;
+    @apply absolute left-1/2 top-1/2 z-20 flex h-[88%] w-[90%] -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center p-4 text-white-500 duration-300 ease-in after:absolute after:inset-0 after:border-4 after:border-white-500 after:transition-all after:duration-300 after:ease-in-out;
 
     & > span {
       @apply relative pb-2 font-t text-sm font-bold uppercase tracking-sm text-white-500/60 after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:w-[50px] after:-translate-x-1/2 after:bg-white-500/40 after:content-[""];
@@ -208,7 +208,7 @@ code::-webkit-scrollbar-thumb {
   @apply container relative z-20 mx-auto -mt-16 bg-white-500 p-4 sm:p-8;
 
   & .post-shadow {
-    @apply absolute top-16 left-0 right-0 h-[90px] w-full before:absolute before:-left-2 before:content-[url('../public/shadow.png')] after:absolute after:-right-2 after:content-[url(../public/shadow-inverse.png)];
+    @apply absolute top-16 left-0 right-0 -z-10 h-[90px] w-full before:absolute before:-left-2 before:content-[url('../public/shadow.png')] after:absolute after:-right-2 after:content-[url(../public/shadow-inverse.png)];
   }
 }
 
@@ -359,7 +359,7 @@ code::-webkit-scrollbar-thumb {
 }
 
 .team-cards {
-  @apply mt-8 mb-24 flex flex-col gap-32 lg:gap-14;
+  @apply mt-8 mb-24 flex flex-col gap-32 lg:mb-0 lg:gap-14;
 
   .team-card {
     @apply relative;

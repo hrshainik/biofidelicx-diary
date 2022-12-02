@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { Header, PostWidget } from '../../components'
+import CategoryCard from '../../components/CategoryCard'
 import { getCategories } from '../../services'
 
 const CategoryPost = ({ categories }) => {
+  console.log(categories)
   return (
     <>
       <Head>
@@ -24,12 +25,10 @@ const CategoryPost = ({ categories }) => {
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
-          <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
+          <div className="z-50 grid grid-cols-1 items-start gap-12 bg-white-500 lg:grid-cols-12">
             <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
               {categories.map((category) => (
-                <Link key={category.name} href={`/category/${category.slug}`}>
-                  <h1>{category.name}</h1>
-                </Link>
+                <CategoryCard category={category} key={category.slug} />
               ))}
             </div>
             <div className="col-span-1 lg:col-span-4">
