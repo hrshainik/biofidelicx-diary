@@ -11,7 +11,13 @@ import {
 } from '../../components'
 import { getPosts, getTotalPostNumber } from '../../services'
 
+const limit = 10
+
 const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
+  if (!hasNextPage && !hasPreviousPage) {
+    return null
+  }
+
   const router = useRouter()
 
   if (router.isFallback) {
@@ -138,7 +144,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const limit = 10
   const offset = Number((params.page - 1) * limit)
 
   const { edges: posts, pageInfo } = await getPosts(limit, offset)
