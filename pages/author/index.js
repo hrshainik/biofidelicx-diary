@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Header, PostWidget } from '../../components'
@@ -21,7 +22,7 @@ const Author = ({ authors }) => {
         />
         <meta name="author" content="Habibur Rahman" />
       </Head>
-      <Header />
+      <Header title="Authors" />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
@@ -29,7 +30,25 @@ const Author = ({ authors }) => {
             <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
               {authors.map(({ node: author }) => (
                 <Link key={author.slug} href={`/author/${author.slug}`}>
-                  <h1>{author.name}</h1>
+                  <div className="relative">
+                    <div className="relative h-48 w-[60%] sm:h-56 md:h-44 lg:h-48 xl:h-52 2xl:h-56">
+                      <Image
+                        src={author.photo.url}
+                        layout="fill"
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        alt="author"
+                      />
+                    </div>
+                    <div className="border-1 absolute top-4 right-0 w-[50%] border border-midnight-500/40 bg-white-500/60 p-3">
+                      <h2 className="font-h text-lg">{author.name}</h2>
+                      <p className="text-xs">
+                        {author.bio.slice(0, 45)}
+                        {author.bio.length > 45 ? '...' : null}
+                      </p>
+                      <div className=""></div>
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

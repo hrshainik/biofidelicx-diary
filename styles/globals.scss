@@ -105,12 +105,8 @@ code::-webkit-scrollbar-thumb {
   @apply relative mt-[52px] min-h-[65vh] md:min-h-[55vh];
 }
 
-.btn {
-  @apply relative flex items-center justify-center py-2 px-4 text-xs font-normal uppercase text-midnight-500 no-underline;
-}
-
 .btn-outline {
-  @apply relative overflow-hidden border border-solid border-midnight-500 after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
+  @apply relative flex items-center justify-center overflow-hidden border border-solid border-midnight-500 py-2 px-4 text-xs font-normal uppercase text-midnight-500 no-underline after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
 
   span {
     @apply z-20;
@@ -208,7 +204,7 @@ code::-webkit-scrollbar-thumb {
   @apply container relative z-20 mx-auto -mt-16 bg-white-500 p-4 sm:p-8;
 
   & .post-shadow {
-    @apply absolute top-16 left-0 right-0 -z-10 h-[90px] w-full before:absolute before:-left-2 before:content-[url('../public/shadow.png')] after:absolute after:-right-2 after:content-[url(../public/shadow-inverse.png)];
+    @apply absolute top-16 left-0 right-0 -z-40 h-[90px] w-full before:absolute before:-left-2 before:content-[url('../public/shadow.png')] after:absolute after:-right-2 after:content-[url(../public/shadow-inverse.png)];
   }
 }
 

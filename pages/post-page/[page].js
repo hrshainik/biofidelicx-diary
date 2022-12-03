@@ -68,14 +68,14 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
                     : `/post-page/${currentPageNumber - 1}`
                 }`}
               >
-                <a className="btn btn-outline cursor-pointer font-t text-xs font-bold tracking-sm">
+                <a className="btn-outline cursor-pointer font-t text-xs font-bold tracking-sm">
                   &larr; Prev
                 </a>
               </Link>
             ) : (
               <Link href={`/post-page/${currentPageNumber - 1}`}>
                 <a
-                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
+                  className="btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
                   &larr; Prev
@@ -85,14 +85,14 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
 
             {hasNextPage ? (
               <Link href={`/post-page/${currentPageNumber + 1}`}>
-                <a className="btn btn-outline font-t text-xs font-bold tracking-sm">
+                <a className="btn-outline font-t text-xs font-bold tracking-sm">
                   Next &rarr;
                 </a>
               </Link>
             ) : (
               <Link href={`/post-page/${currentPageNumber + 1}`}>
                 <a
-                  className="btn btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
+                  className="btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
                   Next &rarr;

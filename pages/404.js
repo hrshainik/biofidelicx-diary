@@ -15,7 +15,7 @@ const NotFound = () => {
           <h2 className="title">Something Went Wrong!</h2>
           <p className="para">This page doesn't exist or was removed!</p>
           <p className="para">We suggest you back to home page.</p>
-          <button className="btn btn-outline">Back to home</button>
+          <button className="btn-outline">Back to home</button>
         </div>
       </div>
     </>
