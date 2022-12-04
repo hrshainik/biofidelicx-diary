@@ -16,12 +16,14 @@ const CommentsForm = ({ slug }) => {
   useEffect(() => {
     setLocalStorage(window.localStorage)
     const initalFormData = {
-      name: window.localStorage.getItem('name'),
-      email: window.localStorage.getItem('email'),
+      name: window.localStorage.getItem('name') || '',
+      email: window.localStorage.getItem('email') || '',
       storeData:
         window.localStorage.getItem('name') ||
-        window.localStorage.getItem('email'),
+        window.localStorage.getItem('email') ||
+        false,
     }
+    console.log(initalFormData)
     setFormData(initalFormData)
   }, [])
 
@@ -76,7 +78,7 @@ const CommentsForm = ({ slug }) => {
 
   return (
     <div className="my-8">
-      <h3 className="mb-6 border-b border-midnight-200 pb-2 text-xl font-semibold">
+      <h3 className="mb-6 border-b border-midnight-200 pb-2 font-h text-xl font-semibold">
         Leave a Reply
       </h3>
       <div className="mb-4 grid grid-cols-1 gap-4">
@@ -84,32 +86,34 @@ const CommentsForm = ({ slug }) => {
           name="comment"
           className="w-full rounded-none border border-midnight-100 p-4 outline-none"
           placeholder="Comment"
-          value={formData.comment}
+          value={formData.comment || ''}
           onChange={onInputChange}
         />
       </div>
       <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <input
           type="text"
-          value={formData.name}
+          value={formData.name || ''}
           onChange={onInputChange}
           className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
           placeholder="Name"
           name="name"
+          required
         />
         <input
           type="text"
-          value={formData.email}
+          value={formData.email || ''}
           onChange={onInputChange}
           className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
           placeholder="Email"
           name="email"
+          required
         />
       </div>
       <div className="mb-2 grid grid-cols-1 gap-4">
         <div className="flex items-center">
           <Checkbox
-            value="true"
+            value={formData.storeData}
             isCheckboxSelected={formData.storeData}
             handleCheckbox={onInputChange}
             text="Save my email for the next time I comment"

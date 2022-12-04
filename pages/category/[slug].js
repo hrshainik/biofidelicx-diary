@@ -11,6 +11,7 @@ const CategoryPost = ({ posts }) => {
   }
 
   const category = posts[0].node.categories[0].name
+  const categoryColor = posts[0].node.categories[0].categoryColor.hex
 
   return (
     <>
@@ -31,6 +32,8 @@ const CategoryPost = ({ posts }) => {
       <Header
         title={category}
         imageUrl={posts[0].node.categories[0].photo.url}
+        subText={`${posts.length} articles`}
+        color={categoryColor}
       />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">

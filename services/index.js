@@ -221,7 +221,6 @@ export const getCategoryPost = async (slug) => {
     query GetCategoryPost($slug: String!) {
       postsConnection(where: { categories_some: { slug: $slug } }) {
         edges {
-          cursor
           node {
             author {
               bio
@@ -363,6 +362,9 @@ export const getAuthorDetails = async (slug) => {
           featuredImage {
             url
           }
+        }
+        photo {
+          url
         }
         slug
         cover {

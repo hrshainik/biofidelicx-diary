@@ -14,7 +14,7 @@ const Comments = ({ slug }) => {
     <>
       {comments.length > 0 && (
         <div className="mt-8">
-          <h3 className="mb-6 border-b border-midnight-200 pb-2 text-xl font-semibold">
+          <h3 className="mb-6 border-b border-midnight-200 pb-2 font-h text-xl font-semibold">
             {comments.length} Comments
           </h3>
           {comments.map((comment) => (
@@ -22,14 +22,14 @@ const Comments = ({ slug }) => {
               key={comment.createdAt}
               className="mb-4 border-b border-midnight-100 pb-4 last:border-none"
             >
-              <p className="mb-2 flex items-center gap-2 text-sm font-normal text-gray-400">
-                <span className="font-t text-base font-semibold capitalize text-gray-700">
+              <p className="mb-2 flex items-center gap-2 text-sm italic text-midnight-400">
+                <span className="font-h text-base font-normal capitalize text-midnight-500">
                   {comment.name}
                 </span>
                 <span className="dot"></span>
                 {moment(comment.createdAt).format('MMM DD, YYYY')}
               </p>
-              <p className="w-full whitespace-pre-line">
+              <p className="w-full whitespace-pre-line text-midnight-500">
                 {parse(comment.comment)}
               </p>
             </div>

@@ -20,11 +20,11 @@ const FeaturedPostCard = ({ post }) => {
             {category}
           </span>
         </div>
-        <h1 className="mb-2 cursor-pointer text-center text-xl font-semibold leading-6 text-midnight-500">
+        <h1 className="mb-2 cursor-pointer text-center font-h text-xl font-semibold leading-6 text-midnight-500">
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
         <div className="items-center justify-center text-center lg:flex">
-          <div className="mb-4 flex w-full items-center justify-center gap-2 text-white-900 lg:mb-0 lg:w-auto">
+          <div className="mb-4 flex w-full items-center justify-center gap-2 text-midnight-400 lg:mb-0 lg:w-auto">
             {post.author.photo ? (
               <Image
                 src={post.author.photo.url}

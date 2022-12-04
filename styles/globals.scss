@@ -45,6 +45,13 @@ code::-webkit-scrollbar-thumb {
     @apply my-2;
   }
 
+  & p,
+  code,
+  blockquote,
+  pre {
+    @apply text-base;
+  }
+
   h1,
   h2,
   h3,
@@ -55,28 +62,27 @@ code::-webkit-scrollbar-thumb {
   }
 
   h1 {
-    @apply text-sm;
-    font-size: 30px;
+    @apply text-3xl;
   }
 
   h2 {
-    font-size: 24px;
+    @apply text-2xl;
   }
 
   h3 {
-    font-size: 20px;
+    @apply text-xl;
   }
 
   h4 {
-    font-size: 18px;
+    @apply text-lg;
   }
 
   h5 {
-    font-size: 16px;
+    @apply text-base;
   }
 
   h6 {
-    font-size: 14px;
+    @apply text-sm;
   }
 
   code {
@@ -106,7 +112,7 @@ code::-webkit-scrollbar-thumb {
 }
 
 .btn-outline {
-  @apply relative flex items-center justify-center overflow-hidden border border-solid border-midnight-500 py-2 px-4 text-xs font-normal uppercase text-midnight-500 no-underline after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
+  @apply relative flex items-center justify-center overflow-hidden border border-solid border-midnight-400 py-2 px-4 text-xs font-semibold uppercase text-midnight-500 no-underline after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
 
   span {
     @apply z-20;
@@ -118,19 +124,19 @@ code::-webkit-scrollbar-thumb {
 }
 
 .main-title {
-  @apply text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-7xl;
+  @apply text-center font-h text-4xl font-bold text-white-500 sm:text-5xl md:text-6xl;
 }
 
 .title {
-  @apply m-auto mb-4 w-3/4 max-w-xl text-center font-h text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl;
+  @apply m-auto mb-4 w-3/4 max-w-xl text-center font-h text-2xl font-semibold sm:text-3xl md:text-4xl;
 }
 
 .para {
-  @apply m-auto mb-4 w-[90%] max-w-3xl text-center font-t;
+  @apply m-auto mb-4 w-[90%] max-w-3xl text-center text-base;
 }
 
 .post-tag {
-  @apply relative bg-aquamarine-500 px-3 py-2.5 font-t text-xs font-semibold uppercase leading-3 tracking-sm text-midnight-500;
+  @apply relative bg-aquamarine-500 px-3 py-2 text-xs font-semibold uppercase leading-3 tracking-md text-midnight-500;
 }
 
 .card {
@@ -197,7 +203,7 @@ code::-webkit-scrollbar-thumb {
 }
 
 .logo {
-  @apply w-[175px] cursor-pointer md:w-[300px];
+  @apply w-[170px] cursor-pointer sm:w-[200px] md:w-[270px];
 }
 
 .post-details {
@@ -223,7 +229,7 @@ code::-webkit-scrollbar-thumb {
 
 // Navbar
 .navbar {
-  @apply fixed inset-x-0 top-0 z-[99999] flex h-[52px] items-center justify-between border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-sm font-bold uppercase text-white-500 md:justify-center;
+  @apply fixed inset-x-0 top-0 z-[99999] flex h-[52px] items-center justify-between border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-xs font-bold uppercase text-white-500 md:justify-center;
 }
 
 .navbar-logo {
@@ -365,18 +371,18 @@ code::-webkit-scrollbar-thumb {
     }
 
     &-info {
-      @apply absolute -bottom-24 w-[90%] max-w-[440px] border-4 border-solid border-midnight-500 bg-white-500 py-6 px-9 lg:top-12 lg:bottom-[unset];
+      @apply absolute -bottom-24 w-[90%] max-w-[440px] border-2 border-solid border-midnight-500 bg-white-500 bg-white-500/60 py-6 px-9 lg:top-12 lg:bottom-[unset];
 
       & > h2 {
-        @apply text-[42px] leading-[90%];
+        @apply font-h text-2xl font-normal leading-[90%] sm:text-3xl md:text-4xl;
       }
 
       & > span {
-        @apply mb-3 inline-block text-sm font-bold;
+        @apply mb-3 inline-block text-sm font-bold tracking-md;
       }
 
       & > p {
-        @apply text-sm;
+        @apply text-base;
       }
     }
   }

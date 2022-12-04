@@ -10,12 +10,16 @@ const AuthorAbout = ({ author }) => {
         <div className="p-5 pt-4 lg:p-8">
           <div className="">
             <p className="mb-4">{author.bio}</p>
-            <p className="mb-4">
+            <p className="mb-4 italic">
               Joined on {moment(author.createdAt).format('MMM DD, YYYY')}
             </p>
             <div className="author-social-links flex items-center gap-2">
               {author.facebook && (
-                <a href={author.facebook}>
+                <a
+                  href={author.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     fill="#000"
                     xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +33,11 @@ const AuthorAbout = ({ author }) => {
                 </a>
               )}
               {author.twitter && (
-                <a href={author.twitter}>
+                <a
+                  href={author.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     fill="#000"
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +51,11 @@ const AuthorAbout = ({ author }) => {
                 </a>
               )}
               {author.linkedin && (
-                <a href={author.linkedin}>
+                <a
+                  href={author.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     fill="#000"
                     xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +69,11 @@ const AuthorAbout = ({ author }) => {
                 </a>
               )}
               {author.website && (
-                <a href={author.website}>
+                <a
+                  href={author.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     viewBox="64 64 896 896"
                     focusable="false"
@@ -73,7 +89,11 @@ const AuthorAbout = ({ author }) => {
                 </a>
               )}
               {author.email && (
-                <a href={author.email}>
+                <a
+                  href={author.email}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     viewBox="64 64 896 896"
                     focusable="false"
@@ -89,7 +109,11 @@ const AuthorAbout = ({ author }) => {
                 </a>
               )}
               {author.youtube && (
-                <a href={author.youtube}>
+                <a
+                  href={author.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     fill="#000"
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +127,11 @@ const AuthorAbout = ({ author }) => {
                 </a>
               )}
               {author.instagram && (
-                <a href={author.instagram}>
+                <a
+                  href={author.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     fill="#000"
                     xmlns="http://www.w3.org/2000/svg"

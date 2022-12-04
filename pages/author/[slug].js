@@ -29,7 +29,8 @@ const AuthorDetails = ({ author }) => {
       <Header
         title={author.name}
         imageUrl={author?.cover?.url}
-        totalItems={author.post.length}
+        subText={`${author.post.length} articles`}
+        authorPhoto={author.photo.url}
       />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">

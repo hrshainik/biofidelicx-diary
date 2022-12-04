@@ -10,7 +10,7 @@ const Checkbox = ({
       <input
         type="checkbox"
         name={name}
-        value={value}
+        value={value || ''}
         className="pointer-events-none hidden"
         id={name}
         checked={isCheckboxSelected}

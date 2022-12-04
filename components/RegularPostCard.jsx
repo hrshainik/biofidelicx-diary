@@ -21,20 +21,20 @@ const RegularPostCard = ({ post }) => {
         >
           <div className="shadow-box"></div>
           <div
-            className="-mt-4 py-2 px-3.5"
+            className="-mt-4 flex items-center justify-center py-2 px-3.5"
             style={{
               backgroundColor: `${post.categories[0].categoryColor?.hex}`,
             }}
           >
-            <span className="font-t text-xs font-semibold uppercase leading-3 tracking-sm">
+            <span className="font-t text-xs font-semibold uppercase leading-3 tracking-md">
               {post.categories[0].name}
             </span>
           </div>
           <div className="card-con-text p-4 pb-5 pt-0">
-            <h1 className="mb-3 text-center text-2xl font-semibold transition duration-100">
+            <h1 className="mb-3 text-center font-h text-2xl font-semibold transition duration-100">
               {post.title}
             </h1>
-            <div className="mb-4 flex w-full items-center justify-center gap-3 text-center text-sm text-gray-500">
+            <div className="mb-4 flex w-full items-center justify-center gap-3 text-center text-sm text-midnight-400">
               <div className="flex items-center justify-center lg:mb-0 lg:w-auto">
                 {post.author.photo ? (
                   <Image
@@ -78,10 +78,7 @@ const RegularPostCard = ({ post }) => {
                 </span>
               </div>
             </div>
-            <p
-              className="text-center font-h text-base font-normal leading-6"
-              style={{ color: '#50505e' }}
-            >
+            <p className="text-center text-base font-normal leading-6 text-midnight-500">
               {post.excerpt}
             </p>
           </div>

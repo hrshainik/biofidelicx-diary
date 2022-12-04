@@ -52,9 +52,9 @@ const PostDetails = ({ post }) => {
       <Header
         title={post.title}
         imageUrl={post.featuredImage.url}
-        category={post.categories[0].name}
+        subText={post.categories[0].name}
         slug={post.categories[0].slug}
-        categoryColor={post.categories[0].categoryColor?.hex}
+        color={post.categories[0].categoryColor?.hex}
       />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div
