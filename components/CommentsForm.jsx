@@ -124,7 +124,7 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="btn btn-outline px-3.5 py-2 font-t text-xs font-bold uppercase tracking-sm"
+          className="btn-outline px-3.5 py-2 font-t text-xs font-bold uppercase tracking-sm"
         >
           Post Comment
         </button>
