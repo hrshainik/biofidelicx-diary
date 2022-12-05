@@ -1,6 +1,9 @@
 import { gql, request } from 'graphql-request'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
+const requestHeaders = {
+  Authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
+}
 
 export const getSpecialPost = async () => {
   const query = gql`
@@ -37,7 +40,7 @@ export const getSpecialPost = async () => {
     }
   `
 
-  const result = await request(graphqlAPI, query)
+  const result = await request(graphqlAPI, query, {}, requestHeaders)
 
   return result.postsConnection
 }
@@ -85,7 +88,12 @@ export const getPosts = async (limit, offset) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { limit, offset })
+  const result = await request(
+    graphqlAPI,
+    query,
+    { limit, offset },
+    requestHeaders
+  )
 
   return result.postsConnection
 }
@@ -101,7 +109,7 @@ export const getTotalPostNumber = async () => {
     }
   `
 
-  const result = await request(graphqlAPI, query)
+  const result = await request(graphqlAPI, query, {}, requestHeaders)
 
   return result.postsConnection
 }
@@ -140,7 +148,7 @@ export const getPostDetails = async (slug) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { slug })
+  const result = await request(graphqlAPI, query, { slug }, requestHeaders)
 
   return result.post
 }
@@ -162,7 +170,7 @@ export const getRecentPosts = async () => {
     }
   `
 
-  const result = await request(graphqlAPI, query)
+  const result = await request(graphqlAPI, query, {}, requestHeaders)
 
   return result.posts
 }
@@ -187,7 +195,12 @@ export const getRelatedPosts = async (categories, slug) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { categories, slug })
+  const result = await request(
+    graphqlAPI,
+    query,
+    { categories, slug },
+    requestHeaders
+  )
 
   return result.posts
 }
@@ -211,7 +224,7 @@ export const getCategories = async () => {
     }
   `
 
-  const result = await request(graphqlAPI, query)
+  const result = await request(graphqlAPI, query, {}, requestHeaders)
 
   return result.categories
 }
@@ -253,7 +266,7 @@ export const getCategoryPost = async (slug) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { slug })
+  const result = await request(graphqlAPI, query, { slug }, requestHeaders)
 
   return result.postsConnection.edges
 }
@@ -281,7 +294,7 @@ export const getComments = async (slug) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { slug })
+  const result = await request(graphqlAPI, query, { slug }, requestHeaders)
 
   return result.comments
 }
@@ -310,7 +323,7 @@ export const getFeaturedPosts = async () => {
     }   
   `
 
-  const result = await request(graphqlAPI, query)
+  const result = await request(graphqlAPI, query, {}, requestHeaders)
 
   return result.posts
 }
@@ -333,7 +346,7 @@ export const getAuthors = async () => {
     }
   `
 
-  const result = await request(graphqlAPI, query)
+  const result = await request(graphqlAPI, query, {}, requestHeaders)
   return result.authorsConnection.edges
 }
 
@@ -382,6 +395,6 @@ export const getAuthorDetails = async (slug) => {
     }
   `
 
-  const result = await request(graphqlAPI, query, { slug })
+  const result = await request(graphqlAPI, query, { slug }, requestHeaders)
   return result.author
 }
