@@ -387,6 +387,8 @@ export const getAuthorDetails = async (slug) => {
         twitter
         website
         linkedin
+        instagram
+        youtube
         email
         name
         bio

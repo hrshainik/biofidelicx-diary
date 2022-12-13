@@ -416,3 +416,19 @@ code::-webkit-scrollbar-thumb {
     }
   }
 }
+
+.input {
+  &__label {
+    transition: transform 120ms ease-in;
+  }
+
+  &__field {
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .input__label {
+        transform: translate(0.25rem, -65%) scale(0.8);
+        color: var(--color-accent);
+      }
+    }
+  }
+}

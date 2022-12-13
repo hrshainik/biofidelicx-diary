@@ -23,7 +23,6 @@ const CommentsForm = ({ slug }) => {
         window.localStorage.getItem('email') ||
         false,
     }
-    console.log(initalFormData)
     setFormData(initalFormData)
   }, [])
 
@@ -82,33 +81,51 @@ const CommentsForm = ({ slug }) => {
         Leave a Reply
       </h3>
       <div className="mb-4 grid grid-cols-1 gap-4">
-        <textarea
-          name="comment"
-          className="w-full rounded-none border border-midnight-100 p-4 outline-none"
-          placeholder="Comment"
-          value={formData.comment || ''}
-          onChange={onInputChange}
-        />
+        <label className="input relative">
+          <textarea
+            name="comment"
+            className="input__field block w-full rounded-none border border-midnight-200 bg-transparent py-3 px-3 font-t focus:outline-0"
+            placeholder=" "
+            value={formData.comment || ''}
+            onChange={onInputChange}
+          />
+          <span
+            className="input__label absolute left-0 top-0 my-[7px] mx-1 origin-top-left translate-x-0 translate-y-0 cursor-text
+              whitespace-nowrap bg-white-500 py-[6px] px-3 font-h"
+          >
+            Comment
+          </span>
+        </label>
       </div>
       <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <input
-          type="text"
-          value={formData.name || ''}
-          onChange={onInputChange}
-          className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
-          placeholder="Name"
-          name="name"
-          required
-        />
-        <input
-          type="text"
-          value={formData.email || ''}
-          onChange={onInputChange}
-          className="w-full rounded-none border border-midnight-100 p-4 py-2 px-4 outline-none"
-          placeholder="Email"
-          name="email"
-          required
-        />
+        <label className="input relative">
+          <input
+            type="text"
+            value={formData.name || ''}
+            onChange={onInputChange}
+            className="input__field block w-full rounded-none border border-midnight-200 bg-transparent py-3 px-3 font-t focus:outline-0"
+            placeholder=" "
+            name="name"
+            required
+          />
+          <span className="input__label absolute left-0 top-0 my-[7px] mx-1 origin-top-left translate-x-0 translate-y-0 cursor-text whitespace-nowrap bg-white-500 py-[6px] px-3 font-h">
+            Name
+          </span>
+        </label>
+        <label className="input relative">
+          <input
+            type="text"
+            value={formData.email || ''}
+            onChange={onInputChange}
+            className="input__field block w-full rounded-none border border-midnight-200 bg-transparent py-3 px-3 font-t focus:outline-0"
+            placeholder=" "
+            name="email"
+            required
+          />
+          <span className="input__label absolute left-0 top-0 my-[7px] mx-1 origin-top-left translate-x-0 translate-y-0 cursor-text whitespace-nowrap bg-white-500 py-[6px] px-3 font-h">
+            Email
+          </span>
+        </label>
       </div>
       <div className="mb-2 grid grid-cols-1 gap-4">
         <div className="flex items-center">
