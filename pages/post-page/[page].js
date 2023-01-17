@@ -139,7 +139,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
@@ -147,6 +147,12 @@ export async function getStaticProps({ params }) {
   const offset = Number((params.page - 1) * limit)
 
   const { edges: posts, pageInfo } = await getPosts(limit, offset)
+
+  if (!posts) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: {

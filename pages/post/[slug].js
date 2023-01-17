@@ -91,8 +91,14 @@ export default PostDetails
 export async function getStaticProps({ params }) {
   const postDetails = await getPostDetails(params.slug)
 
+  if (!postDetails) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
-    props: { post: postDetails || null },
+    props: { post: postDetails },
   }
 }
 
@@ -103,6 +109,6 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: true,
+    fallback: 'blocking',
   }
 }
