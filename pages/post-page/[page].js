@@ -145,10 +145,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const offset = Number((params.page - 1) * limit)
-
   const { edges: posts, pageInfo } = await getPosts(limit, offset)
 
-  if (!posts) {
+  if (!posts || offset < 0) {
     return {
       notFound: true,
     }
