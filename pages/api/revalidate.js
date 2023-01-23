@@ -11,13 +11,20 @@ export default async function handler(req, res) {
 
   try {
     const typename = req.body.data.__typename
+    console.log('Typename', typename)
     const slug = req.body.data.slug
-
+    console.log('Slug', slug)
+    await res.revalidate('/')
     if (typename === 'Author') {
+      console.log('Inside author')
+      await res.revalidate('/author')
       await res.revalidate(`/author/${slug}`)
     } else if (typename === 'Cateogry') {
+      console.log('Inside category')
+      await res.revalidate('category')
       await res.revalidate(`/category/${slug}`)
     } else if (typename === 'Post') {
+      console.log('Inside post')
       await res.revalidate(`/post/${slug}`)
     }
     return res.status(200).json({ revalidated: true })
