@@ -30,7 +30,7 @@ const RegularPostCard = ({ post }) => {
               {post.categories[0].name}
             </span>
           </div>
-          <div className="card-con-text p-4 pb-5 pt-0">
+          <div className="card-con-text w-full p-4 pb-5 pt-0">
             <h1 className="mb-3 text-center font-h text-2xl font-semibold transition duration-100">
               {post.title}
             </h1>

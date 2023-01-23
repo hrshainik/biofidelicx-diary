@@ -137,17 +137,17 @@ const Navbar = () => {
               </li>
             </a>
           </Link>
-          <Link href="/about" onClick={closeMobileMenu}>
+          <Link href="/about">
             <a onClick={closeMobileMenu}>
               <li className="nav-item">About</li>
             </a>
           </Link>
-          <Link href="/contact" onClick={closeMobileMenu}>
+          <Link href="/contact">
             <a onClick={closeMobileMenu}>
               <li className="nav-item">Contact</li>
             </a>
           </Link>
-          <Link href="/sign-up" onClick={closeMobileMenu}>
+          <Link href="/sign-up">
             <a onClick={closeMobileMenu}>
               <li className="nav-item">Sign Up</li>
             </a>
