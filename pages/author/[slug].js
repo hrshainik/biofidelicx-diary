@@ -58,8 +58,14 @@ export default AuthorDetails
 export async function getStaticProps({ params }) {
   const author = await getAuthorDetails(params.slug)
 
+  if (!author) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
-    props: { author: author || null },
+    props: { author: author },
   }
 }
 
@@ -68,6 +74,6 @@ export async function getStaticPaths() {
 
   return {
     paths: authors.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: true,
+    fallback: 'blocking',
   }
 }

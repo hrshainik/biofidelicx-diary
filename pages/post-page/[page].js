@@ -147,7 +147,7 @@ export async function getStaticProps({ params }) {
   const offset = Number((params.page - 1) * limit)
   const { edges: posts, pageInfo } = await getPosts(limit, offset)
 
-  if (!posts || offset < 0) {
+  if (!posts) {
     return {
       notFound: true,
     }
