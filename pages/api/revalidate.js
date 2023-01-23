@@ -10,14 +10,15 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = JSON.parse(req.body)
-    console.log(body.data.__typename)
-    if (body.data.__typename === 'Author') {
-      await res.revalidate(`/author/${body.data.slug}`)
-    } else if (body.data.__typename === 'Cateogry') {
-      await res.revalidate(`/category/${body.data.slug}`)
-    } else if (body.data.__typename === 'Post') {
-      await res.revalidate(`/post/${body.data.slug}`)
+    const typename = req.body.data.__typename
+    const slug = req.body.data.slug
+
+    if (typename === 'Author') {
+      await res.revalidate(`/author/${slug}`)
+    } else if (typename === 'Cateogry') {
+      await res.revalidate(`/category/${slug}`)
+    } else if (typename === 'Post') {
+      await res.revalidate(`/post/${slug}`)
     }
     return res.status(200).json({ revalidated: true })
   } catch (err) {
