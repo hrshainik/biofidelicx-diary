@@ -41,7 +41,7 @@ const Author = ({ author, date }) => {
           </div>
         </div>
       </Link>
-      <div className="flex basis-0 items-center gap-2 text-midnight-300 md:basis-56 md:justify-end">
+      <div className="flex basis-0 items-end gap-2 text-midnight-300 md:basis-56 md:justify-end">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

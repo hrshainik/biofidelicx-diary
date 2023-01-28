@@ -1,24 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { getCategories } from '../services'
 
 const Header = ({ title, imageUrl, slug, subText, color, authorPhoto }) => {
-  const [categories, setCategories] = useState([])
-
-  useEffect(() => {
-    getCategories().then((data) => setCategories(data))
-  }, [])
-
   const bgImage = {
     background: `linear-gradient(
       rgba(0, 0, 0, .75), 
       rgba(0, 0, 0, .5)
     ),
-    url('${imageUrl}')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPostion: 'center',
+    url('${imageUrl}') center center / cover no-repeat`,
   }
 
   return (

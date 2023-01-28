@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import {
+  Categories,
   FeaturedPosts,
   Header,
   PostWidget,
@@ -86,8 +87,9 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
           </div>
         </div>
         <div className="col-span-1 lg:col-span-4">
-          <div className="relative lg:sticky lg:top-20">
+          <div className="relative flex flex-col gap-6 lg:sticky lg:top-20">
             <PostWidget />
+            <Categories />
           </div>
         </div>
       </div>

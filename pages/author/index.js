@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import { Header, PostWidget } from '../../components'
+import { Categories, Header, PostWidget } from '../../components'
 import AuthorCard from '../../components/AuthorCard'
 import { getAuthors } from '../../services'
 
@@ -25,15 +25,16 @@ const Author = ({ authors }) => {
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
-          <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
+          <div className="z-50 grid grid-cols-1 items-start gap-12 bg-white-500 lg:grid-cols-12">
             <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
               {authors.map(({ node: author }) => (
                 <AuthorCard author={author} key={author.slug} />
               ))}
             </div>
             <div className="col-span-1 lg:col-span-4">
-              <div className="relative lg:sticky lg:top-20">
+              <div className="relative flex flex-col gap-6 lg:sticky lg:top-20">
                 <PostWidget />
+                <Categories />
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import {
+  Categories,
   FeaturedPosts,
   Header,
   Loader,
@@ -102,8 +103,9 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
           </div>
         </div>
         <div className="col-span-1 lg:col-span-4">
-          <div className="relative lg:sticky lg:top-20">
+          <div className="relative flex flex-col gap-6 lg:sticky lg:top-20">
             <PostWidget />
+            <Categories />
           </div>
         </div>
       </div>

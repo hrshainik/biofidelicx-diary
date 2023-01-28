@@ -137,6 +137,11 @@ const Navbar = () => {
               </li>
             </a>
           </Link>
+          <Link href="/category">
+            <a onClick={closeMobileMenu}>
+              <li className="nav-item">Category</li>
+            </a>
+          </Link>
           <Link href="/about">
             <a onClick={closeMobileMenu}>
               <li className="nav-item">About</li>

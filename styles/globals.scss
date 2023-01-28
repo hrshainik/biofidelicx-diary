@@ -37,6 +37,10 @@ code::-webkit-scrollbar-thumb {
 // Default Tag
 // Recheck default tags design
 .post-content {
+  & > p:first-child::first-letter {
+    @apply float-left mr-1 font-h text-5xl font-light;
+  }
+
   & a {
     @apply mr-3 inline-block leading-none no-underline shadow-[inset_0_-6px_0_0_rgba(5,255,219,0.75)] transition-shadow duration-300 ease-in-out hover:shadow-[inset_0_-24px_0_0_rgba(5,255,219,0.75)];
   }
@@ -237,7 +241,7 @@ code::-webkit-scrollbar-thumb {
 }
 
 .nav-menu {
-  @apply grid flex-auto list-none grid-cols-5 text-center;
+  @apply grid flex-auto list-none grid-cols-6 text-center;
 }
 
 .nav-item {

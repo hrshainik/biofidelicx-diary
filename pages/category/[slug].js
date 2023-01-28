@@ -1,6 +1,12 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Categories, Header, Loader, RegularPostCard } from '../../components'
+import {
+  Categories,
+  Header,
+  Loader,
+  PostWidget,
+  RegularPostCard,
+} from '../../components'
 import { getCategories, getCategoryPost } from '../../services'
 
 const CategoryPost = ({ posts }) => {
@@ -38,15 +44,16 @@ const CategoryPost = ({ posts }) => {
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>
-          <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
+          <div className="z-50 grid grid-cols-1 items-start gap-12 bg-white-500 lg:grid-cols-12">
             <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
               {posts.map((post, index) => (
                 <RegularPostCard key={index} post={post.node} />
               ))}
             </div>
             <div className="col-span-1 lg:col-span-4">
-              <div className="relative lg:sticky lg:top-20">
+              <div className="relative flex flex-col gap-6 lg:sticky lg:top-20">
                 <Categories />
+                <PostWidget />
               </div>
             </div>
           </div>

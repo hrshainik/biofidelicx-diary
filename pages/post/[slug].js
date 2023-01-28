@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import {
   Author,
+  Categories,
   Comments,
   CommentsForm,
   Header,
@@ -64,7 +65,7 @@ const PostDetails = ({ post }) => {
           }}
         >
           <div className="post-shadow"></div>
-          <div className="z-50 grid grid-cols-1 gap-12 bg-white-500 lg:grid-cols-12">
+          <div className="z-50 grid grid-cols-1 items-start gap-12 bg-white-500 lg:grid-cols-12">
             <div className="col-span-1 lg:col-span-8">
               <PostDetail post={post} />
               <Author author={post.author} date={post.createdAt} />
@@ -72,11 +73,12 @@ const PostDetails = ({ post }) => {
               <Comments slug={post.slug} />
             </div>
             <div className="col-span-1 lg:col-span-4">
-              <div className="relative lg:sticky lg:top-20">
+              <div className="relative flex flex-col gap-6 lg:sticky lg:top-20">
                 <PostWidget
                   slug={post.slug}
                   categories={post.categories.map((category) => category.slug)}
                 />
+                <Categories />
               </div>
             </div>
           </div>

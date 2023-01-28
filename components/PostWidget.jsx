@@ -32,10 +32,9 @@ const PostWidget = ({ categories, slug }) => {
                 className="mb-4 flex w-full cursor-pointer items-start last:mb-0"
                 key={post.title}
               >
-                <div className="w-16 flex-none">
+                <div className="relative h-16 w-16 flex-none">
                   <Image
-                    width="60"
-                    height="60"
+                    layout="fill"
                     src={post.featuredImage.url}
                     className="object-cover align-middle"
                     alt={post.title}
