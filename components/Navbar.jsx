@@ -126,7 +126,7 @@ const Navbar = () => {
               <li className="nav-item">Home</li>
             </a>
           </Link>
-          <Link href="https://biofidelicx-quiz.vercel.app">
+          <Link href="https://biofidelicx-quizzard.vercel.app">
             <a onClick={closeMobileMenu}>
               <li
                 className="nav-item"

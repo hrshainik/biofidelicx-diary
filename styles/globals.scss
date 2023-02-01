@@ -233,7 +233,7 @@ code::-webkit-scrollbar-thumb {
 
 // Navbar
 .navbar {
-  @apply fixed inset-x-0 top-0 z-[99999] flex h-[52px] items-center justify-between border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-xs font-bold uppercase text-white-500 md:justify-center;
+  @apply fixed inset-x-0 top-0 z-[999] flex h-[52px] items-center justify-between border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-xs font-bold uppercase text-white-500 md:justify-center;
 }
 
 .navbar-logo {

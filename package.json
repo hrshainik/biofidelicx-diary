@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@graphcms/rich-text-react-renderer": "^0.5.0",
+    "emailjs-com": "^3.2.0",
     "firebase": "^9.15.0",
     "graphql": "^16.3.0",
     "graphql-request": "^4.2.0",
@@ -15,6 +16,8 @@
     "next": "^12.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.43.0",
+    "react-toastify": "^9.1.1",
     "sass": "^1.49.11",
     "swiper": "^8.1.4"
   },

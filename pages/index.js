@@ -38,7 +38,7 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
       </Head>
 
       <Header
-        title="Come here to fall in love with bio-science."
+        title="Unlock Your Potential in Bio-Science: Learn, Explore, Discover"
         imageUrl={'/hero-img.jpg'}
       />
       <FeaturedPosts />
