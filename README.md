@@ -3,7 +3,7 @@
   <h1 align="center">biofidelicX Diary</h1>
 
   <p align="center">
-    Here you find all kind of bio-science related blog.
+    biofidelicX diary is the ideal location to stay informed and up-to-date on the most recent research and discoveries in bio-science, whether you're a student, a scientist, or simply someone with a passion for learning about the natural world.
     <br />
     <br />
     <a href="https://biofidelicx-diary.vercel.app/">View Demo</a>
@@ -35,7 +35,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://biofidelicx-diary.vercel.app/)
 
-Here you find all kind of bio-science related blog.
+biofidelicX diary is the ideal location to stay informed and up-to-date on the most recent research and discoveries in bio-science, whether you're a student, a scientist, or simply someone with a passion for learning about the natural world.
 
 <p align="right"><a href="#top">⇧Back To Top</a></p>
 
@@ -46,7 +46,7 @@ Here you find all kind of bio-science related blog.
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Sass](https://sass-lang.com/)
-- [graphcms](https://graphcms.com/)
+- [hygraph CMS](https://hygraph.com/)
 - [GraphQL](https://graphql.org/)
 - [Swiper](https://swiperjs.com/)
 
