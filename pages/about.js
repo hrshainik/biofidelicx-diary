@@ -9,7 +9,7 @@ const About = () => {
       <Head>
         <title>About - biofidelicX</title>
       </Head>
-      <Header title="About Us" />
+      <Header title="About Us" imageUrl={'/hero-img.jpg'} />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>

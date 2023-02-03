@@ -56,7 +56,7 @@ const Contact = () => {
       <Head>
         <title>Contact - biofidelicX diary</title>
       </Head>
-      <Header title="We'd love to hear from you" />
+      <Header title="We'd love to hear from you" imageUrl={'/hero-img.jpg'} />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details">
           <div className="post-shadow"></div>

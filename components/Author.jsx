@@ -37,7 +37,7 @@ const Author = ({ author, date }) => {
               Written By
             </span>
             <h3 className="font-h text-2xl font-semibold">{author.name}</h3>
-            <p className="text-sm">{author.bio.slice(0, 45)}...</p>
+            <p className="text-sm">{author.bio?.slice(0, 45)}...</p>
           </div>
         </div>
       </Link>

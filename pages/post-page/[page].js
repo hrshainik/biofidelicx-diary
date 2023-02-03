@@ -51,12 +51,12 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
       </Head>
 
       <Header
-        title="Come here to fall in love with bio-science."
+        title="Unlock Your Potential in Bio-Science: Learn, Explore, Discover"
         imageUrl={'/hero-img.jpg'}
       />
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
-        <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
+        <div className="col-span-1 grid grid-cols-1 content-start gap-6 md:grid-cols-2 lg:col-span-8">
           {posts.map(({ node: post }, i) => (
             <RegularPostCard key={i} post={post} />
           ))}

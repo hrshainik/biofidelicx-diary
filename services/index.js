@@ -318,6 +318,9 @@ export const getFeaturedPosts = async () => {
         categories {
           name
           slug
+          categoryColor {
+            hex
+          }
         }
       }
     }   

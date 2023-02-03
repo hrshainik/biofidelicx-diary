@@ -18,8 +18,8 @@ const AuthorCard = ({ author }) => {
         <div className="border-1 absolute top-4 right-0 w-[60%] border border-midnight-500/40 bg-white-500/60 p-3 lg:w-[50%] xl:w-[60%]">
           <h2 className="font-h text-xl sm:text-2xl">{author.name}</h2>
           <p className="text-sm">
-            {author.bio.slice(0, 45)}
-            {author.bio.length > 45 ? '...' : null}
+            {author.bio?.slice(0, 45)}
+            {author.bio?.length > 45 ? '...' : null}
           </p>
           <div className=""></div>
         </div>

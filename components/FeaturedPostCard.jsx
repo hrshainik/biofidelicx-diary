@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 const FeaturedPostCard = ({ post }) => {
   const category = post.categories[0].name
+  const color = post.categories[0].categoryColor.hex
+  console.log(color)
 
   return (
     <div className="mb-8">
@@ -16,7 +18,10 @@ const FeaturedPostCard = ({ post }) => {
       </div>
       <div className="relative z-20 mx-auto flex flex-col items-center px-2 pt-0 text-midnight-500 lg:px-4">
         <div className="py-1 text-midnight-500">
-          <span className="font-t text-xs font-semibold uppercase tracking-sm">
+          <span
+            className="font-t text-xs font-bold uppercase tracking-sm"
+            style={{ color: `${color}` }}
+          >
             {category}
           </span>
         </div>

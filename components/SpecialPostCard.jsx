@@ -24,7 +24,7 @@ const SpecialPostCard = ({ post }) => {
         <div className="relative bg-aquamarine-400 p-4 pb-8">
           <div className="folded-corner"></div>
           <div className="flex flex-col items-start gap-6  md:flex-row md:gap-8">
-            <div className="order-last block flex-col items-center justify-center text-center text-midnight-400 md:order-first md:basis-56">
+            <div className="order-last block flex-col items-center justify-center text-center text-midnight-400 md:order-first md:basis-60">
               <div className="mb-2 flex items-center lg:w-auto">
                 {post.author.photo ? (
                   <Image

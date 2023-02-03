@@ -43,7 +43,7 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
       />
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
-        <div className="col-span-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
+        <div className="col-span-1 grid grid-cols-1 content-start gap-6 md:grid-cols-2 lg:col-span-8">
           {specialPost.map(({ node: post }, i) => (
             <SpecialPostCard post={post} key={i} />
           ))}
@@ -86,7 +86,7 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
             )}
           </div>
         </div>
-        <div className="col-span-1 lg:col-span-4">
+        <div className="col-span-1 lg:col-span-4 ">
           <div className="relative flex flex-col gap-6 lg:sticky lg:top-20">
             <PostWidget />
             <Categories />
