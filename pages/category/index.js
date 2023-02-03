@@ -13,7 +13,7 @@ const CategoryPost = ({ categories }) => {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="biofidelicx diary" />
+        <meta name="description" content="biofidelicx diary's categories" />
         <meta
           name="keywords"
           content="biofidelicX diary, biofidelicX academy"
