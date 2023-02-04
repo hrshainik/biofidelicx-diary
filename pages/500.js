@@ -10,7 +10,7 @@ const Custom500 = () => {
       </Head>
       <Header title="Ooops! Page Not Found." imageUrl={'/hero-img.jpg'} />
       <div className="mx-auto mb-8 px-2 md:px-5">
-        <div className="post-details flex flex-col items-center">
+        <div className="post-details flex !max-w-screen-lg flex-col items-center">
           <div className="post-shadow"></div>
           <h2 className="title">Something Went Wrong!</h2>
           <p className="para">This page doesn't exist or was removed!</p>

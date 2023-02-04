@@ -1,7 +1,12 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
-const Header = ({ title, imageUrl, slug, subText, color, authorPhoto }) => {
+const Header = ({ title, imageUrl, slug, subText, color }) => {
+  // const [categories, setCategories] = useState([]);
+
+  // useEffect(() => {
+  //   getCategories().then((data) => setCategories(data));
+  // }, []);
+
   const bgImage = {
     background: `linear-gradient(
       rgba(0, 0, 0, .75), 
@@ -21,22 +26,12 @@ const Header = ({ title, imageUrl, slug, subText, color, authorPhoto }) => {
           </div>
         </div>
         <div className="hero-l">
-          {authorPhoto && (
-            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-aquamarine-500 lg:h-20 lg:w-20">
-              <Image
-                src={authorPhoto}
-                alt="author"
-                layout="fill"
-                className="object-cover"
-              />
-            </div>
-          )}
           <h1 className="main-title">{title}</h1>
           {subText && slug && color && (
-            <Link href={`/category/${slug}`}>
+            <Link href={`/category/[cSlug]`} as={`/category/${slug}`}>
               <div className="flex items-center gap-1">
                 <div
-                  className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-52 xl:w-64 2xl:w-96"
+                  className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-36"
                   style={{ backgroundColor: `${color}` }}
                 ></div>
                 <span
@@ -48,7 +43,7 @@ const Header = ({ title, imageUrl, slug, subText, color, authorPhoto }) => {
                   {subText}
                 </span>
                 <div
-                  className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-52 xl:w-64 2xl:w-96"
+                  className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-36"
                   style={{ backgroundColor: `${color}` }}
                 ></div>
               </div>
@@ -58,7 +53,7 @@ const Header = ({ title, imageUrl, slug, subText, color, authorPhoto }) => {
           {subText && color && !slug && (
             <div className="flex items-center gap-1">
               <div
-                className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-52 xl:w-64 2xl:w-96"
+                className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-36"
                 style={{ backgroundColor: `${color}` }}
               ></div>
               <span
@@ -70,7 +65,7 @@ const Header = ({ title, imageUrl, slug, subText, color, authorPhoto }) => {
                 {subText}
               </span>
               <div
-                className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-52 xl:w-64 2xl:w-96"
+                className="h-px w-12 bg-aquamarine-500 sm:w-20 md:w-32 lg:w-36"
                 style={{ backgroundColor: `${color}` }}
               ></div>
             </div>

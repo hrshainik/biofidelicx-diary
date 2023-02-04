@@ -31,9 +31,9 @@ const RegularPostCard = ({ post }) => {
             </span>
           </div>
           <div className="card-con-text w-full p-4 pb-5 pt-0">
-            <h1 className="mb-3 text-center font-h text-2xl font-semibold transition duration-100">
+            <h2 className="mb-3 text-center font-h text-2xl font-semibold transition duration-100">
               {post.title}
-            </h1>
+            </h2>
             <div className="mb-4 flex w-full items-center justify-center gap-3 text-center text-sm text-midnight-400">
               <div className="flex items-center justify-center lg:mb-0 lg:w-auto">
                 {post.author.photo ? (

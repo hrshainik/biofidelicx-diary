@@ -11,36 +11,37 @@ const About = () => {
       </Head>
       <Header title="About Us" imageUrl={'/hero-img.jpg'} />
       <div className="mx-auto mb-8 px-2 md:px-5">
-        <div className="post-details">
+        <div className="post-details !max-w-screen-lg">
           <div className="post-shadow"></div>
           <div className="mb-10">
             <h2 className="title">Our Mission</h2>
             <p className="para">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              enim iusto aspernatur ut? Explicabo culpa veritatis mollitia
-              sapiente. Accusamus odit ab repellat laudantium labore id, commodi
-              enim placeat fugiat tempore!
+              To revolutionize the way biology is taught and learned by
+              utilizing cutting-edge technology to create engaging, interactive
+              and personalized learning experiences for students and
+              professionals alike, advancing the future of bio-science education
+              and research.
             </p>
           </div>
           <h2 className="title">Our Leading, Strong and Creative Team</h2>
           <div className="team-cards">
             <TeamMemberCard
               name="Habibur Rahman"
-              designation="CEO"
-              bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              enim iusto aspernatur ut? Explicabo culpa veritatis mollitia
-              sapiente. Accusamus odit ab repellat laudantium labore id, commodi
-              enim placeat fugiat tempore!"
-              img="dummymember.jpg"
+              designation="CEO & Software Developer"
+              bio="I have a vision with a passion for using technology to advance the field of bio-science education. With 2 years of experience in both bio-science and education technology. With a strong advocate for the power of technology to enhance education and has a vision for how biofidelicX academy's solutions can transform the way bio-science is taught and learned."
+              img="habibur-rahman.jpg"
             />
             <TeamMemberCard
               name="Mehedi Hasan"
               designation="Font-End Developer"
-              bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              enim iusto aspernatur ut? Explicabo culpa veritatis mollitia
-              sapiente. Accusamus odit ab repellat laudantium labore id, commodi
-              enim placeat fugiat tempore!"
-              img="hero-img.jpg"
+              bio="I am a front-end web developer, has 2 of experience creating engaging and user-friendly websites and web applications. With a strong background in HTML, CSS, and JavaScript, I have the technical skills to bring designs to life and create seamless user experiences."
+              img="mehedi-hasan.jpg"
+            />
+            <TeamMemberCard
+              name="Sujoy Kumar Das"
+              designation="Content Writer"
+              bio="I am a bio-science writer with a passion for sharing the exciting advancements and discoveries in the field with a broad audience. From the intricacies of genetics to the latest breakthroughs in medical research, my articles provide engaging and informative perspectives on the biological world around us."
+              img="sujoy-kumar-das.jpg"
             />
           </div>
         </div>
