@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Slide, toast } from 'react-toastify'
 import { submitComment } from '../services'
 import Checkbox from './Checkbox'
 
 const CommentsForm = ({ slug }) => {
-  const [error, setError] = useState(false)
   const [localStorage, setLocalStorage] = useState(null)
-  const [showSuccessMsg, setShowSuccessMsg] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,12 +41,21 @@ const CommentsForm = ({ slug }) => {
   }
 
   const handleCommentSubmission = () => {
-    setError(false)
-
     const { name, email, comment, storeData } = formData
 
     if (!comment || !name || !email) {
-      setError(true)
+      toast.error('All fields are required', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Slide,
+      })
+
       return
     }
 
@@ -67,11 +75,17 @@ const CommentsForm = ({ slug }) => {
     }
 
     submitComment(commentObj).then((res) => {
-      setShowSuccessMsg(true)
-
-      setTimeout(() => {
-        setShowSuccessMsg(false)
-      }, 3000)
+      toast.success('Comment submitted for review', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Slide,
+      })
     })
   }
 
@@ -138,9 +152,6 @@ const CommentsForm = ({ slug }) => {
           />
         </div>
       </div>
-      {error && (
-        <p className="text-sm text-rose-600">All fields are required.</p>
-      )}
       <div className="btn-noti">
         <button
           type="button"
@@ -149,11 +160,6 @@ const CommentsForm = ({ slug }) => {
         >
           Post Comment
         </button>
-        {showSuccessMsg && (
-          <span className="bg-aquamarine-500 px-3.5 py-2 text-center font-t text-sm font-normal opacity-0 transition-opacity duration-300 ease-in-out">
-            Comment submitted for review
-          </span>
-        )}
       </div>
     </div>
   )

@@ -365,28 +365,28 @@ code::-webkit-scrollbar-thumb {
 }
 
 .team-cards {
-  @apply mt-8 mb-24 flex flex-col gap-32 lg:mb-0 lg:gap-14;
+  @apply mt-8 mb-24 flex flex-col gap-36 lg:mb-0 lg:gap-14;
 
   .team-card {
     @apply relative;
 
     &-img {
-      @apply relative inset-y-0 h-[580px] w-full md:w-[90%] lg:w-[78%];
+      @apply relative inset-y-0 h-80 w-full md:h-[580px] md:w-[90%] lg:w-[78%];
     }
 
     &-info {
-      @apply absolute -bottom-24 w-[90%] max-w-[440px] border-2 border-solid border-midnight-500 bg-white-500 bg-white-500/60 py-6 px-9 lg:top-12 lg:bottom-[unset];
+      @apply absolute top-[70%] w-[90%] max-w-[440px] border border-solid border-midnight-500 bg-white-500 bg-white-500/60 p-4 md:border-2 md:py-6 md:px-9 lg:top-12 lg:bottom-[unset];
 
       & > h2 {
-        @apply font-h text-2xl font-normal leading-[90%] sm:text-3xl md:text-4xl;
+        @apply font-h text-xl font-normal leading-[90%] sm:text-3xl md:text-4xl;
       }
 
       & > span {
-        @apply mb-3 inline-block text-sm font-bold tracking-md;
+        @apply mb-1 inline-block text-xs font-bold tracking-md md:mb-3 md:text-sm;
       }
 
       & > p {
-        @apply text-base;
+        @apply text-sm md:text-base;
       }
     }
   }
@@ -400,7 +400,7 @@ code::-webkit-scrollbar-thumb {
       @apply left-1/2 -translate-x-1/2 md:left-0;
 
       @media only screen and (min-width: 768px) {
-        transform: unset;
+        @apply transform-none;
       }
     }
   }
@@ -414,8 +414,7 @@ code::-webkit-scrollbar-thumb {
       @apply left-1/2 -translate-x-1/2 md:right-0;
 
       @media only screen and (min-width: 768px) {
-        left: unset;
-        transform: unset;
+        @apply left-["unset"] transform-none;
       }
     }
   }

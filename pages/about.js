@@ -28,7 +28,7 @@ const About = () => {
             <TeamMemberCard
               name="Habibur Rahman"
               designation="CEO & Software Developer"
-              bio="I have a vision with a passion for using technology to advance the field of bio-science education. With 2 years of experience in both bio-science and education technology. With a strong advocate for the power of technology to enhance education and has a vision for how biofidelicX academy's solutions can transform the way bio-science is taught and learned."
+              bio="I have a vision with a passion for using technology to advance the field of bio-science education. With 2 years of experience in both bio-science & education technology to enhance education & has a vision for how our solutions can transform the way bio-science is taught & learned."
               img="habibur-rahman.jpg"
             />
             <TeamMemberCard
@@ -40,7 +40,7 @@ const About = () => {
             <TeamMemberCard
               name="Sujoy Kumar Das"
               designation="Content Writer"
-              bio="I am a bio-science writer with a passion for sharing the exciting advancements and discoveries in the field with a broad audience. From the intricacies of genetics to the latest breakthroughs in medical research, my articles provide engaging and informative perspectives on the biological world around us."
+              bio="I am a bio-science writer with a passion for sharing the exciting advancements in the field with a broad audience. From the intricacies of genetics to the latest breakthroughs in medical research, my articles provide informative perspectives on the biological world around us."
               img="sujoy-kumar-das.jpg"
             />
           </div>
