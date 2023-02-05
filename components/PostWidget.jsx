@@ -20,7 +20,7 @@ const PostWidget = ({ categories, slug }) => {
         setDataLoaded(true)
       }, 1500)
     }
-  }, [slug, relatedPosts])
+  }, [slug])
 
   if (!dataLoaded) {
     return (
@@ -32,7 +32,7 @@ const PostWidget = ({ categories, slug }) => {
           <div className="mb-4 flex  animate-pulse items-start last:mb-0 ">
             <div className="flex h-16 w-16 flex-none items-center justify-center bg-gray-300 dark:bg-gray-700">
               <svg
-                class="h-12 w-12 text-gray-200 dark:text-gray-600"
+                className="h-12 w-12 text-gray-200 dark:text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
                 fill="currentColor"
@@ -51,7 +51,7 @@ const PostWidget = ({ categories, slug }) => {
           <div className="mb-4 flex  animate-pulse items-start last:mb-0 ">
             <div className="flex h-16 w-16 flex-none items-center justify-center bg-gray-300 dark:bg-gray-700">
               <svg
-                class="h-12 w-12 text-gray-200 dark:text-gray-600"
+                className="h-12 w-12 text-gray-200 dark:text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
                 fill="currentColor"
@@ -70,7 +70,7 @@ const PostWidget = ({ categories, slug }) => {
           <div className="mb-4 flex  animate-pulse items-start last:mb-0 ">
             <div className="flex h-16 w-16 flex-none items-center justify-center bg-gray-300 dark:bg-gray-700">
               <svg
-                class="h-12 w-12 text-gray-200 dark:text-gray-600"
+                className="h-12 w-12 text-gray-200 dark:text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
                 fill="currentColor"

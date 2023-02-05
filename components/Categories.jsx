@@ -15,7 +15,7 @@ const Categories = () => {
         setDataLoaded(true)
       }, 1500)
     }
-  }, [categories])
+  }, [])
 
   if (!dataLoaded) {
     return (
@@ -24,9 +24,10 @@ const Categories = () => {
           Categories
         </legend>
         <div className="flex flex-col gap-5 p-5 pt-4 lg:p-8">
-          {categories.map((category) => (
-            <CategoryCardSkeleton />
-          ))}
+          <CategoryCardSkeleton />
+          <CategoryCardSkeleton />
+          <CategoryCardSkeleton />
+          <CategoryCardSkeleton />
         </div>
       </fieldset>
     )

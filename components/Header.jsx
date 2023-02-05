@@ -1,12 +1,6 @@
 import Link from 'next/link'
 
 const Header = ({ title, imageUrl, slug, subText, color }) => {
-  // const [categories, setCategories] = useState([]);
-
-  // useEffect(() => {
-  //   getCategories().then((data) => setCategories(data));
-  // }, []);
-
   const bgImage = {
     background: `linear-gradient(
       rgba(0, 0, 0, .75), 

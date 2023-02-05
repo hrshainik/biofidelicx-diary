@@ -20,7 +20,7 @@ const FeaturedPosts = () => {
         setDataLoaded(true)
       }, 2000)
     }
-  }, [featuredPosts])
+  }, [])
 
   if (!dataLoaded) {
     return (
@@ -142,12 +142,11 @@ const FeaturedPosts = () => {
             },
           }}
         >
-          {dataLoaded &&
-            featuredPosts.map((post, index) => (
-              <SwiperSlide key={index}>
-                <FeaturedPostCard key={index} post={post} />
-              </SwiperSlide>
-            ))}
+          {featuredPosts.map((post, index) => (
+            <SwiperSlide key={index}>
+              <FeaturedPostCard key={index} post={post} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

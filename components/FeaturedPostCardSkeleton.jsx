@@ -4,9 +4,9 @@ const FeaturedPostCardSkeleton = () => {
       role="status"
       className="mb-8 flex animate-pulse flex-col items-center gap-2"
     >
-      <div class="flex h-40 w-full items-center justify-center bg-gray-300 dark:bg-gray-700">
+      <div className="flex h-40 w-full items-center justify-center bg-gray-300 dark:bg-gray-700">
         <svg
-          class="h-12 w-12 text-gray-200"
+          className="h-12 w-12 text-gray-200"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
           fill="currentColor"
@@ -19,7 +19,7 @@ const FeaturedPostCardSkeleton = () => {
       <div className="h-3 w-10/12 bg-gray-200 dark:bg-gray-700"></div>
       <div className="flex items-center gap-2">
         <svg
-          class="h-8 w-8 text-gray-200 dark:text-gray-700"
+          className="h-8 w-8 text-gray-200 dark:text-gray-700"
           aria-hidden="true"
           fill="currentColor"
           viewBox="0 0 20 20"
