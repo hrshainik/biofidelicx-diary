@@ -21,12 +21,12 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
           objectFit="cover"
           objectPosition="center"
         />
-        <div className="relative top-3 z-10 mx-auto cursor-pointer">
-          <div className="relative flex h-12 items-center justify-center md:h-16 lg:h-20">
-            <Link href="/">
+        <div className="relative top-3 z-10 mx-auto">
+          <Link href="/">
+            <div className="relative mx-auto h-12 w-40 cursor-pointer md:h-16 md:w-56 lg:h-20 lg:w-72">
               <Image src="/logo.svg" layout="fill" alt="logo" />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
         <div className="hero-l">
           <h1 className="main-title">{title}</h1>
