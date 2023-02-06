@@ -70,7 +70,16 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
                 }`}
               >
                 <a className="btn-outline cursor-pointer font-t text-xs font-bold tracking-sm">
-                  &larr; Prev
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" />
+                  </svg>
+                  Prev
                 </a>
               </Link>
             ) : (
@@ -79,7 +88,16 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
                   className="btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
-                  &larr; Prev
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" />
+                  </svg>
+                  Prev
                 </a>
               </Link>
             )}
@@ -87,7 +105,16 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
             {hasNextPage ? (
               <Link href={`/post-page/${currentPageNumber + 1}`}>
                 <a className="btn-outline font-t text-xs font-bold tracking-sm">
-                  Next &rarr;
+                  Next
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
+                  </svg>
                 </a>
               </Link>
             ) : (
@@ -96,7 +123,16 @@ const Home = ({ currentPageNumber, hasNextPage, hasPreviousPage, posts }) => {
                   className="btn-outline cursor-not-allowed font-t text-xs font-bold tracking-sm opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Next &rarr;
+                  Next
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
+                  </svg>
                 </a>
               </Link>
             )}

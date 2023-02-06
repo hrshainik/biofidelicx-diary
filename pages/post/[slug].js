@@ -64,8 +64,8 @@ const PostDetails = ({ post }) => {
             borderTop: `3px solid ${post.categories[0].categoryColor?.hex}`,
           }}
         >
-          <div className="post-shadow"></div>
-          <div className="container -z-40 mx-auto grid grid-cols-1 gap-12 p-5 sm:p-0 lg:grid-cols-12">
+          <div className="post-shadow !top-[calc(4rem_-_3px)]"></div>
+          <div className="container -z-40 mx-auto grid grid-cols-1 gap-12 p-0 sm:p-0 md:p-5 lg:grid-cols-12">
             <div className="col-span-1 content-start lg:col-span-8">
               <PostDetail post={post} />
               <Author author={post.author} date={post.createdAt} />

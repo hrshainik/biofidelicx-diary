@@ -81,7 +81,7 @@ const RegularPostCard = ({ post }) => {
               </div>
             </div>
             <p className="text-center text-base font-normal leading-6 text-midnight-500">
-              {post.excerpt}
+              {post.excerpt}...
             </p>
           </div>
         </div>

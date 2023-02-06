@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const Footer = () => {
@@ -6,23 +7,19 @@ const Footer = () => {
       <div className="container mx-auto text-white-500">
         <ul className="mb-12 flex flex-col items-center justify-center gap-4 uppercase md:flex-row md:items-end lg:gap-12">
           <li className="pb-3">
-            <Link href="/about">About Us</Link>
+            <Link href="/author">Authors</Link>
           </li>
           <li className="pb-3">
-            <Link href="https://biofidelicx-diary.vercel.app">Quiz</Link>
+            <Link href="/about">Team</Link>
           </li>
-          <li>
-            <img
-              src="/logo.svg"
-              alt="logo"
-              className="w-36 cursor-pointer sm:w-40 md:w-52 lg:w-60"
-            />
+          <li className="relative h-11 w-36 cursor-pointer sm:w-40 md:h-20 md:w-52 lg:w-60">
+            <Image src="/logo.svg" alt="logo" layout="fill" />
+          </li>
+          <li className="pb-3">
+            <Link href="/category">Categories</Link>
           </li>
           <li className="pb-3">
             <Link href="/contact">Contact</Link>
-          </li>
-          <li className="pb-3">
-            <Link href="/category">Category</Link>
           </li>
         </ul>
         <ul className="mb-8 flex flex-wrap items-center justify-center gap-4 uppercase lg:gap-16">

@@ -1,9 +1,12 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 const Navbar = () => {
   const [click, setClick] = useState(false)
   const [dropdown, setDropdown] = useState(false)
+  const router = useRouter()
+  const currentRoute = router.pathname
 
   const handleClick = () => setClick(!click)
   const closeMobileMenu = () => setClick(false)
@@ -123,7 +126,13 @@ const Navbar = () => {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <Link href="/">
             <a onClick={closeMobileMenu}>
-              <li className="nav-item">Home</li>
+              <li
+                className={`nav-item ${
+                  currentRoute === '/' ? 'nav-active' : null
+                }`}
+              >
+                Home
+              </li>
             </a>
           </Link>
           <Link href="https://biofidelicx-quizzard.vercel.app">
@@ -139,17 +148,35 @@ const Navbar = () => {
           </Link>
           <Link href="/category">
             <a onClick={closeMobileMenu}>
-              <li className="nav-item">Category</li>
+              <li
+                className={`nav-item ${
+                  currentRoute === '/category' ? 'nav-active' : null
+                }`}
+              >
+                Category
+              </li>
             </a>
           </Link>
           <Link href="/about">
             <a onClick={closeMobileMenu}>
-              <li className="nav-item">About</li>
+              <li
+                className={`nav-item ${
+                  currentRoute === '/about' ? 'nav-active' : null
+                }`}
+              >
+                About
+              </li>
             </a>
           </Link>
           <Link href="/contact">
             <a onClick={closeMobileMenu}>
-              <li className="nav-item">Contact</li>
+              <li
+                className={`nav-item ${
+                  currentRoute === '/contact' ? 'nav-active' : null
+                }`}
+              >
+                Contact
+              </li>
             </a>
           </Link>
         </ul>

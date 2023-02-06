@@ -116,7 +116,7 @@ code::-webkit-scrollbar-thumb {
 }
 
 .btn-outline {
-  @apply relative flex items-center justify-center overflow-hidden border border-solid border-midnight-400 py-2 px-4 text-xs font-semibold uppercase text-midnight-500 no-underline after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
+  @apply relative flex items-center justify-center overflow-hidden border border-solid border-midnight-200 py-2 px-4 text-xs font-semibold uppercase text-midnight-500 no-underline after:absolute after:-top-12 after:-left-[75px] after:h-36 after:w-12 after:rotate-[35deg] after:bg-aquamarine-500 after:opacity-20 after:transition-[left] after:duration-700 after:ease-[cubic-bezier(0.19,1,0.22,1)] after:content-[""] hover:after:left-[120%] hover:after:transition-[left] hover:after:duration-700 hover:after:ease-[cubic-bezier(0.19,1,0.22,1)];
 
   span {
     @apply z-20;
@@ -233,7 +233,7 @@ code::-webkit-scrollbar-thumb {
 
 // Navbar
 .navbar {
-  @apply fixed inset-x-0 top-0 z-[999] flex h-[52px] items-center justify-between border-b border-t border-solid border-b-[#535353] border-t-[#535353] bg-midnight-500 font-h text-xs font-bold uppercase text-white-500 md:justify-center;
+  @apply fixed inset-x-0 top-0 z-[999] flex h-[52px] items-center justify-between border-solid bg-midnight-500 font-h text-xs font-bold uppercase text-white-500 md:justify-center;
 }
 
 .navbar-logo {
@@ -250,6 +250,10 @@ code::-webkit-scrollbar-thumb {
 
 .nav-links {
   @apply px-4 py-2 no-underline;
+}
+
+.nav-active {
+  @apply text-aquamarine-700;
 }
 
 .nav-links-mobile,
