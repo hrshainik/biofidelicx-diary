@@ -7,7 +7,7 @@ const requestHeaders = {
 
 export const getSpecialPost = async () => {
   const query = gql`
-    query MyQuery() {
+    query MyQuery {
       postsConnection(where: { specialPost: true }) {
         edges {
           node {
@@ -155,11 +155,8 @@ export const getPostDetails = async (slug) => {
 
 export const getRecentPosts = async () => {
   const query = gql`
-    query GetPostDetails() {
-      posts(
-        orderBy: createdAt_ASC
-        last: 3
-      ) {
+    query GetPostDetails {
+      posts(orderBy: createdAt_ASC, last: 3) {
         title
         featuredImage {
           url
@@ -301,8 +298,8 @@ export const getComments = async (slug) => {
 
 export const getFeaturedPosts = async () => {
   const query = gql`
-    query GetCategoryPost() {
-      posts(where: {featuredPost: true}) {
+    query GetCategoryPost {
+      posts(where: { featuredPost: true }) {
         author {
           name
           photo {
@@ -323,7 +320,7 @@ export const getFeaturedPosts = async () => {
           }
         }
       }
-    }   
+    }
   `
 
   const result = await request(graphqlAPI, query, {}, requestHeaders)
