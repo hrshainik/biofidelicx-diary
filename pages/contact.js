@@ -20,7 +20,6 @@ const Contact = () => {
     formState: { errors },
   } = useForm()
   const onSubmit = (data) => {
-    // console.log(data)
     sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID).then(
       (result) => {
         toast.success('Message Sent', {

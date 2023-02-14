@@ -26,7 +26,7 @@ const RegularPostCard = ({ post }) => {
               backgroundColor: `${post.categories[0].categoryColor?.hex}`,
             }}
           >
-            <span className="font-t text-xs font-semibold uppercase leading-3 tracking-md">
+            <span className="font-t text-xs font-semibold uppercase leading-3 tracking-md text-white-500">
               {post.categories[0].name}
             </span>
           </div>

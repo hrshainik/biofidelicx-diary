@@ -30,7 +30,12 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <a href="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <a
+          href="/"
+          className="navbar-logo"
+          aria-label="logo"
+          onClick={closeMobileMenu}
+        >
           <svg
             viewBox="0 0 28 43"
             fill="none"
@@ -124,67 +129,81 @@ const Navbar = () => {
           </svg>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <Link href="/">
-            <a onClick={closeMobileMenu}>
-              <li
-                className={`nav-item ${
-                  currentRoute === '/' ? 'nav-active' : null
-                }`}
+          <li
+            className={`nav-item ${currentRoute === '/' ? 'nav-active' : null}`}
+          >
+            <Link href="/">
+              <a
+                onClick={closeMobileMenu}
+                className="flex h-full w-full items-center justify-center"
               >
                 Home
-              </li>
-            </a>
-          </Link>
-          <Link href="https://biofidelicx-quizzard.vercel.app">
-            <a onClick={closeMobileMenu}>
-              <li
-                className="nav-item"
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
+              </a>
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link href="https://biofidelicx-quizzard.vercel.app">
+              <a
+                onClick={closeMobileMenu}
+                className="flex h-full w-full items-center justify-center"
               >
                 Quiz
-              </li>
-            </a>
-          </Link>
-          <Link href="/category">
-            <a onClick={closeMobileMenu}>
-              <li
-                className={`nav-item ${
-                  currentRoute === '/category' ? 'nav-active' : null
-                }`}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={`nav-item ${
+              currentRoute === '/category' ? 'nav-active' : null
+            }`}
+          >
+            <Link href="/category">
+              <a
+                onClick={closeMobileMenu}
+                className="flex h-full w-full items-center justify-center"
               >
                 Category
-              </li>
-            </a>
-          </Link>
-          <Link href="/about">
-            <a onClick={closeMobileMenu}>
-              <li
-                className={`nav-item ${
-                  currentRoute === '/about' ? 'nav-active' : null
-                }`}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={`nav-item ${
+              currentRoute === '/about' ? 'nav-active' : null
+            }`}
+          >
+            <Link href="/about">
+              <a
+                onClick={closeMobileMenu}
+                className="flex h-full w-full items-center justify-center"
               >
                 About
-              </li>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a onClick={closeMobileMenu}>
-              <li
-                className={`nav-item ${
-                  currentRoute === '/contact' ? 'nav-active' : null
-                }`}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={`nav-item ${
+              currentRoute === '/contact' ? 'nav-active' : null
+            }`}
+          >
+            <Link href="/contact">
+              <a
+                onClick={closeMobileMenu}
+                className="flex h-full w-full items-center justify-center"
               >
                 Contact
-              </li>
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </li>
         </ul>
         <div className="share-link">
           <a
             href="https://www.youtube.com/channel/UCFwsPbrNazt7_hR91raqLPA"
             target="_blank"
             rel="noreferrer"
+            aria-label="youtube"
           >
             <svg
               fill="#fff"

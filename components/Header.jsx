@@ -16,6 +16,7 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
         <Image
           className="-z-10"
           src={imageUrl}
+          priority
           alt="hero"
           layout="fill"
           objectFit="cover"
@@ -38,7 +39,7 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
                   style={{ backgroundColor: `${color}` }}
                 ></div>
                 <span
-                  className="post-tag cursor-pointer"
+                  className="post-tag cursor-pointer text-white-500"
                   style={{
                     backgroundColor: `${color}`,
                   }}
@@ -60,7 +61,7 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
                 style={{ backgroundColor: `${color}` }}
               ></div>
               <span
-                className="post-tag"
+                className="post-tag text-white-500"
                 style={{
                   backgroundColor: `${color}`,
                 }}

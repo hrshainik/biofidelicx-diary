@@ -23,7 +23,7 @@ const CategoryCard = ({ category, height }) => {
         <span className="text-base">
           {category.post.length} {category.post.length > 1 ? 'blogs' : 'blog'}
         </span>
-        <h3 className="font-h text-2xl font-bold">{category.name}</h3>
+        <h2 className="font-h text-2xl font-bold">{category.name}</h2>
       </div>
     </Link>
   )

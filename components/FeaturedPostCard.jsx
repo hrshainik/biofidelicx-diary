@@ -4,7 +4,6 @@ import Link from 'next/link'
 const FeaturedPostCard = ({ post }) => {
   const category = post.categories[0].name
   const color = post.categories[0].categoryColor.hex
-  console.log(color)
 
   return (
     <Link href={`/post/${post.slug}`}>
