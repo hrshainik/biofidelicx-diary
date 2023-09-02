@@ -9,7 +9,6 @@ const Navbar = () => {
   const currentRoute = router.pathname
 
   const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -34,7 +33,7 @@ const Navbar = () => {
           href="/"
           className="navbar-logo"
           aria-label="logo"
-          onClick={closeMobileMenu}
+          onClick={handleClick}
         >
           <svg
             viewBox="0 0 28 43"
@@ -134,21 +133,17 @@ const Navbar = () => {
           >
             <Link href="/">
               <a
-                onClick={closeMobileMenu}
+                onClick={handleClick}
                 className="flex h-full w-full items-center justify-center"
               >
                 Home
               </a>
             </Link>
           </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
+          <li className="nav-item">
             <Link href="https://biofidelicx-quizzard.vercel.app">
               <a
-                onClick={closeMobileMenu}
+                onClick={handleClick}
                 className="flex h-full w-full items-center justify-center"
               >
                 Quiz
@@ -162,7 +157,7 @@ const Navbar = () => {
           >
             <Link href="/category">
               <a
-                onClick={closeMobileMenu}
+                onClick={handleClick}
                 className="flex h-full w-full items-center justify-center"
               >
                 Category
@@ -176,7 +171,7 @@ const Navbar = () => {
           >
             <Link href="/about">
               <a
-                onClick={closeMobileMenu}
+                onClick={handleClick}
                 className="flex h-full w-full items-center justify-center"
               >
                 About
@@ -190,7 +185,7 @@ const Navbar = () => {
           >
             <Link href="/contact">
               <a
-                onClick={closeMobileMenu}
+                onClick={handleClick}
                 className="flex h-full w-full items-center justify-center"
               >
                 Contact

@@ -27,6 +27,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/biofidelicx"
               className="flex items-center gap-1"
+              aria-label="facebook"
             >
               <svg
                 fill="#fff"
@@ -45,6 +46,7 @@ const Footer = () => {
             <a
               href="https://instagram.com/biofidelicx"
               className="flex items-center gap-1"
+              aria-label="instagram"
             >
               <svg
                 fill="#fff"
@@ -63,6 +65,7 @@ const Footer = () => {
             <a
               href="https://www.youtube.com/channel/UCFwsPbrNazt7_hR91raqLPA"
               className="flex items-center gap-1"
+              aria-label="youtube"
             >
               <svg
                 fill="#fff"
@@ -81,6 +84,7 @@ const Footer = () => {
             <a
               href="https://twitter.com/biofidelicx"
               className="flex items-center gap-1"
+              aria-label="twitter"
             >
               <svg
                 fill="#fff"
@@ -99,6 +103,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/company/biofidelicx-academy"
               className="flex items-center gap-1"
+              aria-label="linkedin"
             >
               <svg
                 fill="#fff"

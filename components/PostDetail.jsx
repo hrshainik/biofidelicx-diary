@@ -1,6 +1,29 @@
 import { RichText } from '@graphcms/rich-text-react-renderer'
+import { useEffect, useState } from 'react'
 
 const PostDetail = ({ post }) => {
+  const [webShareSupported, setWebShareSupported] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.navigator.share) {
+      setWebShareSupported(true)
+    }
+  }, [])
+
+  const shareBlogPost = async () => {
+    if (webShareSupported) {
+      try {
+        await window.navigator.share({
+          title: post.title,
+          text: post.excerpt,
+          url: window.location.href,
+        })
+      } catch (error) {
+        console.error('Error sharing:', error)
+      }
+    }
+  }
+
   return (
     <div className="mb-12">
       <div className="relative">
@@ -58,7 +81,13 @@ const PostDetail = ({ post }) => {
                 </svg>
               </a>
             </div>
-            <div className="ln cursor-pointer border border-midnight-200 p-4">
+            <div
+              className={`ln cursor-pointer border border-midnight-200 p-4 md:border-b-0 md:border-r ${
+                webShareSupported
+                  ? 'border-r-0 md:border-b-0'
+                  : 'border-r md:border-b'
+              }`}
+            >
               <a
                 href={`https://linkedin.com/shareArticle?url=https://biofidelicx-diary.vercel.app/post/${post.slug}&title=${post.title}`}
                 target="_blank"
@@ -76,6 +105,28 @@ const PostDetail = ({ post }) => {
                 </svg>
               </a>
             </div>
+            {webShareSupported && (
+              <div
+                onClick={shareBlogPost}
+                className="share cursor-pointer border border-midnight-200 p-4"
+              >
+                <a
+                  href={`https://linkedin.com/shareArticle?url=https://biofidelicx-diary.vercel.app/post/${post.slug}&title=${post.title}`}
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 30 30"
+                    className="h-6 w-6 md:h-10 md:w-10"
+                    fill="currentColor"
+                  >
+                    <path d="M 23 3 C 20.791 3 19 4.791 19 7 C 19 7.2869826 19.034351 7.5660754 19.091797 7.8359375 L 10 12.380859 C 9.2667379 11.541629 8.2018825 11 7 11 C 4.791 11 3 12.791 3 15 C 3 17.209 4.791 19 7 19 C 8.2018825 19 9.2667379 18.458371 10 17.619141 L 19.091797 22.164062 C 19.034351 22.433925 19 22.713017 19 23 C 19 25.209 20.791 27 23 27 C 25.209 27 27 25.209 27 23 C 27 20.791 25.209 19 23 19 C 21.798117 19 20.733262 19.541629 20 20.380859 L 10.908203 15.835938 C 10.965649 15.566075 11 15.286983 11 15 C 11 14.713017 10.965649 14.433925 10.908203 14.164062 L 20 9.6191406 C 20.733262 10.458371 21.798117 11 23 11 C 25.209 11 27 9.209 27 7 C 27 4.791 25.209 3 23 3 z"></path>
+                  </svg>
+                </a>
+              </div>
+            )}
           </div>
         </div>
         <div className="post-content">
