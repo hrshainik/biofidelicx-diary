@@ -13,7 +13,8 @@ const Footer = () => {
             <Link href="/about">Team</Link>
           </li>
           <li className="relative h-11 w-36 cursor-pointer sm:w-40 md:h-20 md:w-52 lg:w-60">
-            <Image src="/logo.svg" alt="logo" layout="fill" />
+            {/* <Image src="/logo.svg" alt="logo" layout="fill" /> */}
+            <Image src="/logo.svg" alt="logo" width={160} height={48} />
           </li>
           <li className="pb-3">
             <Link href="/category">Categories</Link>

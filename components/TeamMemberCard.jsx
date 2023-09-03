@@ -7,10 +7,10 @@ const TeamMemberCard = ({ name, designation, bio, img }) => {
       <div className="team-card-img relative">
         <Image
           src={`/${img}`}
-          layout="fill"
+          fill
           className="h-full w-full object-cover"
-          loading="lazy"
           alt="team member"
+          loader={() => `/${img}`}
         />
       </div>
       <div className="team-card-info">

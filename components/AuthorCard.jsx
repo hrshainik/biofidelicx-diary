@@ -9,10 +9,10 @@ const AuthorCard = ({ author }) => {
         <div className="relative h-48 w-[50%] sm:h-56 md:h-44 lg:h-52 lg:w-[60%] xl:w-[50%] 2xl:h-56">
           <Image
             src={author.photo.url}
-            layout="fill"
+            fill
             className="h-full w-full object-cover"
-            loading="lazy"
             alt="author"
+            // loader={() => author.photo.url}
           />
         </div>
         <div className="border-1 absolute top-4 right-0 w-[60%] border border-midnight-500/40 bg-white-500/60 p-3 lg:w-[50%] xl:w-[60%]">

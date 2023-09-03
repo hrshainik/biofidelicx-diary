@@ -6,14 +6,16 @@ const RegularPostCard = ({ post }) => {
   return (
     <Link href={`/post/${post.slug}`}>
       <div className="card mb-8 cursor-pointer">
-        <div className="relative z-10 h-56">
-          <Image
-            src={post.featuredImage.url}
-            alt={post.title}
-            layout="fill"
-            className="card-img h-full w-full object-cover"
-            loading="lazy"
-          />
+        <div className="aspect-ratio-container aspect-ratio-16-9 aspect-ratio-container-video relative z-10 w-full overflow-hidden">
+          <div className="aspect-ratio-content">
+            <Image
+              src={post.featuredImage.url}
+              alt={post.title}
+              fill
+              className="card-img object-cover"
+              // loader={() => post.featuredImage.url}
+            />
+          </div>
         </div>
         <div
           className="card-con relative z-20 mx-auto -mt-6 flex flex-col items-center bg-white-500  text-midnight-500"
@@ -43,6 +45,7 @@ const RegularPostCard = ({ post }) => {
                     width="24"
                     height="24"
                     className="rounded-full object-cover align-middle"
+                    // loader={() => post.author.photo.url}
                   />
                 ) : (
                   <svg

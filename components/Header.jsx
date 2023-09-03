@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Header = ({ title, imageUrl, slug, subText, color }) => {
   const bgImage = {
     background: `linear-gradient(
-      rgba(0, 0, 0, .75), 
+      rgba(0, 0, 0, .75),
       rgba(0, 0, 0, .5)
     ),
     url('${imageUrl}') center center / cover no-repeat`,
@@ -14,18 +14,18 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
     <>
       <main className="hero bg-gradient-to-b from-midnight-500 to-transparent">
         <Image
-          className="-z-10"
+          className="-z-10 object-cover object-center"
           src={imageUrl}
+          fill
           priority
           alt="hero"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          // loader={() => imageUrl}
         />
         <div className="relative top-3 z-10 mx-auto">
           <Link href="/">
             <div className="relative mx-auto h-12 w-40 cursor-pointer md:h-16 md:w-56 lg:h-20 lg:w-72">
-              <Image src="/logo.svg" layout="fill" alt="logo" />
+              {/* <Image src="/logo.svg" layout="fill" alt="logo" /> */}
+              <Image src="/logo.svg" alt="logo" width={160} height={48} />
             </div>
           </Link>
         </div>

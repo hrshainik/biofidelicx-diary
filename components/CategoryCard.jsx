@@ -13,12 +13,11 @@ const CategoryCard = ({ category, height }) => {
         // }}
       >
         <Image
-          className="-z-10"
           src={category?.photo?.url}
+          className="-z-10 object-cover object-center"
           alt={category.name}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          // loader={() => category?.photo?.url}
         />
         <span className="text-base">
           {category.post.length} {category.post.length > 1 ? 'blogs' : 'blog'}

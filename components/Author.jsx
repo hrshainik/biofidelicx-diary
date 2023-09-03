@@ -12,10 +12,10 @@ const Author = ({ author, date }) => {
               <Image
                 src={author.photo.url}
                 alt={author.name}
-                width="90"
-                height="90"
+                width={90}
+                height={90}
                 className="object-cover align-middle"
-                loading="lazy"
+                // loader={() => author.photo.url}
               />
             ) : (
               <svg

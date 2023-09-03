@@ -131,23 +131,12 @@ const Navbar = () => {
           <li
             className={`nav-item ${currentRoute === '/' ? 'nav-active' : null}`}
           >
-            <Link href="/">
-              <a
-                onClick={handleClick}
-                className="flex h-full w-full items-center justify-center"
-              >
-                Home
-              </a>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="https://biofidelicx-quizzard.vercel.app">
-              <a
-                onClick={handleClick}
-                className="flex h-full w-full items-center justify-center"
-              >
-                Quiz
-              </a>
+            <Link
+              href="/"
+              onClick={handleClick}
+              className="flex h-full w-full items-center justify-center"
+            >
+              Home
             </Link>
           </li>
           <li
@@ -155,13 +144,12 @@ const Navbar = () => {
               currentRoute === '/category' ? 'nav-active' : null
             }`}
           >
-            <Link href="/category">
-              <a
-                onClick={handleClick}
-                className="flex h-full w-full items-center justify-center"
-              >
-                Category
-              </a>
+            <Link
+              href="/category"
+              onClick={handleClick}
+              className="flex h-full w-full items-center justify-center"
+            >
+              Category
             </Link>
           </li>
           <li
@@ -169,13 +157,12 @@ const Navbar = () => {
               currentRoute === '/about' ? 'nav-active' : null
             }`}
           >
-            <Link href="/about">
-              <a
-                onClick={handleClick}
-                className="flex h-full w-full items-center justify-center"
-              >
-                About
-              </a>
+            <Link
+              href="/about"
+              onClick={handleClick}
+              className="flex h-full w-full items-center justify-center"
+            >
+              About
             </Link>
           </li>
           <li
@@ -183,13 +170,12 @@ const Navbar = () => {
               currentRoute === '/contact' ? 'nav-active' : null
             }`}
           >
-            <Link href="/contact">
-              <a
-                onClick={handleClick}
-                className="flex h-full w-full items-center justify-center"
-              >
-                Contact
-              </a>
+            <Link
+              href="/contact"
+              onClick={handleClick}
+              className="flex h-full w-full items-center justify-center"
+            >
+              Contact
             </Link>
           </li>
         </ul>

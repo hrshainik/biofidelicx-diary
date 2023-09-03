@@ -8,13 +8,16 @@ const FeaturedPostCard = ({ post }) => {
   return (
     <Link href={`/post/${post.slug}`}>
       <div className="mb-8">
-        <div className="relative z-10 h-40">
-          <Image
-            src={post.featuredImage.url}
-            alt={post.title}
-            layout="fill"
-            className="w-full object-cover object-top"
-          />
+        <div className="aspect-ratio-container aspect-ratio-16-9 aspect-ratio-container-video relative z-10">
+          <div className="aspect-ratio-content">
+            <Image
+              src={post.featuredImage.url}
+              alt={post.title}
+              fill
+              className="object-cover object-top"
+              // loader={() => post.featuredImage.url}
+            />
+          </div>
         </div>
         <div className="relative z-20 mx-auto flex flex-col items-center px-2 pt-0 text-midnight-500 lg:px-4">
           <div className="py-1 text-midnight-500">
@@ -37,6 +40,7 @@ const FeaturedPostCard = ({ post }) => {
                   width="24"
                   height="24"
                   className="mr-2 rounded-full object-cover align-middle"
+                  // loader={() => post.author.photo.url}
                 />
               ) : (
                 <svg
