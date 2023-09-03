@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from 'react'
 import { Slide, toast } from 'react-toastify'
 import { submitComment } from '../services'

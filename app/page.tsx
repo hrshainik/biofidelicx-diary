@@ -1,6 +1,6 @@
-import Head from 'next/head'
+'use client'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Categories,
   FeaturedPosts,
@@ -11,7 +11,36 @@ import {
 } from '../components'
 import { getPosts, getSpecialPost } from '../services'
 
-const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
+const HomePage: React.FC = () => {
+  const [postsData, setPostsData] = useState([])
+  const [pageInfo, setPageInfo] = useState({})
+  const [specialPost, setSpecialPost] = useState([])
+  let currentPageNumber = 1
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const limit = 10
+        const offset = 0
+
+        // Fetch posts
+        const postsResponse = await getPosts(limit, offset)
+        setPostsData(postsResponse.edges)
+        setPageInfo(postsResponse.pageInfo)
+
+        // Fetch special post
+        const specialPostResponse = await getSpecialPost()
+        console.log(specialPostResponse.edges)
+
+        setSpecialPost(specialPostResponse.edges) // Assuming you want the first special post
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
   useEffect(() => {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -19,24 +48,6 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
 
   return (
     <>
-      <Head>
-        <title>biofidelicX diary</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=7" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="biofidelicX diary is the ideal location to stay informed and up-to-date on the most recent research and discoveries in bio-science, whether you're a student, a scientist, or simply someone with a passion for learning about the natural world."
-        />
-        <meta
-          name="keywords"
-          content="biofidelicx diary, biofidelicx academy"
-        />
-        <meta name="author" content="Habibur Rahman" />
-      </Head>
-
       <Header
         title="Unlock Your Potential in Bio-Science: Learn, Explore, Discover"
         imageUrl={'/hero-img.jpg'}
@@ -47,7 +58,7 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
           {specialPost.map(({ node: post }, i) => (
             <SpecialPostCard post={post} key={i} />
           ))}
-          {posts.map(({ node: post }, i) => (
+          {postsData.map(({ node: post }, i) => (
             <RegularPostCard key={i} post={post} />
           ))}
           <div className="pagination">
@@ -133,21 +144,4 @@ const Home = ({ posts, pageInfo, currentPageNumber, specialPost }) => {
   )
 }
 
-export default Home
-
-export async function getStaticProps() {
-  const limit = 10
-  const offset = 0
-
-  const { edges: posts, pageInfo } = await getPosts(limit, offset)
-  const { edges: specialPost } = await getSpecialPost()
-
-  return {
-    props: {
-      posts,
-      pageInfo,
-      currentPageNumber: 1,
-      specialPost,
-    },
-  }
-}
+export default HomePage

@@ -1,3 +1,4 @@
+'use client'
 import { RichText } from '@graphcms/rich-text-react-renderer'
 import { useEffect, useState } from 'react'
 

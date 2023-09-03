@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from 'react'
 import { getCategories } from '../services'
 import CategoryCard from './CategoryCard'

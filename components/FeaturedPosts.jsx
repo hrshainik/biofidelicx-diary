@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from 'react'
 import { Autoplay, Pagination } from 'swiper'
 import 'swiper/css'
