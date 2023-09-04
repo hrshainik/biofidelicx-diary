@@ -5,6 +5,7 @@ import { getCategories } from '../../services'
 
 const CategoriesPage: React.FC = () => {
   const [categories, setCategories] = useState([])
+
   useEffect(() => {
     const fetchData = async () => {
       try {
