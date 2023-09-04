@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React, { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { Slide, toast } from 'react-toastify'
-import { Header } from '../components'
+import { Header } from './components'
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID
