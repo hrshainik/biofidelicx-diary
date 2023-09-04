@@ -99,11 +99,7 @@ const PostWidget = ({ categories, slug }) => {
       </legend>
       <div className="p-5 pt-4 lg:p-8">
         {relatedPosts.map((post, i) => (
-          <Link
-            href={`/post/${post.slug}`}
-            className="text-base"
-            key={post.title}
-          >
+          <Link href={`/${post.slug}`} className="text-base" key={post.title}>
             <div
               className={`flex w-full cursor-pointer items-start ${
                 i === 2 ? 'mb-0' : 'mb-4'

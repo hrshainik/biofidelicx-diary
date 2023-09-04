@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       await res.revalidate('/category')
       await res.revalidate(`/category/${slug}`)
     } else if (typename === 'Post') {
-      await res.revalidate(`/post/${slug}`)
+      await res.revalidate(`/${slug}`)
     }
     return res.status(200).json({ revalidated: true })
   } catch (err) {

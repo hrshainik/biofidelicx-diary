@@ -5,8 +5,8 @@ import Link from 'next/link'
 const SpecialPostCard = ({ post }) => {
   return (
     <Link
-      href={`/post/${post.slug}`}
-      className="sp-card order-first col-span-1 mb-8 cursor-pointer md:col-span-2"
+      href={`/${post.slug}`}
+      className="sp-card order-first col-span-1 cursor-pointer md:col-span-2"
     >
       <div className="sp-card-up aspect-ratio-container aspect-ratio-19-9 aspect-ratio-container-video-narrow relative z-10 w-full overflow-hidden">
         <div className="aspect-ratio-content">

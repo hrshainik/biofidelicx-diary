@@ -54,7 +54,10 @@ const HomePage: React.FC = () => {
       />
       <FeaturedPosts />
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
-        <div className="col-span-1 grid grid-cols-1 content-start gap-6 md:grid-cols-2 lg:col-span-8">
+        <div
+          className="col-span-1 grid grid-cols-1 content-start md:grid-cols-2 lg:col-span-8"
+          style={{ 'grid-row-gap': '32px', 'grid-column-gap': '24px' }}
+        >
           {specialPost.map(({ node: post }, i) => (
             <SpecialPostCard post={post} key={i} />
           ))}

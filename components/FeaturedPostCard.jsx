@@ -6,7 +6,7 @@ const FeaturedPostCard = ({ post }) => {
   const color = post.categories[0].categoryColor.hex
 
   return (
-    <Link href={`/post/${post.slug}`}>
+    <Link href={`/${post.slug}`}>
       <div className="mb-8">
         <div className="aspect-ratio-container aspect-ratio-16-9 aspect-ratio-container-video relative z-10">
           <div className="aspect-ratio-content">

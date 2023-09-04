@@ -32,7 +32,7 @@ const PostDetail = ({ post }) => {
           <div className="social mb-0 flex text-midnight-300 md:mb-4 md:mr-6 md:flex-col">
             <div className="fb block cursor-pointer border border-r-0 border-midnight-200 p-4 md:border-b-0 md:border-r">
               <div
-                data-href={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
+                data-href={`https://biofidelicx-diary.vercel.app/${post.slug}`}
                 data-layout="button"
                 data-size="large"
               >
@@ -59,10 +59,10 @@ const PostDetail = ({ post }) => {
                 href={`https://twitter.com/intent/tweet?text=${encodeURI(
                   post.title
                 )}&url=${encodeURI(
-                  `https://biofidelicx-diary.vercel.app/post/${post.slug}`
+                  `https://biofidelicx-diary.vercel.app/${post.slug}`
                 )}&hashtags=biofidelicx,biofidelicxdiary&via=biofidelicx`}
                 data-text={post.title}
-                data-url={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
+                data-url={`https://biofidelicx-diary.vercel.app/${post.slug}`}
                 data-hashtags="biofidelicx,biofidelicxdiary"
                 data-via="biofidelicx"
                 data-related="twitterapi,twitter"
@@ -90,7 +90,7 @@ const PostDetail = ({ post }) => {
               }`}
             >
               <a
-                href={`https://linkedin.com/shareArticle?url=https://biofidelicx-diary.vercel.app/post/${post.slug}&title=${post.title}`}
+                href={`https://linkedin.com/shareArticle?url=https://biofidelicx-diary.vercel.app/${post.slug}&title=${post.title}`}
                 target="_blank"
               >
                 <svg
@@ -112,7 +112,7 @@ const PostDetail = ({ post }) => {
                 className="share cursor-pointer border border-midnight-200 p-4"
               >
                 <a
-                  href={`https://linkedin.com/shareArticle?url=https://biofidelicx-diary.vercel.app/post/${post.slug}&title=${post.title}`}
+                  href={`https://linkedin.com/shareArticle?url=https://biofidelicx-diary.vercel.app/${post.slug}&title=${post.title}`}
                   target="_blank"
                 >
                   <svg

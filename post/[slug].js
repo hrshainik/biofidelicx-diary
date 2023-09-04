@@ -9,8 +9,8 @@ import {
   Loader,
   PostDetail,
   PostWidget,
-} from '../../components'
-import { getPostDetails, getPosts } from '../../services'
+} from '../components'
+import { getPostDetails, getPosts } from '../services'
 
 const PostDetails = ({ post }) => {
   const router = useRouter()
@@ -43,7 +43,7 @@ const PostDetails = ({ post }) => {
         // For facebook
         <meta
           property="og:url"
-          content={`https://biofidelicx-diary.vercel.app/post/${post.slug}`}
+          content={`https://biofidelicx-diary.vercel.app/${post.slug}`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={post.title} />

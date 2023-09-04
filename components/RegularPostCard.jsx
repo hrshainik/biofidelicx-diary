@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 const RegularPostCard = ({ post }) => {
   return (
-    <Link href={`/post/${post.slug}`}>
-      <div className="card mb-8 cursor-pointer">
+    <Link href={`/${post.slug}`}>
+      <div className="card cursor-pointer">
         <div className="aspect-ratio-container aspect-ratio-16-9 aspect-ratio-container-video relative z-10 w-full overflow-hidden">
           <div className="aspect-ratio-content">
             <Image

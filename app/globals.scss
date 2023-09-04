@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap');
+
 body {
   @apply bg-white-500 font-t text-midnight-500 selection:bg-aquamarine-500 selection:text-midnight-500;
 }
