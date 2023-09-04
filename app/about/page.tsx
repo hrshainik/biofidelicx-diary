@@ -1,14 +1,10 @@
-import Head from 'next/head'
+'use client'
 import React from 'react'
-import { Header } from '../components'
-import TeamMemberCard from '../components/TeamMemberCard'
+import { Header, TeamMemberCard } from '../../components'
 
-const About = () => {
+const AboutPage: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>About - biofidelicX</title>
-      </Head>
       <Header title="About Us" imageUrl={'/hero-img.jpg'} />
       <div className="mx-auto mb-8 px-2 md:px-5">
         <div className="post-details !max-w-screen-lg">
@@ -50,4 +46,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutPage

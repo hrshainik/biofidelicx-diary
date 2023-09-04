@@ -65,26 +65,3 @@ const AuthorPage: React.FC = ({ params }: { params: { slug: string } }) => {
 }
 
 export default AuthorPage
-
-// export async function getStaticProps({ params }) {
-//   const author = await getAuthorDetails(params.slug)
-
-//   if (!author) {
-//     return {
-//       notFound: true,
-//     }
-//   }
-
-//   return {
-//     props: { author: author },
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   const authors = await getAuthors()
-
-//   return {
-//     paths: authors.map(({ node: { slug } }) => ({ params: { slug } })),
-//     fallback: 'blocking',
-//   }
-// }
