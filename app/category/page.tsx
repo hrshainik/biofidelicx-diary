@@ -1,10 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { CategoryCard, Header, PostWidget } from '../../components'
+import { CategoryCard, Header } from '../../components'
+import PostWidget from '../../components/PostWidget'
 import { getCategories } from '../../services'
+import { Category } from '../global-types'
 
 const CategoriesPage: React.FC = () => {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState<[Category]>([])
 
   useEffect(() => {
     const fetchData = async () => {

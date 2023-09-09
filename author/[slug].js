@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { AuthorAbout, Header, Loader, RegularPostCard } from '../components'
+import { AuthorAbout, Header, Loader } from '../components'
 import { getAuthorDetails, getAuthors } from '../services'
 
 const AuthorDetails = ({ author }) => {

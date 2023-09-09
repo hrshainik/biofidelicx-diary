@@ -1,6 +1,21 @@
 import moment from 'moment'
+import React from 'react'
 
-const AuthorAbout = ({ author }) => {
+interface AuthorAboutProps {
+  author: {
+    bio: string
+    createdAt: string
+    facebook: string
+    twitter: string
+    linkedin: string
+    website: string
+    email: string
+    youtube: string
+    instagram: string
+  }
+}
+
+const AuthorAbout: React.FC = ({ author }: AuthorAboutProps) => {
   return (
     <>
       <fieldset className="border border-midnight-100">

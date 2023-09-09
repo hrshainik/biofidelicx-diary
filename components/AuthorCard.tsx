@@ -2,7 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const AuthorCard = ({ author }) => {
+interface AuthorCardProps {
+  author: {
+    slug: string
+    name: string
+    bio: string
+    photo: {
+      url: string
+    }
+  }
+}
+
+const AuthorCard: React.FC = ({ author }: AuthorCardProps) => {
   return (
     <Link key={author.slug} href={`/author/${author.slug}`}>
       <div className="relative">

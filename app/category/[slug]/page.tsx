@@ -1,21 +1,18 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import {
-  Categories,
-  Header,
-  Loader,
-  PostWidget,
-  RegularPostCard,
-} from '../../../components'
+import { Header, Loader, RegularPostCard } from '../../../components'
+import Categories from '../../../components/Categories'
+import PostWidget from '../../../components/PostWidget'
 import { getCategoryPost } from '../../../services'
+import { Post } from '../../global-types'
 
 const CategoryPage = ({ params }: { params: { slug: string } }) => {
   const router = useRouter()
 
-  const [posts, setPosts] = useState<any>(null)
-  const [category, setCategory] = useState('')
-  const [categoryColor, setCategoryColor] = useState('')
+  const [posts, setPosts] = useState<[Post]>(null)
+  const [category, setCategory] = useState<string>('')
+  const [categoryColor, setCategoryColor] = useState<string>('')
 
   useEffect(() => {
     const fetchData = async () => {

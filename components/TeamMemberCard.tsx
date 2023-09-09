@@ -1,7 +1,19 @@
 import Image from 'next/image'
 import React from 'react'
 
-const TeamMemberCard = ({ name, designation, bio, img }) => {
+interface TeamMemberCardProps {
+  name: string
+  designation: string
+  bio: string
+  img: string
+}
+
+const TeamMemberCard: React.FC = ({
+  name,
+  designation,
+  bio,
+  img,
+}: TeamMemberCardProps) => {
   return (
     <div className="team-card">
       <div className="team-card-img relative">

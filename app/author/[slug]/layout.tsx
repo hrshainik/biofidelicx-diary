@@ -1,4 +1,6 @@
-export const metadata: MetaData = {
+import { Metadata } from '../../global-types'
+
+export const metadata: Metadata = {
   title: 'biofidelicX diary',
   description: "biofidelicx diary's categories",
   keywords: 'biofidelicX diary, biofidelicX academy',

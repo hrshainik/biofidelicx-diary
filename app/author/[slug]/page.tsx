@@ -1,18 +1,16 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import {
-  AuthorAbout,
-  Header,
-  Loader,
-  RegularPostCard,
-} from '../../../components'
+import { Header, Loader } from '../../../components'
+import AuthorAbout from '../../../components/AuthorAbout'
+import RegularPostCard from '../../../components/RegularPostCard'
 import { getAuthorDetails } from '../../../services'
+import { Author } from '../../global-types'
 
 const AuthorPage: React.FC = ({ params }: { params: { slug: string } }) => {
   const router = useRouter()
 
-  const [author, setAuthor] = useState<any>(null)
+  const [author, setAuthor] = useState<Author>(null)
 
   useEffect(() => {
     const fetchData = async () => {

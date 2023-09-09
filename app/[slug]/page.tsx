@@ -1,29 +1,23 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import {
-  Author,
-  Categories,
-  Comments,
-  CommentsForm,
-  Header,
-  Loader,
-  PostDetail,
-  PostWidget,
-} from '../../components'
+import { Comments, CommentsForm, Header, Loader } from '../../components'
+import Author from '../../components/Author'
+import Categories from '../../components/Categories'
+import PostDetail from '../../components/PostDetail'
+import PostWidget from '../../components/PostWidget'
 import { getPostDetails } from '../../services'
+import { Post } from '../global-types'
 
 const PostDetailsPage = ({ params }: { params: { slug: string } }) => {
   const router = useRouter()
 
-  const [post, setPost] = useState<any>(null)
+  const [post, setPost] = useState<Post>(null)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const postDetails = await getPostDetails(params.slug)
-        console.log(postDetails)
-
         setPost(postDetails)
       } catch (error) {
         console.error('Error fetching data:', error)
@@ -33,8 +27,6 @@ const PostDetailsPage = ({ params }: { params: { slug: string } }) => {
     fetchData()
     console.log('fetching data')
   }, [params.slug])
-
-  console.log(post)
 
   if (router.isFallback) {
     return <Loader />

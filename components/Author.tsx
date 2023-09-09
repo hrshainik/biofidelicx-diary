@@ -2,7 +2,19 @@ import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Author = ({ author, date }) => {
+interface AuthorProps {
+  author: {
+    name: string
+    slug: string
+    bio: string
+    photo: {
+      url: string
+    }
+  }
+  date: string
+}
+
+const Author: React.FC = ({ author, date }: AuthorProps) => {
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-0">
       <Link href={`/author/${author.slug}`}>

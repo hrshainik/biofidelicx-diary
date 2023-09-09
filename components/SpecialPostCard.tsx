@@ -1,8 +1,43 @@
+'use client'
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
-const SpecialPostCard = ({ post }) => {
+interface SpecialPostCardProps {
+  post: {
+    title: string
+    slug: string
+    featuredImage: {
+      sourceUrl: string
+    }
+    author: {
+      id: string
+      name: string
+      bio: string
+      photo: {
+        url: string
+      }
+    }
+    categories: [
+      {
+        name: string
+        slug: string
+        categoryColor: {
+          hex: string
+        }
+        photo: {
+          url: string
+        }
+      }
+    ]
+    excerpt: string
+    createdAt: string
+    specialPost: boolean
+  }
+}
+
+const SpecialPostCard: React.FC = ({ post }: SpecialPostCardProps) => {
   return (
     <Link
       href={`/${post.slug}`}

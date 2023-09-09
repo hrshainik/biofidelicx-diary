@@ -1,3 +1,5 @@
+import { Metadata } from '../global-types'
+
 export const metadata: Metadata = {
   title: 'Next.js',
   description: 'Next.js is the React framework for production',

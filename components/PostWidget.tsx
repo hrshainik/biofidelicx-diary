@@ -2,12 +2,18 @@
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Category, Post } from '../app/global-types'
 import { getRecentPosts, getRelatedPosts } from '../services'
 
-const PostWidget = ({ categories, slug }) => {
-  const [relatedPosts, setRelatedPosts] = useState([])
-  const [dataLoaded, setDataLoaded] = useState(false)
+interface PostWidgetProps {
+  slug?: string
+  categories?: [Category]
+}
+
+const PostWidget: React.FC = ({ categories, slug }: PostWidgetProps) => {
+  const [relatedPosts, setRelatedPosts] = useState<[Post]>([])
+  const [dataLoaded, setDataLoaded] = useState<boolean>(false)
 
   useEffect(() => {
     if (slug) {

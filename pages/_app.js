@@ -1,11 +1,11 @@
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Layout } from '../components'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
+      {/* <Layout> */}
       <Component {...pageProps} />
       <ToastContainer
         position="top-center"
@@ -20,7 +20,8 @@ function MyApp({ Component, pageProps }) {
         limit={3}
         theme="light"
       />
-    </Layout>
+      {/* </Layout> */}
+    </>
   )
 }
 

@@ -1,9 +1,25 @@
 'use client'
 import { RichText } from '@graphcms/rich-text-react-renderer'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const PostDetail = ({ post }) => {
-  const [webShareSupported, setWebShareSupported] = useState(false)
+interface PostDetailProps {
+  post: {
+    title: string
+    slug: string
+    featuredImage: {
+      url: string
+    }
+    content: {
+      raw: {
+        children: any
+      }
+    }
+    excerpt: string
+  }
+}
+
+const PostDetail: React.FC = ({ post }: PostDetailProps) => {
+  const [webShareSupported, setWebShareSupported] = useState<boolean>(false)
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.navigator.share) {

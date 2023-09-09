@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
-import { Header, TeamMemberCard } from '../../components'
+import { Header } from '../../components'
+import TeamMemberCard from '../../components/TeamMemberCard'
 
 const AboutPage: React.FC = () => {
   return (

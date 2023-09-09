@@ -1,5 +1,6 @@
 import { Navbar } from '../components'
 import Footer from '../components/Footer'
+import { Metadata } from './global-types'
 import './globals.scss'
 
 export const metadata: Metadata = {

@@ -331,23 +331,19 @@ export const getFeaturedPosts = async () => {
 export const getAuthors = async () => {
   const query = gql`
     query MyQuery {
-      authorsConnection {
-        edges {
-          node {
-            bio
-            name
-            photo {
-              url
-            }
-            slug
-          }
+      authors {
+        photo {
+          url
         }
+        bio
+        name
+        slug
       }
     }
   `
 
   const result = await request(graphqlAPI, query, {}, requestHeaders)
-  return result.authorsConnection.edges
+  return result.authors
 }
 
 export const getAuthorDetails = async (slug) => {

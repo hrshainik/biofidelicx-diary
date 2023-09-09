@@ -1,11 +1,12 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { Category } from '../app/global-types'
 import { getCategories } from '../services'
 import CategoryCard from './CategoryCard'
 import CategoryCardSkeleton from './CategoryCardSkeleton'
 
 const Categories = () => {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState<[Category]>([])
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {

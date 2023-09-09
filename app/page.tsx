@@ -1,21 +1,24 @@
 'use client'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import {
-  Categories,
-  FeaturedPosts,
-  Header,
-  PostWidget,
-  RegularPostCard,
-  SpecialPostCard,
-} from '../components'
+import { FeaturedPosts, Header } from '../components'
+import Categories from '../components/Categories'
+import PostWidget from '../components/PostWidget'
+import RegularPostCard from '../components/RegularPostCard'
+import SpecialPostCard from '../components/SpecialPostCard'
 import { getPosts, getSpecialPost } from '../services'
+import { Post } from './global-types'
+
+interface PageInfo {
+  hasNextPage: boolean
+  hasPreviousPage: boolean
+}
 
 const HomePage: React.FC = () => {
-  const [postsData, setPostsData] = useState([])
-  const [pageInfo, setPageInfo] = useState({})
-  const [specialPost, setSpecialPost] = useState([])
-  let currentPageNumber = 1
+  const [postsData, setPostsData] = useState<[Post]>([])
+  const [pageInfo, setPageInfo] = useState<PageInfo>({})
+  const [specialPost, setSpecialPost] = useState<[Post]>([])
+  let currentPageNumber: number = 1
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +33,6 @@ const HomePage: React.FC = () => {
 
         // Fetch special post
         const specialPostResponse = await getSpecialPost()
-        console.log(specialPostResponse.edges)
 
         setSpecialPost(specialPostResponse.edges) // Assuming you want the first special post
       } catch (error) {
@@ -56,7 +58,7 @@ const HomePage: React.FC = () => {
       <div className="container mx-auto grid grid-cols-1 gap-12 p-5 lg:grid-cols-12">
         <div
           className="col-span-1 grid grid-cols-1 content-start md:grid-cols-2 lg:col-span-8"
-          style={{ 'grid-row-gap': '32px', 'grid-column-gap': '24px' }}
+          style={{ gap: '32px 24px' }}
         >
           {specialPost.map(({ node: post }, i) => (
             <SpecialPostCard post={post} key={i} />

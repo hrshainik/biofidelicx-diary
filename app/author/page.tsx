@@ -1,16 +1,20 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { Categories, Header, PostWidget } from '../../components'
+import { Header } from '../../components'
 import AuthorCard from '../../components/AuthorCard'
+import Categories from '../../components/Categories'
+import PostWidget from '../../components/PostWidget'
 import { getAuthors } from '../../services'
+import { Author } from '../global-types'
 
 const AuthorsPage: React.FC = () => {
-  const [authors, setAuthors] = useState([])
+  const [authors, setAuthors] = useState<[Author]>([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const authorsDetails = await getAuthors()
+        console.log('authorsDetails', authorsDetails)
         setAuthors(authorsDetails)
       } catch (error) {
         console.error('Error fetching data:', error)
@@ -32,7 +36,7 @@ const AuthorsPage: React.FC = () => {
           <div className="post-shadow"></div>
           <div className="container -z-40 mx-auto grid grid-cols-1 gap-12 py-1 px-0 sm:p-0 md:p-5 lg:grid-cols-12">
             <div className="col-span-1 grid grid-cols-1 content-start gap-6 md:grid-cols-2 lg:col-span-8">
-              {authors.map(({ node: author }) => (
+              {authors.map((author) => (
                 <AuthorCard author={author} key={author.slug} />
               ))}
             </div>

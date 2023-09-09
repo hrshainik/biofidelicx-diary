@@ -1,6 +1,6 @@
 'use client'
 import { sendForm } from 'emailjs-com'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { Slide, toast } from 'react-toastify'
 import { Header } from '../../components'
@@ -9,7 +9,7 @@ const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID
 const USER_ID = process.env.NEXT_PUBLIC_USER_ID
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   const form = useRef()
 
   const {
