@@ -9,7 +9,7 @@
     "@graphcms/rich-text-react-renderer": "^0.5.0",
     "emailjs-com": "^3.2.0",
     "eslint-config-next": "^13.4.19",
-    "graphql": "^16.3.0",
+    "graphql": "^16.8.1",
     "graphql-request": "^4.2.0",
     "html-react-parser": "^1.4.10",
     "moment": "^2.29.2",
