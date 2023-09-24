@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Comments, CommentsForm, Header, Loader } from '../../components'
+import { Header, Loader } from '../../components'
 import Author from '../../components/Author'
 import Categories from '../../components/Categories'
 import PostDetail from '../../components/PostDetail'
@@ -57,8 +57,8 @@ const PostDetailsPage = ({ params }: { params: { slug: string } }) => {
             <div className="col-span-1 content-start lg:col-span-8">
               <PostDetail post={post} />
               <Author author={post.author} date={post.createdAt} />
-              <CommentsForm slug={post.slug} />
-              <Comments slug={post.slug} />
+              {/* <CommentsForm slug={post.slug} />
+              <Comments slug={post.slug} /> */}
             </div>
             <div className="col-span-1 lg:col-span-4">
               <div className="relative flex flex-col gap-6 self-start lg:sticky lg:top-20">

@@ -14,10 +14,14 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  @apply shadow-[inset_0_0_6px_rgba(0,0,0,0.3)];
+  @apply bg-midnight-200;
 }
 
 body::-webkit-scrollbar-thumb {
+  @apply bg-midnight-400;
+}
+
+body::-webkit-scrollbar-thumb:hover {
   @apply bg-midnight-500;
 }
 
@@ -28,7 +32,7 @@ code::-webkit-scrollbar {
 
 pre::-webkit-scrollbar-track,
 code::-webkit-scrollbar-track {
-  @apply shadow-[inset_0_0_6px_rgba(0,0,0,0.3)];
+  @apply bg-midnight-200;
 }
 
 pre::-webkit-scrollbar-thumb,
@@ -126,7 +130,8 @@ code::-webkit-scrollbar-thumb {
 }
 
 .hero-l {
-  @apply absolute top-1/2 left-1/2 flex w-[90%] max-w-[100rem] -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center;
+  @apply absolute left-1/2 flex w-[90%] max-w-[100rem] -translate-y-1/2 -translate-x-1/2 flex-col items-center justify-center;
+  top: calc(50% - 52px);
 }
 
 .main-title {

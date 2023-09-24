@@ -63,10 +63,10 @@ const SpecialPostCard: React.FC = ({ post }: SpecialPostCardProps) => {
       </div>
       <div className="relative bg-aquamarine-400 p-4 pb-8">
         <div className="folded-corner"></div>
-        <div className="flex flex-col items-start gap-6  md:flex-row md:gap-8">
-          <div className="order-last block flex-col items-center justify-center text-center text-midnight-400 md:order-first md:basis-60">
-            <div className="mb-2 flex items-center lg:w-auto">
-              {post.author.photo ? (
+        <div className="flex flex-col items-start gap-6 md:flex-row md:gap-8">
+          <div className="order-last block flex-col items-center justify-center text-midnight-400 md:order-first md:basis-60">
+            <div className="mb-2 lg:w-auto">
+              {/* {post.author.photo ? (
                 <Image
                   src={post.author.photo.url}
                   alt={post.author.name}
@@ -88,11 +88,14 @@ const SpecialPostCard: React.FC = ({ post }: SpecialPostCardProps) => {
                     fill="currentColor"
                   />
                 </svg>
-              )}
-              <p className="ml-2 align-middle text-sm">{post.author.name}</p>
+              )} */}
+              <p className="align-middle text-sm">
+                By {post.author.name.split(' ')[0]}
+              </p>
             </div>
-            <div className="flex items-center text-sm">
-              <svg
+            <p className="">3 mins</p>
+            <div className="text-sm">
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 width="24"
@@ -103,10 +106,8 @@ const SpecialPostCard: React.FC = ({ post }: SpecialPostCardProps) => {
                   d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
                   fill="currentColor"
                 />
-              </svg>
-              <span className="ml-2">
-                {moment(post.createdAt).format('MMM DD, YYYY')}
-              </span>
+              </svg> */}
+              <span>{moment(post.createdAt).format('MMM DD, YYYY')}</span>
             </div>
           </div>
           <p className="pr-6 text-base leading-6">{post.excerpt}</p>

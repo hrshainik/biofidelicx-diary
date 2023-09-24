@@ -21,13 +21,13 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
           alt="hero"
           // loader={() => imageUrl}
         />
-        <div className="relative top-3 z-10 mx-auto">
+        {/* <div className="relative top-3 z-10 mx-auto">
           <Link href="/">
             <div className="relative mx-auto h-12 w-40 cursor-pointer md:h-16 md:w-56 lg:h-20 lg:w-72">
               <Image src="/logo.svg" alt="logo" fill />
             </div>
           </Link>
-        </div>
+        </div> */}
         <div className="hero-l">
           <h1 className="main-title">{title}</h1>
           {subText && slug && color && (
@@ -82,6 +82,9 @@ const Header = ({ title, imageUrl, slug, subText, color }) => {
             </div>
           )}
         </div>
+        {/* <div className="mt-4 mb-2 font-h text-white-500">
+          <span>Habibur Rahman</span> | <span>3 mins</span>
+        </div> */}
       </main>
     </>
   )

@@ -73,7 +73,7 @@ const RegularPostCard: React.FC = ({ post }: RegularPostCardProps) => {
             </h2>
             <div className="mb-4 flex w-full items-center justify-center gap-3 text-center text-sm text-midnight-400">
               <div className="flex items-center justify-center lg:mb-0 lg:w-auto">
-                {post.author.photo ? (
+                {/* {post.author.photo ? (
                   <Image
                     src={post.author.photo.url}
                     alt={post.author.name}
@@ -95,13 +95,18 @@ const RegularPostCard: React.FC = ({ post }: RegularPostCardProps) => {
                       fill="currentColor"
                     />
                   </svg>
-                )}
+                )} */}
                 <p className="ml-2 inline align-middle">
-                  {post.author.name.split(' ')[0]}
+                  By {post.author.name.split(' ')[0]}
                 </p>
               </div>
+              <div>|</div>
+              <div>
+                <span>3 mins</span>
+              </div>
+              <div>|</div>
               <div className="flex items-center">
-                <svg
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width="24"
@@ -112,7 +117,7 @@ const RegularPostCard: React.FC = ({ post }: RegularPostCardProps) => {
                     d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
                     fill="currentColor"
                   />
-                </svg>
+                </svg> */}
                 <span className="ml-2">
                   {moment(post.createdAt).format('MMM DD, YYYY')}
                 </span>

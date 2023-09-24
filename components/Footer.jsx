@@ -126,7 +126,7 @@ const Footer = () => {
           <p className="text-xs">
             Developed by{' '}
             <a
-              href="https://hrshainik.me"
+              href="https://github.com/hrshainik"
               target="_blank"
               className="text-aquamarine-500"
               rel="noreferrer"
